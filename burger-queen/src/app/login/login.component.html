@@ -1,4 +1,16 @@
-<p>Bienvenidx Colaboradorx!</p>
-<input type="text" placeholder="Email"> 
-<input type="password" placeholder="Contraseña"> 
-<a [routerLink]="['/home']"><button>Ingresar</button></a> 
+<div class="container ">
+
+    <section class="row justify-content-md-center">
+        <article class="full-logo col-xs-12 col-sm-10 col-md-7 ">
+            <img class="imagen-logo" src="assets/img/logo.jpg">
+
+        </article>
+        <aside class=" components-login col-xs-12 col-sm-2 col-md-5">
+            <p class="text">Bienvenidxs Colaboradorxs</p>
+
+            <input class="login-input" id="email-login" type="email" placeholder="Email">
+            <input class="login-input" id="password-login" type="password" placeholder="Password">
+            <a [routerLink]="['/home']"> <button class="button" id="log-in">Ingresa</button></a>
+        </aside>
+    </section>
+</div>

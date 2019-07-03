@@ -1,0 +1,54 @@
+.button {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    padding: 10px 36px;
+    background: orange;
+    color: black;
+    font: bold;
+    text-align: center;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.imagen-logo {
+    margin: auto 18%;
+    height: 250px;
+    width: auto;
+    /*margin: 40px 80px 2px 80px;*/
+}
+
+.text {
+    text-align: center;
+    font-family: 'PT Serif', serif;
+    font-size: 130%;
+}
+
+.login-input {
+    outline: none;
+    background: rgba(179, 172, 172, 0.486);
+    margin-bottom: 15px;
+    height: 15px;
+    padding: 18px 36px;
+    border-radius: 15px;
+    border: 1px;
+}
+
+.container {
+    border: solid 5px green;
+}
+
+.full-logo {
+    position: relative;
+    border: solid 5px red;
+    margin-top: 15%;
+}
+
+.components-login {
+    margin-top: 15%;
+    border: solid 5px black;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
