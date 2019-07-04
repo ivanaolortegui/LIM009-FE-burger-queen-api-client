@@ -1,1 +1,72 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+ background-color: #F7F7F7;
+}
+
+* {
+    background-color: #F7F7F7;
+ }
+ 
+ .button {
+     cursor: pointer;
+     outline: none;
+     border: none;
+     padding: 10px 36px;
+     background: #F2911B;
+     color: black;
+     font: bold;
+     text-align: center;
+     border-radius: 5px;
+     text-decoration: none;
+     display: inline-block;
+ }
+ 
+ .imagen-logo {
+     
+     height: 250px;
+     width: auto;
+     /*margin: 40px 80px 2px 80px;*/
+ }
+ 
+ .text {
+     text-align: center;
+     font-family: 'PT Serif', serif;
+     font-size: 130%;
+ }
+ 
+ .login-input {
+     outline: none;
+     background: rgba(179, 172, 172, 0.486);
+     margin-bottom: 15px;
+     height: 15px;
+     padding: 18px 36px;
+     border-radius: 5px;
+     border: 1px;
+ }
+ 
+ /* .container {
+     
+     border: solid 5px green;
+ }
+  */
+ .full-logo {
+     position: relative;
+    
+     margin-top: 15%;
+ }
+ 
+  .components-login {
+     margin-top: 13%;
+     margin-bottom: 10%;
+  
+ 
+ } 
+ 
+ .margin-rigth{
+     padding-right: 0%;
+ }
+ @media screen and (min-width: 800px) {
+  
+ } 
+ 
+ 
