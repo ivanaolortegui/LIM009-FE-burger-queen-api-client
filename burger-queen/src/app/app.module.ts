@@ -6,8 +6,9 @@ import { AppRoutingModule } from './app-routing.module';
 
 import {UserService} from './services/user.service'
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './components/login/login.component';
+import { HomeComponent } from './components/home/home.component';
+import { FormLoginComponent } from './components/form-login/form-login.component';
 
 
 
@@ -16,6 +17,7 @@ import { HomeComponent } from './home/home.component';
     AppComponent,
     LoginComponent,
     HomeComponent,
+    FormLoginComponent,
  
   ],
   imports: [
