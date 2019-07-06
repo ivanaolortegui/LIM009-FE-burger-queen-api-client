@@ -15,8 +15,8 @@ user : Object = {
 }
 
 usuario = {
-  "email": 'liz@gmail.com',
-  "contraseña": '1234567'
+ 
+  "contraseña": 'ivana'
 }
 //userModel = new UserModel();
   constructor(private userservice : UserService) { }
@@ -27,7 +27,7 @@ usuario = {
    
   }
  guardar(forma : FormGroup){
-  this.userservice.getToken(this.usuario).subscribe(resp => (resp) )
+  this.userservice.getToken(this.usuario).subscribe(resp =>  console.log(resp) )
   
    
  }
