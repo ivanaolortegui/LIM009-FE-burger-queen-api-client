@@ -1,6 +1,14 @@
-* {
-   background-color: #F7F7F7;
+*{
+    margin: 0px;
+    padding: 0;
+    box-sizing: border-box;
 }
+ body{
+    
+    margin: 0 auto;
+    padding: 0px 0 0px 0;
+} 
+
 
 .button {
     cursor: pointer;
@@ -50,17 +58,19 @@
     margin-top: 15%;
 }
 
- .components-login {
-    margin-top: 13%;
-    margin-bottom: 10%;
- 
-
-} 
 
 .margin-rigth{
     padding-right: 0%;
 }
 @media screen and (min-width: 800px) {
- 
+   
+    body{
+        background-image:url('src/assets/img/Frame 2.png');
+        background-attachment: fixed;
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin: 0 ;
+        padding: 0;
+    } 
 } 
 
