@@ -1,8 +1,9 @@
 <aside>
-  <form class=" col-xs-10 col-sm-6 col-md-12 ">
+  <form (ngSubmit)="guardar(forma)" #forma = "ngForm" class=" col-xs-10 col-sm-6 col-md-12 " novalidate="">
     <p class="text">Bienvenidxs Colaboradorxs</p>
-    <input class="login-input col-xs-10 col-sm-6 col-md-12" id="email-login" type="email" placeholder="Email">
-    <input class="login-input col-xs-10 col-sm-6 col-md-12" id="password-login" type="password" placeholder="Password">
-    <a [routerLink]="['/home']"> <button class="button col-xs-10 col-sm-6 col-md-12" id="log-in">Ingresa</button></a>
+    <input class="login-input col-xs-10 col-sm-6 col-md-12" id="email-login"  
+    name="email" type="email" placeholder="Email" [(ngModel)]="user.email" pattern="/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3,4})+$/" required>
+    <input class="login-input col-xs-10 col-sm-6 col-md-12" id="password-login" name="password" type="password" placeholder="Password" [(ngModel)]="user.password" required>
+   <!--  <a [routerLink]="['/home']"> --> <button type="submit" class="button col-xs-10 col-sm-6 col-md-12" id="log-in">Ingresa</button> <!-- </a> -->
   </form>
 </aside>
