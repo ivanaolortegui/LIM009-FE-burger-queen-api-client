@@ -25,9 +25,10 @@ export class FormLoginComponent implements OnInit {
   ngOnInit() {
    
     
-   
   }
  guardar(forma : FormGroup) {
+   console.log(forma.invalid);
+   
   this.userservice.getToken(forma.value).subscribe(resp => {
     this.router.navigateByUrl('/home')
      console.log(resp) }),

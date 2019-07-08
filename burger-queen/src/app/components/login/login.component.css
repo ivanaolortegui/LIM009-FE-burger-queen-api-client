@@ -35,8 +35,8 @@
     outline: none;
     background: rgba(179, 172, 172, 0.486);
     margin-bottom: 15px;
-    height: 15px;
-    padding: 18px 36px;
+    height: 7%;
+    padding: 0px;
     border-radius: 5px;
     border: 1px;
 }
@@ -46,7 +46,7 @@
    height: 340px;
    background: rgba(249, 236, 206, 0.93);
    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.35);
-border-radius: 4px;
+  border-radius: 4px;
 }
 
 
@@ -90,6 +90,15 @@ border-radius: 4px;
       background: rgba(249, 236, 206, 0.93);
       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.35);
 border-radius: 4px;
+  }
+  .login-input {
+    outline: none;
+    background: rgba(179, 172, 172, 0.486);
+    margin-bottom: 15px;
+    height: 75px;
+    padding: 0px;
+    border-radius: 5px;
+    border: 1px;
   }
   
 } 
