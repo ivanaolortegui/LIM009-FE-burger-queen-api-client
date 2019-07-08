@@ -2,33 +2,38 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm, FormGroup} from '@angular/forms'
 import {UserService } from 'src/app/services/user.service'
 import { UserModel} from 'src/app/model/model.model'
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-form-login',
   templateUrl: './form-login.component.html',
   styleUrls: ['./form-login.component.css']
 })
 export class FormLoginComponent implements OnInit {
-user : Object = {
+
+  user : Object = {
   email: '',
   password:''
 
 }
 
-usuario = {
- 
-  "contraseña": 'ivana'
-}
-//userModel = new UserModel();
-  constructor(private userservice : UserService) { }
+
+
+  constructor(private userservice : UserService,
+    
+            private router : Router) { }
 
   ngOnInit() {
    
-     //this.userservice.getAll().subscribe(resp => console.log(resp) )
+    
    
   }
- guardar(forma : FormGroup){
-  this.userservice.getToken(this.usuario).subscribe(resp =>  console.log(resp) )
-  
+ guardar(forma : FormGroup) {
+  this.userservice.getToken(forma.value).subscribe(resp => {
+    this.router.navigateByUrl('/home')
+     console.log(resp) }),
+   (err =>console.log(err.HttpErrorResponse))
    
+  //this.userservice.getProducts().subscribe(resp => console.log(resp) )
  }
+ 
 }

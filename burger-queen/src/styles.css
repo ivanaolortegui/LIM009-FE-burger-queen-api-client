@@ -1,28 +1,29 @@
 /*  You can add global styles to this file, and also import other style files * */
-body{
-    margin: 0;
+
+
+body {
+    background-image:url('src/assets/img/Frame 2.png');
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0 ;
+    padding: 0;
+} 
+
+.button {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    padding: 10px 36px;
+    color: white;
+    background: #293092;
+    font: bold;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
 }
 
- .button {
-     cursor: pointer;
-     outline: none;
-     border: none;
-     padding: 10px 36px;
-     background: #F2911B;
-     color: black;
-     font: bold;
-     text-align: center;
-     border-radius: 5px;
-     text-decoration: none;
-     display: inline-block;
- } 
- 
- .imagen-logo {
-     
-     height: 250px;
-     width: auto;
-     
- }
  
  .text {
      text-align: center;
@@ -40,27 +41,13 @@ body{
      border: 1px;
  }
  
- .full-logo {
-     position: relative;
-    
-     margin-top: 15%;
- }
  
-  .components-login {
-     margin-top: 13%;
-     margin-bottom: 10%;
-  
  
- } 
  
- .margin-rigth{
-     padding-right: 0%;
- }
+ 
+ 
  @media screen and (min-width: 700px) {
-  body{
-        margin: 0;
-        padding: 0;
-    } 
+   
  } 
  
  
