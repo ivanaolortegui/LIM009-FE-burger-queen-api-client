@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 import { FormsModule} from '@angular/forms'
 
 import {UserService} from './services/user.service'
@@ -11,6 +12,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { FormLoginComponent } from './components/form-login/form-login.component';
+import { AuthGuard } from './guards/auth.guard';
 
 
 
@@ -20,7 +22,8 @@ import { FormLoginComponent } from './components/form-login/form-login.component
     AppComponent,
     LoginComponent,
     HomeComponent,
-    FormLoginComponent
+    FormLoginComponent,
+  
 
    
   ],
@@ -28,10 +31,13 @@ import { FormLoginComponent } from './components/form-login/form-login.component
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    
+   
   ],
   providers: [
-    UserService
+    UserService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

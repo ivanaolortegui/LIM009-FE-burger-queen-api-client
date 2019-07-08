@@ -16,7 +16,7 @@ export class UserService {
 
 
   constructor(private http: HttpClient) {
-    this.readToken()
+   this.readToken()
    }
   /*   getToken (user : User ){
       const headers = {
@@ -42,7 +42,7 @@ export class UserService {
       .pipe(map(response => response)
       )
   }
-  
+
 //Guardar y leer token en el LocalStorage
   saveToken(Token: string) {
     this.Usertoken = Token
@@ -56,5 +56,10 @@ export class UserService {
       this.Usertoken = '';
     }
     return this.Usertoken;
+  }
+
+  // Usuario Autenticado 
+  authUser() : boolean{
+    return this.Usertoken.length > 2;
   }
 }
