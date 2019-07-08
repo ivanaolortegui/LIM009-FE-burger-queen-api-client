@@ -1,12 +1,12 @@
 <aside class="row justify-content-center">
   <form (ngSubmit)="guardar(forma)" #forma = "ngForm" class=" col-xs-12 col-sm-12 col-md-12 row justify-content-center " novalidate="">   
-    <p class="text">Bienvenidxs Colaboradorxs</p>
+    <p class="text title">Bienvenidxs Colaboradorxs</p>
     <div *ngIf = "forma.submitted && forma.controls['email'].errors" class="text-danger text fadeIn col-xs-10 col-xs-offset-1  col-sm-10 col-sm-offset-2  col-md-6col-md-offset-9"> El correo es invalido </div>
     <input class="login-input col-xs-10 col-xs-offset-1  col-sm-10 col-sm-offset-2  col-md-6col-md-offset-9 " id="email-login"  
     name="email" type="email"  placeholder="📩   Email " [(ngModel)]="user.email" pattern="/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3,4})+$/" required>
     <div *ngIf = "forma.submitted && forma.controls['password'].errors" class="text-danger text fadeIn col-xs-10 col-xs-offset-1  col-sm-10 col-sm-offset-2  col-md-6col-md-offset-9"> Al menos 6 carateres </div>
     <input class="login-input col-xs-10   col-sm-10 col-sm-offset-4     col-md-6.col-md-offset-6" id="password-login" minlength="6" name="password" type="password" 
     placeholder="🔒  Password" [(ngModel)]="user.password" required>
-    <!--  <a [routerLink]="['/home']"> -->  <button type="submit" class="button col-xs-9 col-sm-8 col-md-6" id="log-in">Ingresa</button> <!--  </a>  -->
+    <!--  <a [routerLink]="['/home']"> -->  <button type="submit" class="button col-xs-12 col-sm-10 col-md-8" id="log-in">Ingresa</button> <!--  </a>  -->
   </form>
 </aside>
