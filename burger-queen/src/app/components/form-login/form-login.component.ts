@@ -8,7 +8,8 @@ import { UserModel} from 'src/app/model/model.model'
   styleUrls: ['./form-login.component.css']
 })
 export class FormLoginComponent implements OnInit {
-user : Object = {
+
+  user : Object = {
   email: '',
   password:''
 
@@ -16,19 +17,21 @@ user : Object = {
 
 usuario = {
  
-  "contraseña": 'ivana'
+  "contraseña": 'ivana',
+  "pais":'peru'
 }
-//userModel = new UserModel();
+userModel = new UserModel();
   constructor(private userservice : UserService) { }
 
   ngOnInit() {
    
-     //this.userservice.getAll().subscribe(resp => console.log(resp) )
+    
    
   }
  guardar(forma : FormGroup){
-  this.userservice.getToken(this.usuario).subscribe(resp =>  console.log(resp) )
-  
-   
+  this.userservice.getToken(forma.value).subscribe(resp =>  console.log(resp) ),
+   (err =>console.log(err.HttpErrorResponse))
+   this.userservice.getProducts().subscribe(resp => console.log(resp) )
  }
+ 
 }

@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "email": "ivana@gmail.com",
+      "password": "$2a$10$u04HgHbJAureCDVa87m7A.NfG8S9izMV.GQerhuggj6v.pr/YKOfK"
+    }
+  ],
+
+  "products": [
+    {
+      "name": "Café americano",
+      "price": "5",
+      "type": "Desayuno"
+    },
+    
+    {
+      "name": "Sandwich de jamón y queso",
+      "price": "10",
+      "type": "Desayuno"
+    },
+    {
+
+    }
+  ]
+}
