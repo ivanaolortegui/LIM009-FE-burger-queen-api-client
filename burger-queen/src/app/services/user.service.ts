@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/internal/Observable';
 import { map, take } from 'rxjs/operators'
 import { User } from './user'
 import { UserModel } from '../model/model.model'
+import { product } from './products';
 
 
 
@@ -38,7 +39,7 @@ export class UserService {
     const headers = new HttpHeaders({
       'Authorization': 'Bearer ' + this.Usertoken
     });
-    return this.http.get("http://localhost:3000/660/products", { headers: headers })
+    return this.http.get<product[]>("http://localhost:3000/660/products", { headers: headers })
       .pipe(map(response => response)
       )
   }

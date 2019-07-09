@@ -60,8 +60,7 @@ export class FormLoginComponent implements OnInit {
   
     
     
-   
-  //this.userservice.getProducts().subscribe(resp => console.log(resp) )
+
  }
  
 }

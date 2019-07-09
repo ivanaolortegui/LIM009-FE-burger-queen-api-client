@@ -13,6 +13,9 @@ import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { FormLoginComponent } from './components/form-login/form-login.component';
 import { AuthGuard } from './guards/auth.guard';
+import { HeaderComponent } from './components/header/header.component';
+import { ProductsComponent } from './components/products/products.component';
+import { OrdersComponent } from './components/orders/orders.component';
 
 
 
@@ -23,6 +26,9 @@ import { AuthGuard } from './guards/auth.guard';
     LoginComponent,
     HomeComponent,
     FormLoginComponent,
+    HeaderComponent,
+    ProductsComponent,
+    OrdersComponent,
   
 
    
