@@ -3,7 +3,7 @@
     <p class="text title">Bienvenidxs Colaboradorxs</p>
     <div *ngIf = "forma.submitted && forma.controls['email'].errors" class="text-danger text fadeIn col-xs-10 col-xs-offset-1  col-sm-10 col-sm-offset-2  col-md-6col-md-offset-9"> El correo es invalido </div>
     <input class="login-input col-xs-10 col-xs-offset-1  col-sm-10 col-sm-offset-2  col-md-6col-md-offset-9 " id="email-login"  
-    name="email" type="email"  placeholder="📩   Email " [(ngModel)]="user.email" pattern="/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3,4})+$/" required>
+    name="email" type="email"  placeholder="📩   Email " [(ngModel)]="user.email"  required>
     <div *ngIf = "forma.submitted && forma.controls['password'].errors" class="text-danger text fadeIn col-xs-10 col-xs-offset-1  col-sm-10 col-sm-offset-2  col-md-6col-md-offset-9"> Al menos 6 carateres </div>
     <input class="login-input col-xs-10   col-sm-10 col-sm-offset-4     col-md-6.col-md-offset-6" id="password-login" minlength="6" name="password" type="password" 
     placeholder="🔒  Password" [(ngModel)]="user.password" required>
