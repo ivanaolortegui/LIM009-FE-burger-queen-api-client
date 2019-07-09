@@ -4,7 +4,28 @@
         "password": "$2a$10$u04HgHbJAureCDVa87m7A.NfG8S9izMV.GQerhuggj6v.pr/YKOfK"
     }],
 
-    "products": [{
+  "products": [
+    {
+      "name": "Café americano",
+      "price": "5",
+      "type": "Desayuno"
+    },
+    {
+      "name": "Café con leche",
+      "price": "7",
+      "type": "Desayuno"
+    },
+    {
+      "name": "Sandwich de jamón y queso",
+      "price": "10",
+      "type": "Desayuno"
+    },
+    {
+      "name": "Jugo de frutas natural",
+      "price": "7",
+      "type": "Desayuno"
+    },
+  {
             "name": "Hamburguesa Simple",
             "price": "10",
             "image": "https://image.flaticon.com/icons/svg/1046/1046784.svg",
@@ -62,3 +83,4 @@
         }
     ]
 }
+
