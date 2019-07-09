@@ -5,7 +5,9 @@
     height: 312px;
 }
 .log {
-  width: 50%
+  
+  width: 50%;
+  margin-top: 4%;
 }
 
 .button {
@@ -28,9 +30,11 @@
 .text {
     text-align: center;
     font-family: 'PT Serif', serif;
-    font-size: 130%;
+   
 }
-
+.title{
+  font-size: 130%;
+}
 .login-input {
     outline: none;
     background: rgba(179, 172, 172, 0.486);

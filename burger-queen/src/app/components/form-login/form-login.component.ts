@@ -30,7 +30,7 @@ export class FormLoginComponent implements OnInit {
    
   }
  guardar(forma : FormGroup) {
-   //if (forma.invalid){return;}
+   if (forma.invalid){return;}
   Swal.fire({
     allowOutsideClick: false,
     type: "info",
@@ -42,11 +42,17 @@ export class FormLoginComponent implements OnInit {
     this.router.navigateByUrl('/home')
      console.log(resp) },
    (err )=>{
-    console.log(err.HttpErrorResponse)
+    console.log(err.error)
+    let text="";
+    if(err.error == "Cannot find user"){
+      text="Usuario no existe 😔"
+    } else {
+      text = "Password incorrecto 🤔"
+    }
     Swal.fire({
       allowOutsideClick: false,
       type: "error",
-      text:"Error al autenticar..."
+      text: text
   
     });
    });
