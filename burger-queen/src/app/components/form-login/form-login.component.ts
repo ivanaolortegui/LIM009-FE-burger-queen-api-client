@@ -52,7 +52,8 @@ export class FormLoginComponent implements OnInit {
     Swal.fire({
       allowOutsideClick: false,
       type: "error",
-      text: text
+      text: text,
+      confirmButtonColor:"#293092"
   
     });
    });
