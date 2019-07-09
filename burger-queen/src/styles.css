@@ -1,7 +1,7 @@
 /*  You can add global styles to this file, and also import other style files * */
 
 body {
-    background-image: url('src/assets/img/Frame 2.png');
+    background-image:url('src/assets/img/french-f.png');
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
@@ -56,7 +56,7 @@ body {
     }
     .login-input {
         outline: none;
-        background: rgba(179, 172, 172, 0.486);
+   
         margin-bottom: 15px;
         height: 55px;
         padding: 0px;
