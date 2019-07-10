@@ -6,7 +6,7 @@
 <div class="main wrapp-flex"> 
   <ng-container *ngIf="ocultar">   
      <div class="card" *ngFor= "let product of desayuno"  >
-        <img class="card-img-top" src="./french-f.png" alt="Card image cap">
+        <img class="card-img-top" src="{{product.image}}" alt="Card image cap">
        <div>
          <p > {{product.name}}</p>
          <p> {{product.type}}</p>
@@ -17,7 +17,7 @@
 
   <ng-container *ngIf="mostrar">
     <div class="card" *ngFor= "let product of almuerzo"  >
-        <img class="card-img-top" src="./french-f.png" alt="Card image cap">
+        <img class="card-img-top" src="{{product.image}}" alt="Card image cap">
       <div>
         <p> {{product.name}}</p>
         <p> {{product.type }}</p>

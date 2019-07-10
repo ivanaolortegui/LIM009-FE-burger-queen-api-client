@@ -14,7 +14,11 @@ body {
     height: 48px;
     background: rgba(252, 174, 23, 0.64);
   }
-  
+ 
+  .center-button {
+    display: flex;
+    justify-content: space-around;
+  }
   .button-desayuno {
     background: linear-gradient(
       180deg,
@@ -27,7 +31,7 @@ body {
     color: white;
   }
   .button-menu {
-    padding: 6px 39px;
+    padding: 16px 45px;
     font-size: 110%;
     cursor: pointer;
     outline: none;
@@ -53,6 +57,21 @@ body {
     text-decoration: none;
     display: inline-block;
   }
+
+  /* card de products */
+  .wrapp-flex {
+      display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .card {
+    width: 48%;
+    height: 28%;
+    margin: 1%;
+    border-radius: 10px;
+  }
+
+
   
   .text {
     text-align: center;
