@@ -1,14 +1,14 @@
-<button (click) = "mostrar = !mostrar " (click) = "ocultar = !ocultar " >Desayuno</button>
-<button (click) = "mostrar = !mostrar " (click) = "ocultar = !ocultar " >Almuerzo</button>
+<button (click)="mostrar = !mostrar " (click)="ocultar = !ocultar ">Desayuno</button>
+<button (click)="mostrar = !mostrar " (click)="ocultar = !ocultar ">Almuerzo</button>
 <ng-container *ngIf="ocultar">
-<div *ngFor= "let product of desayuno"  >
-<p > {{product.name}}</p>
-<p  > {{product.type }}</p>
-</div>
+    <div *ngFor="let product of desayuno">
+        <p> {{product.name}}</p>
+
+    </div>
 </ng-container>
 <ng-container *ngIf="mostrar">
-<div  *ngFor= "let product of almuerzo"  >
-    <p> {{product.name}}</p>
-    <p> {{product.type }}</p>
-</div>
+    <div *ngFor="let product of almuerzo">
+        <p> {{product.name}}</p>
+
+    </div>
 </ng-container>
