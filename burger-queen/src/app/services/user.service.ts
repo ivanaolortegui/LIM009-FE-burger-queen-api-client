@@ -34,7 +34,7 @@ export class UserService {
       return resp;
     }))
   }
-
+ // obtener links de los productos
   getProducts() {
     const headers = new HttpHeaders({
       'Authorization': 'Bearer ' + this.Usertoken
