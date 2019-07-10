@@ -1,28 +1,28 @@
-<section  class="conteiner-menu">
- <div class="center-button ">
-<button  class="button-menu button-desayuno" (click) = "mostrar = !mostrar " (click) = "ocultar = !ocultar " >Desayuno</button>
-<button class=" button-almuerzo button-menu"(click) = "mostrar = !mostrar " (click) = "ocultar = !ocultar " >Almuerzo</button>
-</div>
-<div class="main wrapp-flex"> 
-  <ng-container *ngIf="ocultar">   
-     <div class="card" *ngFor= "let product of desayuno"  >
-        <img class="card-img-top" src="{{product.image}}" alt="Card image cap">
-       <div>
-         <p > {{product.name}}</p>
-         <p> {{product.type}}</p>
-       </div>
-     </div>
-
-  </ng-container>
-
-  <ng-container *ngIf="mostrar">
-    <div class="card" *ngFor= "let product of almuerzo"  >
-        <img class="card-img-top" src="{{product.image}}" alt="Card image cap">
-      <div>
-        <p> {{product.name}}</p>
-        <p> {{product.type }}</p>
-      </div>
+<section class="conteiner-menu">
+    <div class="center-button ">
+        <button class="button-menu button-desayuno" (click)="mostrar = !mostrar " (click)="ocultar = !ocultar ">Desayuno</button>
+        <button class=" button-almuerzo button-menu" (click)="mostrar = !mostrar " (click)="ocultar = !ocultar ">Almuerzo</button>
     </div>
-  </ng-container> 
-</div>  
+    <div class="main wrapp-flex">
+        <ng-container *ngIf="ocultar">
+            <div class="card" *ngFor="let product of desayuno">
+                <img class="card-img-top" src="{{product.image}}" alt="Card image cap">
+                <div>
+                    <div class="text descripcion-producto">{{product.name}}</div>
+                    <p>S/.{{product.price}}.00 soles</p>
+                </div>
+            </div>
+
+        </ng-container>
+
+        <ng-container *ngIf="mostrar">
+            <div class="card" *ngFor="let product of almuerzo">
+                <img class="card-img-top" src="{{product.image}}" alt="Card image cap">
+                <div>
+                    <div class="text descripcion-producto">{{product.name}}</div>
+                    <p> precio : S/.{{product.price}}.00 soles</p>
+                </div>
+            </div>
+        </ng-container>
+    </div>
 </section>
