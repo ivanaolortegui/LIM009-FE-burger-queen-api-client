@@ -20,8 +20,7 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit() {
    
-   this.userservice.getProducts().subscribe(resp  => {
-     
+   this.userservice.getProducts().subscribe(resp  => {    
      this.products = resp 
      this.desayuno = this.products.filter(ele => { 
        return ele.type==="Desayuno"})
