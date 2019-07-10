@@ -1,14 +1,28 @@
-<button (click)="mostrar = !mostrar " (click)="ocultar = !ocultar ">Desayuno</button>
-<button (click)="mostrar = !mostrar " (click)="ocultar = !ocultar ">Almuerzo</button>
-<ng-container *ngIf="ocultar">
-    <div *ngFor="let product of desayuno">
-        <p> {{product.name}}</p>
-
+<section class="conteiner-menu">
+    <div class="center-button ">
+        <button class="button-menu button-desayuno" (click)="mostrar = !mostrar " (click)="ocultar = !ocultar ">Desayuno</button>
+        <button class=" button-almuerzo button-menu" (click)="mostrar = !mostrar " (click)="ocultar = !ocultar ">Almuerzo</button>
     </div>
-</ng-container>
-<ng-container *ngIf="mostrar">
-    <div *ngFor="let product of almuerzo">
-        <p> {{product.name}}</p>
+    <div class="main wrapp-flex">
+        <ng-container *ngIf="ocultar">
+            <div class="card" *ngFor="let product of desayuno">
+                <img class="card-img-top" src="./french-f.png" alt="Card image cap">
+                <div>
+                    <p> {{product.name}}</p>
+                    <p> {{product.type}}</p>
+                </div>
+            </div>
 
+        </ng-container>
+
+        <ng-container *ngIf="mostrar">
+            <div class="card" *ngFor="let product of almuerzo">
+                <img class="card-img-top" src="./french-f.png" alt="Card image cap">
+                <div>
+                    <p> {{product.name}}</p>
+                    <p> {{product.type }}</p>
+                </div>
+            </div>
+        </ng-container>
     </div>
-</ng-container>
+</section>
