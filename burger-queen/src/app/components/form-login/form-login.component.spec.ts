@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { UserService } from '../../services/user.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from '../../app-routing.module';
+import { DebugElement} from '@angular/core'
+import { By } from '@angular/platform-browser';
 import { HomeComponent } from '../home/home.component';
 import { LoginComponent } from '../login/login.component';
 
@@ -14,6 +16,9 @@ import { ProductsComponent } from '../products/products.component';
 describe('FormLoginComponent', () => {
   let component: FormLoginComponent;
   let fixture: ComponentFixture<FormLoginComponent>;
+  let inputEl: DebugElement;
+  let formEl: DebugElement;
+
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -29,10 +34,17 @@ describe('FormLoginComponent', () => {
     fixture = TestBed.createComponent(FormLoginComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    inputEl = fixture.debugElement.query(By.css('input'));
+    formEl = fixture.debugElement.query(By.css('form'))
   });
 
   it('should create', (async() => {
     expect(component).toBeTruthy();
   }));
+  it('Deberia de llamar a "guardar" al dar submit al form', () => {
+    spyOn(component, 'guardar');
+    formEl.triggerEventHandler('submit', null);
+    expect(component.guardar).toHaveBeenCalled();
+  })
 
 });
