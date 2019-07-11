@@ -4,7 +4,7 @@ import { FormLoginComponent } from './form-login.component';
 import { FormsModule } from '@angular/forms';
 import { UserService } from '../../services/user.service';
 import { AppRoutingModule } from '../../app-routing.module';
-import { DebugElement} from '@angular/core'
+import { DebugElement, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { HomeComponent } from '../home/home.component';
 import { LoginComponent } from '../login/login.component';
@@ -22,9 +22,10 @@ describe('FormLoginComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FormLoginComponent, HomeComponent, LoginComponent, HeaderComponent, ProductsComponent, OrdersComponent ],
+      declarations: [ FormLoginComponent, HomeComponent, LoginComponent],
       imports:[FormsModule, HttpClientModule, AppRoutingModule],
-      providers:[UserService]
+      providers:[UserService],
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
       
     })
     .compileComponents();

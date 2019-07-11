@@ -1,95 +1,106 @@
 {
-    "users": [{
-        "email": "ivana@gmail.com",
-        "password": "$2a$10$u04HgHbJAureCDVa87m7A.NfG8S9izMV.GQerhuggj6v.pr/YKOfK"
-    }],
-
-    "products": [{
-            "name": "Café americano",
-            "price": "5",
-            "image": "https://image.flaticon.com/icons/svg/15/15234.svg",
-            "type": "Desayuno",
-            "dateEntry": ""
-        },
-        {
-            "name": "Café con leche",
-            "price": "7",
-            "image": "https://image.flaticon.com/icons/svg/579/579125.svg",
-            "type": "Desayuno",
-            "dateEntry": ""
-        },
-        {
-            "name": "Sandwich de jamón y queso",
-            "price": "10",
-            "image": "https://image.flaticon.com/icons/svg/135/135591.svg",
-            "type": "Desayuno",
-            "dateEntry": ""
-        },
-        {
-            "name": "Jugo de frutas natural",
-            "price": "7",
-            "image": "https://image.flaticon.com/icons/svg/1902/1902947.svg",
-            "type": "Desayuno"
-        },
-        {
-            "name": "Hamburguesa Simple",
-            "price": "10",
-            "image": "https://image.flaticon.com/icons/svg/135/135592.svg",
-            "type": "Almuerzo y cena",
-            "dateEntry": ""
-        },
-        {
-            "name": "Hamburguesa Doble",
-            "price": "15",
-            "image": "https://image.flaticon.com/icons/svg/1522/1522401.svg",
-            "type": "Almuerzo y cena",
-            "dateEntry": ""
-        },
-        {
-            "name": "Papas Fritas",
-            "price": "5",
-            "image": "https://image.flaticon.com/icons/svg/135/135589.svg",
-            "type": "Almuerzo y cena",
-            "dateEntry": ""
-        },
-        {
-            "name": "Cebollas tostadas",
-            "price": "5",
-            "image": "https://image.flaticon.com/icons/svg/723/723600.svg",
-            "type": "Almuerzo y cena",
-            "dateEntry": ""
-        },
-        {
-            "name": "Agua 500ml",
-            "price": "5",
-            "image": "https://image.flaticon.com/icons/svg/135/135662.svg",
-            "type": "Almuerzo y cena",
-            "dateEntry": ""
-        },
-        {
-            "name": "Agua 750ml",
-            "price": "7",
-            "image": "https://image.flaticon.com/icons/svg/432/432257.svg",
-            "type": "Almuerzo y cena",
-            "dateEntry": ""
-        },
-        {
-            "name": "Gaseosa 500ml",
-            "price": "7",
-            "image": "https://image.flaticon.com/icons/svg/1237/1237055.svg",
-            "type": "Almuerzo y cena",
-            "dateEntry": ""
-        },
-        {
-            "name": "Gaseosa 750ml",
-            "price": "10",
-            "image": "https://image.flaticon.com/icons/svg/1868/1868727.svg",
-            "type": "Almuerzo y cena",
-            "dateEntry": ""
-        }
-    ],
-    "orders": [{
-        
-    }]
-
+  "users": [
+    {
+      "email": "ivana@gmail.com",
+      "password": "$2a$10$u04HgHbJAureCDVa87m7A.NfG8S9izMV.GQerhuggj6v.pr/YKOfK"
+    }
+  ],
+  "products": [
+    {
+      "name": "Café americano",
+      "price": "5",
+      "image": "https://image.flaticon.com/icons/svg/15/15234.svg",
+      "type": "Desayuno",
+      "dateEntry": ""
+    },
+    {
+      "name": "Café con leche",
+      "price": "7",
+      "image": "https://image.flaticon.com/icons/svg/579/579125.svg",
+      "type": "Desayuno",
+      "dateEntry": ""
+    },
+    {
+      "name": "Sandwich de jamón y queso",
+      "price": "10",
+      "image": "https://image.flaticon.com/icons/svg/135/135591.svg",
+      "type": "Desayuno",
+      "dateEntry": ""
+    },
+    {
+      "name": "Jugo de frutas natural",
+      "price": "7",
+      "image": "https://image.flaticon.com/icons/svg/1902/1902947.svg",
+      "type": "Desayuno"
+    },
+    {
+      "name": "Hamburguesa Simple",
+      "price": "10",
+      "image": "https://image.flaticon.com/icons/svg/135/135592.svg",
+      "type": "Almuerzo y cena",
+      "dateEntry": ""
+    },
+    {
+      "name": "Hamburguesa Doble",
+      "price": "15",
+      "image": "https://image.flaticon.com/icons/svg/1522/1522401.svg",
+      "type": "Almuerzo y cena",
+      "dateEntry": ""
+    },
+    {
+      "name": "Papas Fritas",
+      "price": "5",
+      "image": "https://image.flaticon.com/icons/svg/135/135589.svg",
+      "type": "Almuerzo y cena",
+      "dateEntry": ""
+    },
+    {
+      "name": "Cebollas tostadas",
+      "price": "5",
+      "image": "https://image.flaticon.com/icons/svg/723/723600.svg",
+      "type": "Almuerzo y cena",
+      "dateEntry": ""
+    },
+    {
+      "name": "Agua 500ml",
+      "price": "5",
+      "image": "https://image.flaticon.com/icons/svg/135/135662.svg",
+      "type": "Almuerzo y cena",
+      "dateEntry": ""
+    },
+    {
+      "name": "Agua 750ml",
+      "price": "7",
+      "image": "https://image.flaticon.com/icons/svg/432/432257.svg",
+      "type": "Almuerzo y cena",
+      "dateEntry": ""
+    },
+    {
+      "name": "Gaseosa 500ml",
+      "price": "7",
+      "image": "https://image.flaticon.com/icons/svg/1237/1237055.svg",
+      "type": "Almuerzo y cena",
+      "dateEntry": ""
+    },
+    {
+      "name": "Gaseosa 750ml",
+      "price": "10",
+      "image": "https://image.flaticon.com/icons/svg/1868/1868727.svg",
+      "type": "Almuerzo y cena",
+      "dateEntry": ""
+    }
+  ],
+  "orders": [
+    {},
+    {
+      "id": "1",
+      "name": "Hamburguesa Simple",
+      "price": "10"
+    },
+    {
+      "id": "2",
+      "name": "Hamburguesa Simple",
+      "price": "10"
+    }
+  ]
 }
