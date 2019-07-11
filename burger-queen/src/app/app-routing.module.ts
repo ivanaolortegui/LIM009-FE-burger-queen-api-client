@@ -5,7 +5,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AuthGuard } from './guards/auth.guard';
 
 
-const routes: Routes = [
+export const routes: Routes = [
   { path: 'home', component: HomeComponent ,
   canActivate: [AuthGuard]  },
 {path: 'login', component: LoginComponent},
@@ -16,5 +16,9 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule { 
+
+
+
+}
                      
