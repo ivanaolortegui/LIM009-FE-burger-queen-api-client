@@ -5,6 +5,7 @@ import { ProductsComponent } from '../products/products.component';
 import { HeaderComponent } from '../header/header.component';
 import { UserService } from 'src/app/services/user.service';
 import { HttpClientModule } from '@angular/common/http';
+import { OrdersComponent } from '../orders/orders.component';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -12,7 +13,7 @@ describe('HomeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomeComponent, ProductsComponent, HeaderComponent ],
+      declarations: [ HomeComponent, ProductsComponent, HeaderComponent,OrdersComponent ],
       imports: [     
         HttpClientModule ,
       ],
