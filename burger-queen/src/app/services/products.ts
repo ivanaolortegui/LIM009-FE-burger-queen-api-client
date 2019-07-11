@@ -1,6 +1,9 @@
 export interface product {
         "name": string,
         "price": string,
-        "type": string
+        "image":URL,
+        "type": string,
+        "dateEntry": string
       
 }
+
