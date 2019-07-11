@@ -14,6 +14,7 @@ import {Router}from '@angular/router';
 import {Location}from '@angular/common';
 import {routes} from 'src/app/app-routing.module'
 import { UserService } from './services/user.service';
+import { OrdersComponent } from './components/orders/orders.component';
 
 describe('AppComponent', () => {
   let location: Location;
@@ -30,7 +31,7 @@ describe('AppComponent', () => {
         AppRoutingModule
       ],
       declarations: [
-        AppComponent, LoginComponent,FormLoginComponent,HomeComponent,HeaderComponent,ProductsComponent
+        AppComponent, LoginComponent,FormLoginComponent,HomeComponent,HeaderComponent,ProductsComponent, OrdersComponent
       ],
       providers:[
         UserService
@@ -65,11 +66,11 @@ describe('AppComponent', () => {
     });
   }));
 
-  it('should create the app', () => {
+  it('should create the app', ((async()  => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
-  });
+  })));
 
   it(`should have as title 'burger-queen'`, () => {
     const fixture = TestBed.createComponent(AppComponent);

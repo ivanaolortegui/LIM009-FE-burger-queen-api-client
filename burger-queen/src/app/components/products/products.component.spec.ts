@@ -3,6 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ProductsComponent } from './products.component';
 import { UserService } from 'src/app/services/user.service';
 import { HttpClientModule } from '@angular/common/http';
+import { OrdersComponent } from '../orders/orders.component';
 
 describe('ProductsComponent', () => {
   let component: ProductsComponent;
@@ -10,7 +11,7 @@ describe('ProductsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProductsComponent ],
+      declarations: [ ProductsComponent, OrdersComponent ],
       providers:[
         UserService
       ],
@@ -29,7 +30,8 @@ describe('ProductsComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create', ((async()  => {
     expect(component).toBeTruthy();
-  });
+  })));
+  
 });

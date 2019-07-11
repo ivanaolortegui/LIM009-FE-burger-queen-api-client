@@ -11,11 +11,12 @@ import { HomeComponent } from '../components/home/home.component';
 import { HeaderComponent } from '../components/header/header.component';
 import { FormsModule } from '@angular/forms';
 import { ProductsComponent } from '../components/products/products.component';
+import { OrdersComponent } from '../components/orders/orders.component';
 
 describe('AuthGuard', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ FormLoginComponent,LoginComponent,HomeComponent ,HeaderComponent,ProductsComponent],
+      declarations: [ FormLoginComponent,LoginComponent,HomeComponent ,HeaderComponent,ProductsComponent, OrdersComponent],
       providers: [AuthGuard, UserService,],
       imports: [        
        HttpClientModule ,

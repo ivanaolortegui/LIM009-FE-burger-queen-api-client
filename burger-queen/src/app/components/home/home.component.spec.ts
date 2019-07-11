@@ -13,12 +13,10 @@ describe('HomeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomeComponent, ProductsComponent, HeaderComponent,OrdersComponent ],
-      imports: [     
-        HttpClientModule ,
-      ],
-      providers:[
-        UserService
+      declarations: [ HomeComponent, HeaderComponent, ProductsComponent, OrdersComponent ],
+      providers: [  UserService  ],
+      imports: [
+        HttpClientModule
       ]
     })
     .compileComponents();

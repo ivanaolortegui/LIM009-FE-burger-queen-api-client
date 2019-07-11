@@ -7,6 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 import { FormsModule} from '@angular/forms'
 
+
+
 import {UserService} from './services/user.service'
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -47,5 +49,6 @@ import { OrdersComponent } from './components/orders/orders.component';
     
   ],
   bootstrap: [AppComponent]
+  
 })
 export class AppModule { }
