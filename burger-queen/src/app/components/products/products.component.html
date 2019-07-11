@@ -1,12 +1,12 @@
 <section class="conteiner-menu">
     <div class="center-button ">
-        <button class="button-menu button-desayuno" (click)="mostrar = false " (click)="ocultar = true ">Desayuno</button>
-        <button class=" button-almuerzo button-menu" (click)="mostrar = true " (click)="ocultar = false ">Almuerzo</button>
+        <button class="button-menu button-desayuno" (click)="mostrar = false">Desayuno</button>
+        <button class=" button-almuerzo button-menu" (click)="mostrar = true">Almuerzo</button>
     </div>
     <div class="main wrapp-flex">
-        <ng-container *ngIf="ocultar">
+        <ng-container *ngIf="!mostrar">
             <div class="card" *ngFor="let product of desayuno">
-                <img class="card-img-top" src="{{product.image}}" alt="Card image cap">
+                <img class="card-img-top" [src]="product.image" [alt]="product.nombre">
                 <div>
                     <div class="text descripcion-producto">{{product.name}}</div>
                     <p>S/.{{product.price}}.00 soles</p>
@@ -17,7 +17,7 @@
 
         <ng-container *ngIf="mostrar">
             <div class="card" *ngFor="let product of almuerzo">
-                <img class="card-img-top" src="{{product.image}}" alt="Card image cap">
+                <img class="card-img-top" [src]="product.image" [alt]="product.nombre">
                 <div>
                     <div class="text descripcion-producto">{{product.name}}</div>
                     <p> precio : S/.{{product.price}}.00 soles</p>
@@ -26,3 +26,6 @@
         </ng-container>
     </div>
 </section>
+<div class="orders">
+    <app-orders></app-orders>
+</div>

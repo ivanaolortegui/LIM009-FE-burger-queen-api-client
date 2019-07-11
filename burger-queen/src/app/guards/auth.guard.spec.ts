@@ -2,24 +2,29 @@ import { TestBed, async, inject } from '@angular/core/testing';
 
 import { AuthGuard } from './auth.guard';
 import { UserService } from '../services/user.service';
-import { HttpClientModule, } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { Routes, RouterModule } from '@angular/router';
 import { AppRoutingModule } from '../app-routing.module';
-import { HomeComponent } from '../components/home/home.component';
-import { LoginComponent } from '../components/login/login.component';
-import { HeaderComponent } from '../components/header/header.component';
-import { ProductsComponent } from '../components/products/products.component';
 import { FormLoginComponent } from '../components/form-login/form-login.component';
+import { LoginComponent } from '../components/login/login.component';
+import { HomeComponent } from '../components/home/home.component';
+import { HeaderComponent } from '../components/header/header.component';
 import { FormsModule } from '@angular/forms';
-
+import { ProductsComponent } from '../components/products/products.component';
+import { OrdersComponent } from '../components/orders/orders.component';
 
 describe('AuthGuard', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations:[HomeComponent, LoginComponent,FormLoginComponent, HeaderComponent, ProductsComponent],
-      imports:[HttpClientModule, AppRoutingModule, FormsModule ],
-      providers: [AuthGuard,  UserService],
-      
-      
+      declarations: [ FormLoginComponent,LoginComponent,HomeComponent ,HeaderComponent,ProductsComponent, OrdersComponent],
+      providers: [AuthGuard, UserService,],
+      imports: [        
+       HttpClientModule ,
+       RouterModule,
+       AppRoutingModule,
+       FormsModule,
+      ],
+     
     });
   });
 

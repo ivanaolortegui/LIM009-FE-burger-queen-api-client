@@ -1,10 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProductsComponent } from './products.component';
-import { UserService } from '../../services/user.service';
-
+import { UserService } from 'src/app/services/user.service';
 import { HttpClientModule } from '@angular/common/http';
-
+import { OrdersComponent } from '../orders/orders.component';
 
 describe('ProductsComponent', () => {
   let component: ProductsComponent;
@@ -12,10 +11,14 @@ describe('ProductsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProductsComponent ],
-      providers: [  UserService  ],
-      imports: [
-        HttpClientModule
+      declarations: [ ProductsComponent, OrdersComponent ],
+      providers:[
+        UserService
+      ],
+      imports: [        
+      
+        HttpClientModule ,
+  
       ],
     })
     .compileComponents();
@@ -23,7 +26,7 @@ describe('ProductsComponent', () => {
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ProductsComponent);
-    component = fixture.componentInstance;
+    component = fixture.debugElement.componentInstance;
     fixture.detectChanges();
   });
 

@@ -110,7 +110,7 @@ body {
 
 .orders {
     border: 1px solid;
-    width: 49%;
+    width: 100%;
 }
 
 @media screen and (min-width: 540px) {}
@@ -155,7 +155,8 @@ body {
     }
     .orders {
         border: 1px solid;
-        width: 47%;
+        width: 54%;
+        margin-left: 3%;
     }
 }
 

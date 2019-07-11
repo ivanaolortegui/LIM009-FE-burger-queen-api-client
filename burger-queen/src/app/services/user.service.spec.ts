@@ -1,15 +1,19 @@
 import { TestBed } from '@angular/core/testing';
 
 import {UserService} from './user.service';
-import { AuthGuard } from '../guards/auth.guard';
 import { HttpClientModule } from '@angular/common/http';
+
 
 
 describe('UserService', () => {
   beforeEach(() => TestBed.configureTestingModule({
-    imports: [    HttpClientModule
+    providers:[
+      UserService
     ],
-    providers: [ AuthGuard, UserService ],
+    imports: [  
+       HttpClientModule ,
+        
+    ],
   }));
 
   it('should be created', () => {

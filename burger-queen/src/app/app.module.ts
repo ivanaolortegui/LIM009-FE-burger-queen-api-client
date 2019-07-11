@@ -45,7 +45,8 @@ import { OrdersComponent } from './components/orders/orders.component';
   ],
   providers: [
     UserService,
-    AuthGuard
+    AuthGuard,
+    
   ],
   bootstrap: [AppComponent]
   

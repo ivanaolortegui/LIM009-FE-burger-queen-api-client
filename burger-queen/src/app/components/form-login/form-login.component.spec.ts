@@ -1,9 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientModule } from '@angular/common/http';
 import { FormLoginComponent } from './form-login.component';
 import { FormsModule } from '@angular/forms';
 import { UserService } from '../../services/user.service';
-import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from '../../app-routing.module';
 import { DebugElement} from '@angular/core'
 import { By } from '@angular/platform-browser';
@@ -12,6 +11,7 @@ import { LoginComponent } from '../login/login.component';
 
 import { HeaderComponent } from '../header/header.component';
 import { ProductsComponent } from '../products/products.component';
+import { OrdersComponent } from '../orders/orders.component';
 
 describe('FormLoginComponent', () => {
   let component: FormLoginComponent;
@@ -22,7 +22,7 @@ describe('FormLoginComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FormLoginComponent, HomeComponent, LoginComponent, HeaderComponent, ProductsComponent ],
+      declarations: [ FormLoginComponent, HomeComponent, LoginComponent, HeaderComponent, ProductsComponent, OrdersComponent ],
       imports:[FormsModule, HttpClientModule, AppRoutingModule],
       providers:[UserService]
       

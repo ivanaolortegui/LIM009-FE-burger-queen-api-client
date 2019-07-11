@@ -1,0 +1,31 @@
+.input-group {
+    margin: 0%
+}
+
+.list-group-item {
+    width: 160%;
+}
+
+.icon {
+    position: relative;
+    border-radius: 100%;
+    border: none;
+    cursor: pointer;
+    padding: 16px;
+    width: auto;
+    margin: 5%;
+}
+
+.add-pedido {
+    width: 28%;
+}
+
+.add-icon {
+    background-image: url('https://image.flaticon.com/icons/svg/148/148764.svg');
+}
+
+.delete-icon {
+    background-image: url('https://image.flaticon.com/icons/svg/325/325094.svg');
+}
+
+.button-cocina {}
