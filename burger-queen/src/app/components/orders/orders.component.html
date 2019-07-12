@@ -5,13 +5,13 @@
     <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
 </div>
 <div class="main wrapp-flex">
-    <ul class="list-group">
-        <li class="list-group-item">**************************</li>
-
-    </ul>
-    <div class="add-pedido">
+    <ul class="list-group " *ngFor="let product of orderProduct">
+        <li class="list-group-item"> {{product.name}}</li>
         <button class="icon  add-icon"></button>
         <button class="icon  delete-icon"></button>
+    </ul>
+    <div class="add-pedido">
+
     </div>
 </div>
 <button class="button button-almuerzo wrapp-flex button-cocina">ENVIAR A COCINA </button>

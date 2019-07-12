@@ -18,6 +18,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { HeaderComponent } from './components/header/header.component';
 import { ProductsComponent } from './components/products/products.component';
 import { OrdersComponent } from './components/orders/orders.component';
+import { ListproductComponent } from './components/listproduct/listproduct.component';
 
 
 
@@ -31,6 +32,7 @@ import { OrdersComponent } from './components/orders/orders.component';
     HeaderComponent,
     ProductsComponent,
     OrdersComponent,
+    ListproductComponent,
   
 
    

@@ -44,6 +44,10 @@ export class UserService {
       )
   }
 
+  // *****
+  //definir como observable
+  // tener el suscribe en el componente que lo va a usar (product, order)
+
 //Guardar y leer token en el LocalStorage
   saveToken(Token: string) {
     this.Usertoken = Token
