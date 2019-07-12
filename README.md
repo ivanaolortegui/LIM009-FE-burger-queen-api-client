@@ -228,6 +228,26 @@ rápidamente a los clientes que las hicieron.
   * Los datos se deben mantener íntegros, incluso después de que un pedido ha
   terminado. Todo esto para poder tener estadísticas en el futuro.
 
+---------------------
+
+#### [Historia de usuario 5] Administrador(a) de tienda debe administrar a sus trabajadorxs
+Yo como administrador(a) de tienda quiero gestionar a los usuarios de 
+la plataforma para mantener actualizado la informacion de mis trabajadorxs.
+
+##### Criterios de aceptación
+  * Ver listado de trabajadorxs.
+  * Agregar trabajadorxs.
+  * Eliminar trabajadoxs.
+  * Actualizar datos de trabajadorxs.
+
+##### Definición de terminado
+  * Debes haber recibido _code review_ de al menos una compañera.
+  * Haces _test_ unitarios y, además, has testeado tu producto manualmente.
+  * Hiciste _tests_ de usabilidad e incorporaste el _feedback_ del usuario.
+  * Desplegaste tu aplicación y has etiquetado tu versión (git tag).
+  * Los datos se deben mantener íntegros, incluso después de que un pedido ha
+  terminado. Todo esto para poder tener estadísticas en el futuro.
+
 ***
 
 ## Pistas / Tips
