@@ -3,7 +3,7 @@
 }
 
 .list-group-item {
-    width: 160%;
+    width: 100%;
 }
 
 .icon {
@@ -11,13 +11,13 @@
     border-radius: 100%;
     border: none;
     cursor: pointer;
-    padding: 16px;
+    padding: 36px;
     width: auto;
     margin: 5%;
 }
 
 .add-pedido {
-    width: 28%;
+    width: 40%;
 }
 
 .add-icon {
