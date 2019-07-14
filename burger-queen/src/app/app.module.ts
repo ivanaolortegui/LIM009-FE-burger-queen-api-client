@@ -1,11 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
-import { FormsModule} from '@angular/forms'
 
 
 
@@ -19,6 +18,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { ProductsComponent } from './components/products/products.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { ListproductComponent } from './components/listproduct/listproduct.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -50,7 +50,8 @@ import { ListproductComponent } from './components/listproduct/listproduct.compo
     AuthGuard,
     
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
   
 })
 export class AppModule { }

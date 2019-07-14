@@ -20,8 +20,12 @@ private refresh() {
 
 sharingProductData(product: product) {
 //console.log(product);
-this.lstProducts.push(product);  // next cambia el valor
-this.refresh();
+// Buscando si existe el producto seleccionado en la lista de productos
+let objProduct = this.lstProducts.find(ele=> ele.productId === product.productId);        
+if(objProduct===undefined){
+  this.lstProducts.push(product);  // next cambia el valor
+  this.refresh();
+}
 //console.log(this.lstProducts.length);
 //push
 }
@@ -34,6 +38,15 @@ getProductOfOrders(){
 //Actuaizar 
 //CRUD
 }
+
+deleProduct(idx : number){
+    this.lstProducts.splice(idx,1)
+    this.refresh();
+    console.log(this.lstProducts) 
+  }
+
+
+
 
 }
 

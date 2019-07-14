@@ -102,7 +102,12 @@
         }
     ],
     "orders": [{
-
+        " userId": "sfwghwmesaro",
+        "client": "Jose",
+        "products": [{
+            "productId": "12", 
+            "qty":5
+        }]
     }]
-
 }
+    
