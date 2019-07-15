@@ -24,7 +24,7 @@ export class OrdersComponent implements OnInit {
       // console.log(this.orderProduct);
       this.orderProduct.forEach(ele => {
         // Si la lista no tiene elementos se le agrega uno nuevo con cantidad por defecto
-        if (this.lstPedido.length == 0) {
+        if (this.lstPedido.length === 0) {
           this.order = {
             idProducto: ele.productId,
             qty: 1
@@ -32,21 +32,16 @@ export class OrdersComponent implements OnInit {
           console.log(this.order);
           this.lstPedido.push(this.order);
         } else {
-          let objProduct = this.lstPedido.find(
-            item => item.idProducto === ele.productId
-          ); //Si ya existe ese objeto con esa cantidad no se le vuelve agregar
-          if (objProduct === undefined) {
-            //Si no existe el objeto se le agrega
             this.order = {
               idProducto: ele.productId,
               qty: 1
             };
 
             this.lstPedido.push(this.order);
-          }
         }
       });
       console.log(this.lstPedido);
+     // console.log(this.orderProduct);
     });
   }
 
