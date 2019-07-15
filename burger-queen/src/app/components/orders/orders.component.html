@@ -7,9 +7,9 @@
     <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
 </div>
 <div class="main wrapp-flex">
-    <ul class="list-group " *ngFor="let product of lstPedido; let idx = index">
+    <ul class="list-group " *ngFor="let product of orderProduct; let idx = index">
         <li class="list-group-item"> {{orderProduct[idx].name}}
-            <h6>{{product.qty}}</h6>
+            <h6>{{lstPedido[idx].qty}}</h6>
             <button class="icon delete-icon" (click)="deleteproduct(idx)"> </button>
             <button class="icon " (click)="incrementQuantity(idx)">mas</button>
             <button class="icon " (click)="decrementQuantity(idx)">menos</button>
