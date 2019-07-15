@@ -1,7 +1,4 @@
-export class order {
+export interface Order {
   idProducto: string;
   qty: number;
-  constructor(){
-
-  }
 }
