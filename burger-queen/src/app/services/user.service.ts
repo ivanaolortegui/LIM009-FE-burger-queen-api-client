@@ -42,6 +42,14 @@ export class UserService {
       .pipe(map(response => response)
       )
   }
+  getIdUsers (){
+    const headers = new HttpHeaders({
+      'Authorization': 'Bearer ' + this.Usertoken
+    });
+    return this.http.get<User>("http://localhost:3000/660/users", { headers: headers })
+      .pipe(map(response => response)
+      )
+  }
 
   // *****
   //definir como observable
@@ -66,4 +74,6 @@ export class UserService {
   authUser() : boolean{
     return this.Usertoken.length > 2;
   }
+
+
 }
