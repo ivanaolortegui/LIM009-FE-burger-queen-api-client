@@ -12,20 +12,12 @@ export class UserService {
 
   Usertoken: string
   url = 'http://localhost:3000/login';
-  //url = 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyAYStI_9JZ-YBOhz5hnnFxIHEFz17Rc4wI'
-
-
+  
   constructor(private http: HttpClient) {
    this.readToken()
+
    }
-  /*   getToken (user : User ){
-      const headers = {
-        email: user.email,
-        password : user.password,
-        returnSecureToken :true
-        };
-      return this.http.post(this.url,headers)
-    } */
+
     
   getToken(user: User) {
     return this.http.post(this.url, user).pipe(map(resp => {
@@ -51,6 +43,14 @@ export class UserService {
       )
   }
 
+  getOrder (){
+    const headers = new HttpHeaders({
+      'Authorization': 'Bearer ' + this.Usertoken
+    });
+    return this.http.get("http://localhost:6000/orders", { headers: headers })
+    .pipe(map(response => console.log(response))
+    )
+  }
   // *****
   //definir como observable
   // tener el suscribe en el componente que lo va a usar (product, order)
