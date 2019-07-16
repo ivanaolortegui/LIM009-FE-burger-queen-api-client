@@ -1,10 +1,9 @@
-
-
 <div class="input-group input-group-sm mb-3">
     <div class="input-group-prepend">
         <span class="input-group-text" id="inputGroup-sizing-sm">CLiente</span>
     </div>
-    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" [(ngModel)]="nameClient" name="nameClient">
+
 </div>
 <div class="main wrapp-flex">
     <ul class="list-group " *ngFor="let product of orderProduct; let idx = index">
@@ -13,13 +12,13 @@
             <button class="icon delete-icon" (click)="deleteproduct(idx)"> </button>
             <button class="icon " (click)="incrementQuantity(idx)">mas</button>
             <button class="icon " (click)="decrementQuantity(idx)">menos</button>
-            
+
         </li>
         <!-- <button class="icon  add-icon"></button> -->
-      
+
     </ul>
     <div class="add-pedido">
 
     </div>
 </div>
-<button  (click)="sendToKitchen()" class="button button-almuerzo wrapp-flex button-cocina">ENVIAR A COCINA </button>
+<button (click)="sendToKitchen(nameClient)" class="button button-almuerzo wrapp-flex button-cocina">ENVIAR A COCINA </button>
