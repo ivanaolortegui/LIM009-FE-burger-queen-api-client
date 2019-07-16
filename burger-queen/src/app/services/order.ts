@@ -1,4 +1,4 @@
 export interface Order {
-  productId: string;
+  _id: string;
   qty: number;
 }

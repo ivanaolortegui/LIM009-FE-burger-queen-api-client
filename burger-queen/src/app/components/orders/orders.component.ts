@@ -4,8 +4,7 @@ import { product } from "src/app/services/products";
 import { UserService } from "../../services/user.service";
 import { Order } from "../../services/order";
 import { OrderForBackend } from "../../interface/orderforbackend";
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
-import { map } from 'rxjs/operators';
+
 
 @Component({
   selector: "app-orders",
@@ -32,29 +31,25 @@ export class OrdersComponent implements OnInit {
       // console.log(this.orderProduct);
       this.orderProduct.forEach((ele, index) => {
         // Si la lista no tiene elementos se le agrega uno nuevo con cantidad por defecto
-        if (this.lstPedido.length === 0) {
-         
+        if (this.lstPedido.length === 0) {   
           this.order = {
-            productId: ele.productId,
+            _id: ele._id,
             qty: 1,
           };
-         // console.log(this.order);
-
-         // this.total += parseInt(ele.price)
-         
+         // console.log(this.order);           
           this.lstPedido.push(this.order);
-          this.total +=  parseInt(ele.price)
+        //  this.total +=  parseInt(ele.price)
         } else {
-          let objProduct = this.lstPedido.find(item=> item.productId === ele.productId);        
+          let objProduct = this.lstPedido.find(item=> item._id === ele._id);        
         if(objProduct===undefined){
           this.order = {
-            productId: ele.productId,
+            _id: ele._id,
             qty: 1
           };
           this.lstPedido.push(this.order);     
         }
-        this.total +=  parseInt(ele.price) * this.lstPedido[index].qty
       }
+      this.total +=  parseInt(ele.price) * this.lstPedido[index].qty
       });
      /*  this.orderProduct.forEach((ele, index) => {
         this.total +=  parseInt(ele.price) * this.lstPedido[index].qty
@@ -74,12 +69,9 @@ export class OrdersComponent implements OnInit {
       };
       console.log(this.orderForBackend);  
     });
-    this.userservice.getOrder().subscribe(resp => {
-      console.log( resp);
-    })
+    this.userservice.getOrder(this.orderForBackend)
     
     
-   
     
   }
 

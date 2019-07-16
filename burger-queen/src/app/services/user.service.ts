@@ -43,14 +43,23 @@ export class UserService {
       )
   }
 
-  getOrder (){
-    const headers = new HttpHeaders({
-      'Authorization': 'Bearer ' + this.Usertoken
-    });
-    return this.http.get("http://localhost:6000/orders", { headers: headers })
-    .pipe(map(response => console.log(response))
-    )
+  getOrder (orderForBackend: any){
+     const headers = new HttpHeaders({
+     // 'Authorization': 'Bearer ' + this.Usertoken,
+     //'Accept': 'application/json, text/plain, */*',
+     'Content-Type': 'application/json',
+     
+    }); 
+    this.http.post("http://localhost:5000/orders", orderForBackend, {headers: headers})
+    .subscribe(res => console.log(res));
+   /*  return fetch("http://localhost:5000/orders",
+     {  method:'POST', mode: 'no-cors', headers: {'Content-Type': 'application/json'},  body: JSON.stringify(orderForBackend)})
+     .then(data => {console.log(data)}) */
+    
   }
+
+
+
   // *****
   //definir como observable
   // tener el suscribe en el componente que lo va a usar (product, order)

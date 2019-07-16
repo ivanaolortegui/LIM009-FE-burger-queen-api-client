@@ -6,7 +6,7 @@
     }],
 
     "products": [{
-            "productId": "1",
+            "_id": "1",
             "name": "Café americano",
             "price": "5",
             "image": "https://image.flaticon.com/icons/svg/15/15234.svg",
@@ -14,7 +14,7 @@
             "dateEntry": ""
         },
         {
-            "productId": "2",
+            "_id": "2",
             "name": "Café con leche",
             "price": "7",
             "image": "https://image.flaticon.com/icons/svg/579/579125.svg",
@@ -22,7 +22,7 @@
             "dateEntry": ""
         },
         {
-            "productId": "3",
+            "_id": "3",
             "name": "Sandwich de jamón y queso",
             "price": "10",
             "image": "https://image.flaticon.com/icons/svg/135/135591.svg",
@@ -30,14 +30,15 @@
             "dateEntry": ""
         },
         {
-            "productId": "4",
+            "_id": "4",
             "name": "Jugo de frutas natural",
             "price": "7",
             "image": "https://image.flaticon.com/icons/svg/1902/1902947.svg",
-            "type": "Desayuno"
+            "type": "Desayuno",
+            "dateEntry": ""
         },
         {
-            "productId": "5",
+            "_id": "5",
             "name": "Hamburguesa Simple",
             "price": "10",
             "image": "https://image.flaticon.com/icons/svg/135/135592.svg",
@@ -45,7 +46,7 @@
             "dateEntry": ""
         },
         {
-            "productId": "6",
+            "_id": "6",
             "name": "Hamburguesa Doble",
             "price": "15",
             "image": "https://image.flaticon.com/icons/svg/1522/1522401.svg",
@@ -53,7 +54,7 @@
             "dateEntry": ""
         },
         {
-            "productId": "7",
+            "_id": "7",
             "name": "Papas Fritas",
             "price": "5",
             "image": "https://image.flaticon.com/icons/svg/135/135589.svg",
@@ -61,7 +62,7 @@
             "dateEntry": ""
         },
         {
-            "productId": "8",
+            "_id": "8",
             "name": "Cebollas tostadas",
             "price": "5",
             "image": "https://image.flaticon.com/icons/svg/723/723600.svg",
@@ -69,7 +70,7 @@
             "dateEntry": ""
         },
         {
-            "productId": "9",
+            "_id": "9",
             "name": "Agua 500ml",
             "price": "5",
             "image": "https://image.flaticon.com/icons/svg/135/135662.svg",
@@ -77,7 +78,7 @@
             "dateEntry": ""
         },
         {
-            "productId": "10",
+            "_id": "10",
             "name": "Agua 750ml",
             "price": "7",
             "image": "https://image.flaticon.com/icons/svg/432/432257.svg",
@@ -85,7 +86,7 @@
             "dateEntry": ""
         },
         {
-            "productId": "11",
+            "_id": "11",
             "name": "Gaseosa 500ml",
             "price": "7",
             "image": "https://image.flaticon.com/icons/svg/1237/1237055.svg",
@@ -93,7 +94,7 @@
             "dateEntry": ""
         },
         {
-            "productId": "12",
+            "_id": "12",
             "name": "Gaseosa 750ml",
             "price": "10",
             "image": "https://image.flaticon.com/icons/svg/1868/1868727.svg",
@@ -105,7 +106,7 @@
         " userId": "sfwghwmesaro",
         "client": "Jose",
         "products": [{
-            "productId": "12", 
+            "_id": "12", 
             "qty":5
         }]
     }]

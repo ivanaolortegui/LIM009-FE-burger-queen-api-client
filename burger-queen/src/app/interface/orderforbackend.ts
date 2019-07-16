@@ -2,7 +2,7 @@ export interface OrderForBackend {
   userId: string;
   client: string;
   product: {
-    productId: string;
+    _id: string;
     qty: number;
   }[];
 }
