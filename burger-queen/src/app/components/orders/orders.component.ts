@@ -5,6 +5,7 @@ import { UserService } from "../../services/user.service";
 import { Order } from "../../services/order";
 import { OrderForBackend } from "../../interface/orderforbackend";
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: "app-orders",
@@ -25,32 +26,40 @@ export class OrdersComponent implements OnInit {
     private userservice: UserService
   ) {
     this.orderservice.productData.subscribe(resp => {
-      let total =0;
+      this.total = 0
       this.orderProduct = resp; // se llena la data mediante el servicio
       //recorremos la lista de productos mostrados en el panel derecho
       // console.log(this.orderProduct);
-      this.orderProduct.forEach(ele => {
+      this.orderProduct.forEach((ele, index) => {
         // Si la lista no tiene elementos se le agrega uno nuevo con cantidad por defecto
         if (this.lstPedido.length === 0) {
+         
           this.order = {
             productId: ele.productId,
             qty: 1,
           };
-          console.log(this.order);
-          total += parseInt(ele.price)
+         // console.log(this.order);
+
+         // this.total += parseInt(ele.price)
          
           this.lstPedido.push(this.order);
+          this.total +=  parseInt(ele.price)
         } else {
+          let objProduct = this.lstPedido.find(item=> item.productId === ele.productId);        
+        if(objProduct===undefined){
           this.order = {
             productId: ele.productId,
             qty: 1
           };
-          total += parseInt(ele.price )*this.order.qty 
-     
-          this.lstPedido.push(this.order);
+          this.lstPedido.push(this.order);     
         }
+        this.total +=  parseInt(ele.price) * this.lstPedido[index].qty
+      }
       });
-      console.log(total)
+     /*  this.orderProduct.forEach((ele, index) => {
+        this.total +=  parseInt(ele.price) * this.lstPedido[index].qty
+      }); */
+      console.log(this.total)
     });
   }
 
@@ -63,23 +72,39 @@ export class OrdersComponent implements OnInit {
         client: nameClient,
         product: this.lstPedido
       };
-      console.log(this.orderForBackend);
+      console.log(this.orderForBackend);  
     });
+    this.userservice.getOrder().subscribe(resp => {
+      console.log( resp);
+    })
+    
+    
+   
+    
   }
 
   deleteproduct(idx: number) {
-    console.log(idx);
+    this.lstPedido.splice(idx,1)
+    this.total -= parseInt(this.orderProduct[idx].price) 
+   // console.log(this.total);
+    
     this.orderservice.deleProduct(idx);
   }
 
   incrementQuantity(idx: number) {
-    ++this.lstPedido[idx].qty;
-    
+    this.total += parseInt(this.orderProduct[idx].price) 
+    //console.log(this.total);
+     ++this.lstPedido[idx].qty;
+   
   }
 
   decrementQuantity(idx: number) {
-    if (this.lstPedido[idx].qty > 1) --this.lstPedido[idx].qty;
-  }
 
+    if (this.lstPedido[idx].qty > 1) {
+      this.total -= parseInt(this.orderProduct[idx].price) 
+     // console.log(this.total);
+      --this.lstPedido[idx].qty;
+  }
+  }
 
 }

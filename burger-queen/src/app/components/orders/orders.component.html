@@ -8,8 +8,12 @@
 <div class="main wrapp-flex">
     <ul class="list-group " *ngFor="let product of orderProduct; let idx = index">
         <li class="list-group-item"> {{orderProduct[idx].name}}
-            <h6>{{lstPedido[idx].qty}}</h6>
+            <h6>Cantidad {{lstPedido[idx].qty}}</h6>
             <button class="icon delete-icon" (click)="deleteproduct(idx)"> </button>
+            <div >
+              <p> Precio:{{orderProduct[idx].price}}</p>
+              <p>Subtotal:{{orderProduct[idx].price *lstPedido[idx].qty }} </p>
+          </div>
             <button class="icon " (click)="incrementQuantity(idx)">mas</button>
             <button class="icon " (click)="decrementQuantity(idx)">menos</button>
 
@@ -17,8 +21,14 @@
         <!-- <button class="icon  add-icon"></button> -->
 
     </ul>
+  
     <div class="add-pedido">
-
+    
     </div>
+   
 </div>
+<div >
+    <p>{{total}}</p>
+</div>
+
 <button (click)="sendToKitchen(nameClient)" class="button button-almuerzo wrapp-flex button-cocina">ENVIAR A COCINA </button>
