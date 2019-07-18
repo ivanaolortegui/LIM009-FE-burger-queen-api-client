@@ -1,3 +1,6 @@
+.padding-table{
+    padding: 2%;
+}
 .input-group {
     margin: 0%
 }
@@ -5,15 +8,17 @@
 .list-group-item {
     width: 100%;
 }
-
+.input-client {
+    border-radius: 5%;
+}
 .icon {
     position: relative;
-    border-radius: 100%;
     border: none;
     cursor: pointer;
     padding: 36px;
     width: auto;
     margin: 5%;
+    background-color: transparent;
 }
 
 .add-pedido {
@@ -26,4 +31,24 @@
 
 .delete-icon {
     background-image: url('https://image.flaticon.com/icons/svg/325/325094.svg');
+    
+}
+
+.less-icon{
+    background-image: url('https://image.flaticon.com/icons/svg/149/149689.svg');
+}
+
+@media screen and (min-width: 540px) {
+
+
+}
+
+@media screen and (min-width: 720px) {
+
+}
+
+@media screen and (min-width: 1100px) {
+    .padding-table{
+        padding: 1%;
+    }
 }

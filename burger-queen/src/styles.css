@@ -124,6 +124,11 @@ body {
 .orders {
     border: 1px solid;
     width: 100%;
+    height: min-content;
+}
+.orders-responsive{
+    border: 1px solid;
+    width: 100%;
 }
 
 @media screen and (min-width: 540px) {
