@@ -1,48 +1,51 @@
-
+<div class="orders-responsive">
 <div class="md-form input-group ">
     <div class="input-group-prepend">
       <div class="btn btn-md btn-default m-0 px-3"  id="MaterialButton-addon1">Cliente</div>
     </div>
-    <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
+    <input type="text" class="form-control " placeholder="" aria-label="Example text with button addon"
       aria-describedby="MaterialButton-addon1">
   </div>
-  
-<table class=" table">
+  <div class=" table-responsive ">
+<table class=" table ">
     <thead>
     <tr>
-       <th class="text" scope="col">Cantidad</th>
-      <th class="text" scope="col">Producto</th>
-      <th class="text" scope="col">Precio</th>
-      <th class="text"scope="col">Subtotal</th> 
+       <th class="text padding-table" >Cantidad</th>
+      <th class="text padding-table" >Producto</th>
+      <th class="text padding-table" >Precio</th>
+      <th class="text padding-table">Subtotal</th> 
+      <th class="text padding-table"></th> 
+      <th class="text padding-table"></th> 
     </tr>
   </thead>
   <tbody *ngFor="let product of orderProduct; let idx = index">
       <tr>
-          <td class="text"> {{lstPedido[idx].qty}} </td>
+          <td class="text "> {{lstPedido[idx].qty}} </td>
           <td class="text">{{orderProduct[idx].name}}</td>
           <td class="text">{{orderProduct[idx].price}}$</td>
           <td class="text">{{orderProduct[idx].price *lstPedido[idx].qty}}$ </td>
-          <td ><button class="icon  add-icon " (click)="incrementQuantity(idx)"></button></td>
-           <td><button class="icon less-icon" (click)="decrementQuantity(idx)"></button></td>
-           <td><button class="icon delete-icon" (click)="deleteproduct(idx)"> </button></td>
-   
+          <td><button class="icon  add-icon " (click)="incrementQuantity(idx)"></button></td>
+          <td><button class="icon less-icon" (click)="decrementQuantity(idx)"></button></td>
+          <td><button class="icon delete-icon" (click)="deleteproduct(idx)"> </button></td>
       </tr>
       </tbody>
       <tfoot>
           <tr>
-              <th class="text" scope="row"></th>
-              <th class="text" scope="row"></th>
-              <th class="text" scope="row"></th>
-              <th class="text" scope="row"></th>
-              <th class="text" scope="row"></th>
+              <th class="text"></th>
+              <th class="text" ></th>
+              <th class="text" ></th>
+              <th class="text" ></th>
+              <th class="text" ></th>
               <th class="text" scope="row"></th>
               <th class="text" scope="row">Total:{{total}}</th>
           </tr>
       </tfoot>
     </table>
+  </div>
     
 <div class="main center-button">
  
-  <button (click)="sendToKitchen(nameClient)" class="button col-xs-10 col-sm-12 col-md-6">ENVIAR A COCINA
+  <button (click)="sendToKitchen(nameClient)" class="button ">ENVIAR A COCINA
      </button>
   </div>
+</div>
