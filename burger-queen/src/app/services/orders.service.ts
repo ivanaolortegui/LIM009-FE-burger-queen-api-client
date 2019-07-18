@@ -21,7 +21,7 @@ private refresh() {
 sharingProductData(product: product) {
 //console.log(product);
 // Buscando si existe el producto seleccionado en la lista de productos
-let objProduct = this.lstProducts.find(ele=> ele.productId === product.productId);        
+let objProduct = this.lstProducts.find(ele=> ele._id === product._id);        
 if(objProduct===undefined){
   this.lstProducts.push(product);  // next cambia el valor
   this.refresh();

@@ -1,31 +1,27 @@
 <section class="">
     <div class="center-button ">
-        <button class="button-menu button-desayuno" (click)="mostrar = false">Desayuno</button>
-        <button class=" button-almuerzo button-menu" (click)="mostrar = true">Almuerzo</button>
+        <button class="button-menu button-almuerzo button-imagen-desayuno" (click)="mostrar = false">Desayuno</button>
+        <button class="button-imagen-almuerzo button-menu button-almuerzo " (click)="mostrar = true">Almuerzo </button>
     </div>
     <div class="main wrapp-flex">
         <ng-container *ngIf="!mostrar">
             <div class="card" *ngFor="let product of desayuno">
-                <img class="card-img-top img-with" [src]="product.image" [alt]="product.nombre">
-                <div>
-                    <div class="text p-card descripcion-producto">{{product.name}}</div>
-                    <p>S/.{{product.price}}.00 soles</p>
-                </div>
-                <button (click)="selectedProduct(product)">pedir</button>
+                <img class="card-img-top img-with " [src]="product.image" [alt]="product.nombre">
+                <p class="text p-card descripcion-producto">{{product.name}}</p>
+                <p class="text">S/.{{product.price}}.00 soles</p>
+                <button class="button-card button-desayuno" (click)=" selectedProduct(product) ">Seleccionar</button>
+
+
             </div>
 
         </ng-container>
 
-        <ng-container *ngIf="mostrar">
-            <div class="card" *ngFor="let product of almuerzo">
-                <img class="card-img-top img-with" [src]="product.image" [alt]="product.nombre">
-                <div>
-                    <div class="text descripcion-producto">{{product.name}}</div>
-                    <p> precio : S/.{{product.price}}.00 soles</p>
-                </div>
-                
-                <button (click)="selectedProduct(product)">pedir</button>
-          
+        <ng-container *ngIf="mostrar ">
+            <div class="card " *ngFor="let product of almuerzo ">
+                <img class="card-img-top img-with " [src]="product.image " [alt]="product.nombre ">
+                <p class="text p-card descripcion-producto ">{{product.name}}</p>
+                <p class="text"> precio : S/.{{product.price}}.00 soles</p>
+                <button class="button-card button-desayuno" (click)=" selectedProduct(product) ">Seleccionar</button>
             </div>
         </ng-container>
     </div>
