@@ -8,12 +8,12 @@
 
 .icon {
     position: relative;
-    border-radius: 100%;
     border: none;
     cursor: pointer;
     padding: 36px;
     width: auto;
     margin: 5%;
+    background-color: transparent;
 }
 
 .add-pedido {
@@ -26,6 +26,10 @@
 
 .delete-icon {
     background-image: url('https://image.flaticon.com/icons/svg/325/325094.svg');
+    
 }
 
-.button-cocina {}
+.less-icon{
+    background-image: url('https://image.flaticon.com/icons/svg/149/149689.svg');
+}
+

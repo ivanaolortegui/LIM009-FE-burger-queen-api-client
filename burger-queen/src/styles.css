@@ -211,5 +211,6 @@ body {
     .orders {
         border: 1px solid;
         width: 49%;
+        height: 130%;
     }
 }

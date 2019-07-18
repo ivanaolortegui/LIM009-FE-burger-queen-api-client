@@ -1,34 +1,48 @@
-<div class="input-group input-group-sm mb-3">
+
+<div class="md-form input-group ">
     <div class="input-group-prepend">
-        <span class="input-group-text" id="inputGroup-sizing-sm">CLiente</span>
+      <div class="btn btn-md btn-default m-0 px-3"  id="MaterialButton-addon1">Cliente</div>
     </div>
-    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" [(ngModel)]="nameClient" name="nameClient">
-
-</div>
-<div class="main wrapp-flex">
-    <ul class="list-group " *ngFor="let product of orderProduct; let idx = index">
-        <li class="list-group-item"> {{orderProduct[idx].name}}
-            <h6>Cantidad {{lstPedido[idx].qty}}</h6>
-            <button class="icon delete-icon" (click)="deleteproduct(idx)"> </button>
-            <div >
-              <p> Precio:{{orderProduct[idx].price}}</p>
-              <p>Subtotal:{{orderProduct[idx].price *lstPedido[idx].qty }} </p>
-          </div>
-            <button class="icon " (click)="incrementQuantity(idx)">mas</button>
-            <button class="icon " (click)="decrementQuantity(idx)">menos</button>
-
-        </li>
-        <!-- <button class="icon  add-icon"></button> -->
-
-    </ul>
+    <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
+      aria-describedby="MaterialButton-addon1">
+  </div>
   
-    <div class="add-pedido">
-    
-    </div>
+<table class=" table">
+    <thead>
+    <tr>
+       <th class="text" scope="col">Cantidad</th>
+      <th class="text" scope="col">Producto</th>
+      <th class="text" scope="col">Precio</th>
+      <th class="text"scope="col">Subtotal</th> 
+    </tr>
+  </thead>
+  <tbody *ngFor="let product of orderProduct; let idx = index">
+      <tr>
+          <td class="text"> {{lstPedido[idx].qty}} </td>
+          <td class="text">{{orderProduct[idx].name}}</td>
+          <td class="text">{{orderProduct[idx].price}}$</td>
+          <td class="text">{{orderProduct[idx].price *lstPedido[idx].qty}}$ </td>
+          <td ><button class="icon  add-icon " (click)="incrementQuantity(idx)"></button></td>
+           <td><button class="icon less-icon" (click)="decrementQuantity(idx)"></button></td>
+           <td><button class="icon delete-icon" (click)="deleteproduct(idx)"> </button></td>
    
-</div>
-<div >
-    <p>{{total}}</p>
-</div>
-
-<button (click)="sendToKitchen(nameClient)" class="button button-almuerzo wrapp-flex button-cocina">ENVIAR A COCINA </button>
+      </tr>
+      </tbody>
+      <tfoot>
+          <tr>
+              <th class="text" scope="row"></th>
+              <th class="text" scope="row"></th>
+              <th class="text" scope="row"></th>
+              <th class="text" scope="row"></th>
+              <th class="text" scope="row"></th>
+              <th class="text" scope="row"></th>
+              <th class="text" scope="row">Total:{{total}}</th>
+          </tr>
+      </tfoot>
+    </table>
+    
+<div class="main center-button">
+ 
+  <button (click)="sendToKitchen(nameClient)" class="button col-xs-10 col-sm-12 col-md-6">ENVIAR A COCINA
+     </button>
+  </div>
