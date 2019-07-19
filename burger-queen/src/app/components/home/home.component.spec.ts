@@ -6,6 +6,7 @@ import { HeaderComponent } from '../header/header.component';
 import { UserService } from 'src/app/services/user.service';
 import { HttpClientModule } from '@angular/common/http';
 import { OrdersComponent } from '../orders/orders.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -13,11 +14,12 @@ describe('HomeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomeComponent, HeaderComponent, ProductsComponent, OrdersComponent ],
+      declarations: [ HomeComponent, HeaderComponent, ProductsComponent ],
       providers: [  UserService  ],
       imports: [
         HttpClientModule
-      ]
+      ],
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA]
     })
     .compileComponents();
   }));

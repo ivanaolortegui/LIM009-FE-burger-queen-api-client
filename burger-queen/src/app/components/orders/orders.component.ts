@@ -24,6 +24,10 @@ export class OrdersComponent implements OnInit {
     private orderservice: OrdersService,
     private userservice: UserService
   ) {
+   
+  }
+
+  ngOnInit() {
     this.orderservice.productData.subscribe(resp => {
       this.total = 0
       this.orderProduct = resp; // se llena la data mediante el servicio
@@ -58,8 +62,6 @@ export class OrdersComponent implements OnInit {
     });
   }
 
-  ngOnInit() {}
-
   sendToKitchen(nameClient:string) {   // Función que captura el userId y el nombre de cliente para enviarlo a cocina
     this.userservice.getIdUsers().subscribe(resp => {
       this.orderForBackend = {
@@ -70,9 +72,6 @@ export class OrdersComponent implements OnInit {
       console.log(this.orderForBackend);  
     });
     this.userservice.getOrder(this.orderForBackend)
-    
-    
-    
   }
 
   deleteproduct(idx: number) {

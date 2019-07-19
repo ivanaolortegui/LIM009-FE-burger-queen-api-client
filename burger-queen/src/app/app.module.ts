@@ -17,8 +17,8 @@ import { AuthGuard } from './guards/auth.guard';
 import { HeaderComponent } from './components/header/header.component';
 import { ProductsComponent } from './components/products/products.component';
 import { OrdersComponent } from './components/orders/orders.component';
-import { ListproductComponent } from './components/listproduct/listproduct.component';
 import { FormsModule } from '@angular/forms';
+import { OrdersService } from './services/orders.service';
 
 
 
@@ -32,8 +32,7 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     ProductsComponent,
     OrdersComponent,
-    ListproductComponent,
-  
+     
 
    
   ],
@@ -48,7 +47,7 @@ import { FormsModule } from '@angular/forms';
   providers: [
     UserService,
     AuthGuard,
-    
+    OrdersService
   ],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
