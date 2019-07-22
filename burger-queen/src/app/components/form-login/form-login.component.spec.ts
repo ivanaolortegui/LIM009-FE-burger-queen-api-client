@@ -8,6 +8,7 @@ import { DebugElement, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { HomeComponent } from '../home/home.component';
 import { LoginComponent } from '../login/login.component';
+import {APP_BASE_HREF} from '@angular/common';
 
 import { HeaderComponent } from '../header/header.component';
 import { ProductsComponent } from '../products/products.component';
@@ -24,7 +25,7 @@ describe('FormLoginComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ FormLoginComponent, HomeComponent, LoginComponent],
       imports:[FormsModule, HttpClientModule, AppRoutingModule],
-      providers:[UserService],
+      providers:[UserService, {provide: APP_BASE_HREF, useValue : '/' }],
       schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
       
     })
@@ -39,9 +40,9 @@ describe('FormLoginComponent', () => {
     formEl = fixture.debugElement.query(By.css('form'))
   });
 
-  it('should create', (async() => {
+  it('should create', () => {
     expect(component).toBeTruthy();
-  }));
+  });
   it('Deberia de llamar a "guardar" al dar submit al form', () => {
     spyOn(component, 'guardar');
     formEl.triggerEventHandler('submit', null);

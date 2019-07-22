@@ -1,51 +1,58 @@
-<div class="orders-responsive">
-<div class="md-form input-group ">
-    <div class="input-group-prepend">
-      <div class="btn btn-md btn-default m-0 px-3"  id="MaterialButton-addon1">Cliente</div>
+<section class="orders-responsive">
+  <div class="client-secction">
+    <div class="">
+      <h5 class="text-center">
+        Cliente
+      </h5>
+      <input
+        type="text"
+        class="client-input"
+        placeholder=""
+        aria-label="Example text with button addon"
+        aria-describedby="MaterialButton-addon1"
+      />
     </div>
-    <input type="text" class="form-control " placeholder="" aria-label="Example text with button addon"
-      aria-describedby="MaterialButton-addon1">
   </div>
-  <div class=" table-responsive ">
-<table class=" table ">
-    <thead>
-    <tr>
-       <th class="text padding-table" >Cantidad</th>
-      <th class="text padding-table" >Producto</th>
-      <th class="text padding-table" >Precio</th>
-      <th class="text padding-table">Subtotal</th> 
-      <th class="text padding-table"></th> 
-      <th class="text padding-table"></th> 
-    </tr>
-  </thead>
-  <tbody *ngFor="let product of orderProduct; let idx = index">
-      <tr>
-          <td class="text "> {{lstPedido[idx].qty}} </td>
-          <td class="text">{{orderProduct[idx].name}}</td>
-          <td class="text">{{orderProduct[idx].price}}$</td>
-          <td class="text">{{orderProduct[idx].price *lstPedido[idx].qty}}$ </td>
-          <td><button class="icon  add-icon " (click)="incrementQuantity(idx)"></button></td>
-          <td><button class="icon less-icon" (click)="decrementQuantity(idx)"></button></td>
-          <td><button class="icon delete-icon" (click)="deleteproduct(idx)"> </button></td>
-      </tr>
-      </tbody>
-      <tfoot>
-          <tr>
-              <th class="text"></th>
-              <th class="text" ></th>
-              <th class="text" ></th>
-              <th class="text" ></th>
-              <th class="text" ></th>
-              <th class="text" scope="row"></th>
-              <th class="text" scope="row">Total:{{total}}</th>
-          </tr>
-      </tfoot>
-    </table>
+
+  <div
+    class="main section-orders row"
+    *ngFor="let product of orderProduct; let idx = index"
+  >
+    <div
+      class="margin-product col-4 col-sm-5 col-xs-3 col-md-3 col-lg-4 col-xl-3"
+    >
+      {{ orderProduct[idx].name }}
+    </div>
+    <div
+      class="margin-product col-2 col-sm-3 col-xs-3 col-md-1 col-lg-1 col-xl-2"
+    >
+      {{ orderProduct[idx].price }}$
+    </div>
+    <div
+      class="margin-product col-2 col-sm-3 col-xs-3 col-md-2 col-lg-1 col-xl-2"
+    >
+      <p class="text">{{ orderProduct[idx].price * lstPedido[idx].qty }}$</p>
+    </div>
+    <div
+      class=" col-2 col-sm-5 col-xs-3 col-md-2 col-lg-3 col-xl-4 button-icon"
+    >
+      <button class="icon less-icon" (click)="decrementQuantity(idx)"></button>
+      <p class="margin-p">{{ lstPedido[idx].qty }}</p>
+      <button class="icon  add-icon " (click)="incrementQuantity(idx)"></button>
+    </div>
+    <div
+      class=" margin-product col-2 col-sm-5 col-xs-3 col-md-2 col-lg-2 col-xl-1"
+    >
+      <button class="icon delete-icon" (click)="deleteproduct(idx)"></button>
+    </div>
   </div>
-    
-<div class="main center-button">
- 
-  <button (click)="sendToKitchen(nameClient)" class="button ">ENVIAR A COCINA
-     </button>
+
+  <div class="total-datails"><strong>Total:{{ total }}</strong></div>
+  
+
+  <div class="main center-button">
+    <button (click)="sendToKitchen(nameClient)" class="button ">
+      ENVIAR A COCINA
+    </button>
   </div>
-</div>
+</section>
