@@ -14,8 +14,13 @@ import { ProductsComponent } from '../components/products/products.component';
 import { OrdersComponent } from '../components/orders/orders.component';
 import { APP_BASE_HREF } from '@angular/common';
 
+
+class MockRouter {
+  navigate(path) {}
+}
+
 describe('AuthGuard', () => {
-  beforeEach(() => {
+   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [ FormLoginComponent,LoginComponent,HomeComponent ,HeaderComponent,ProductsComponent, OrdersComponent],
       providers: [AuthGuard, UserService, {provide: APP_BASE_HREF, useValue : '/' }],
@@ -27,9 +32,33 @@ describe('AuthGuard', () => {
       ],
      
     });
-  });
+  }); 
 
   it('should ...', inject([AuthGuard], (guard: AuthGuard) => {
     expect(guard).toBeTruthy();
   }));
+
+  describe('canActivate', () => {
+    let authGuard: AuthGuard;
+    let UserService;
+    let router;
+
+    it('should return true for a logged in user', () => {
+      UserService = { authUser: () => true };
+      router = new MockRouter();
+      authGuard = new AuthGuard(UserService, router);
+      expect(authGuard.canActivate()).toEqual(true);
+    });
+    it('should navigate to home for a logged out user', () => {
+      UserService = { authUser: () => false };
+      router = new MockRouter();
+      authGuard = new AuthGuard(UserService, router);
+      spyOn(router, 'navigate');
+
+      expect(authGuard.canActivate()).toEqual(false);
+      expect(router.navigate).toHaveBeenCalledWith(['/login']);
+    });
+  });
 });
+
+ 

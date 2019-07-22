@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';
 import { map } from 'rxjs/operators'
-import { User } from './user'
-import { product } from './products';
+import { User } from '../interface/user'
+import { product } from '../interface/products';
 
 
 
@@ -52,9 +52,6 @@ export class UserService {
     }); 
     this.http.post("http://localhost:5000/orders", orderForBackend, {headers: headers})
     .subscribe(res => console.log(res));
-   /*  return fetch("http://localhost:5000/orders",
-     {  method:'POST', mode: 'no-cors', headers: {'Content-Type': 'application/json'},  body: JSON.stringify(orderForBackend)})
-     .then(data => {console.log(data)}) */
     
   }
 

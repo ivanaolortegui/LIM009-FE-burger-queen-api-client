@@ -14,37 +14,37 @@
     </div>
   </div>
 
-  <div
-    class="main section-orders row"
-    *ngFor="let product of orderProduct; let idx = index"
-  >
-    <div
-      class="margin-product col-4 col-sm-5 col-xs-3 col-md-3 col-lg-4 col-xl-3"
-    >
+  <div  class="main section-orders row" *ngFor="let product of orderProduct; let idx = index" >
+    <div class="margin-product text-center col-4 col-sm-4 col-xs-3 col-md-12 col-lg-4 col-xl-3">
       {{ orderProduct[idx].name }}
     </div>
-    <div
-      class="margin-product col-2 col-sm-3 col-xs-3 col-md-1 col-lg-1 col-xl-2"
-    >
-      {{ orderProduct[idx].price }}$
+
+<div class=" col-6 col-sm-7 col-xs-4 col-md-12 col-lg-6 col-xl-3 " >
+  <div class="button-icon margin-product ">
+    <h6 class="qty">Cantidad: </h6>
+    <div class=" button-icon " > 
+        <button class="icon icon-operation" (click)="decrementQuantity(idx)"> - </button>
+       <div> <p class="margin-p ">{{ lstPedido[idx].qty }}</p></div>
+        <button class="icon  icon-operation" (click)="incrementQuantity(idx)"> + </button>
     </div>
-    <div
-      class="margin-product col-2 col-sm-3 col-xs-3 col-md-2 col-lg-1 col-xl-2"
-    >
-      <p class="text">{{ orderProduct[idx].price * lstPedido[idx].qty }}$</p>
-    </div>
-    <div
-      class=" col-2 col-sm-5 col-xs-3 col-md-2 col-lg-3 col-xl-4 button-icon"
-    >
-      <button class="icon less-icon" (click)="decrementQuantity(idx)"></button>
-      <p class="margin-p">{{ lstPedido[idx].qty }}</p>
-      <button class="icon  add-icon " (click)="incrementQuantity(idx)"></button>
-    </div>
-    <div
-      class=" margin-product col-2 col-sm-5 col-xs-3 col-md-2 col-lg-2 col-xl-1"
-    >
+  </div>
+  <div class="button-icon margin-product ">
+     <h5 > Precio:   </h5> 
+     <h5 class=" price"> {{    orderProduct[idx].price }}$</h5> 
+   
+  </div>
+
+  <div class="button-icon margin-product ">
+    <h5 class="" >  SubTotal:</h5> 
+    <h5 class=" price"> {{ orderProduct[idx].price * lstPedido[idx].qty }}$</h5>
+    
+  </div>
+  </div>
+
+    <div class=" text-center margin-product col-12 col-sm-12 col-xs-12 col-md-12 col-lg-2 col-xl-1">
       <button class="icon delete-icon" (click)="deleteproduct(idx)"></button>
     </div>
+
   </div>
 
   <div class="total-datails"><strong>Total:{{ total }}</strong></div>

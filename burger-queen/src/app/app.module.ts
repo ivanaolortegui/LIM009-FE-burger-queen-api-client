@@ -19,6 +19,7 @@ import { ProductsComponent } from './components/products/products.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { FormsModule } from '@angular/forms';
 import { OrdersService } from './services/orders.service';
+import { HttpTestingController } from '@angular/common/http/testing';
 
 
 
@@ -41,6 +42,7 @@ import { OrdersService } from './services/orders.service';
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
+  
     
    
   ],
