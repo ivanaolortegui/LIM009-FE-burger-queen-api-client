@@ -32,14 +32,13 @@ body {
 }
 
 .button-menu {
-    padding: 10px 36px;
     font-size: 110%;
     cursor: pointer;
     outline: none;
-    border: none;
-    text-decoration: none;
     margin: auto;
     margin-top: 2%;
+    border-radius: 5px;
+    width: 70%
 }
 
 .button {
@@ -60,6 +59,53 @@ body {
     display: inline-block;
 }
 
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    width: 70%;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    margin: auto;
+    height: 46px;
+    display: flex;
+    margin-bottom: 2%;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.dropdown {
+    display: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    margin-left: 14%;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 16px;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
 
 /* card de products */
 
@@ -74,6 +120,7 @@ body {
     height: 280px;
     margin: auto;
     margin-bottom: 3%;
+    border-radius: 10px;
     -webkit-box-shadow: 0px 0px 7px -1px rgb(161, 155, 161);
     -moz-box-shadow: 0px 0px 7px -1px rgba(189, 178, 189, 1);
     box-shadow: 0px 0px 7px -1px rgba(189, 178, 189, 1);
@@ -158,6 +205,7 @@ body {
         width: 48%;
         height: 250px;
         margin: 1%;
+        border-radius: 10px;
         margin-bottom: 3%;
         -webkit-box-shadow: 0px 0px 7px -1px rgb(161, 155, 161);
         -moz-box-shadow: 0px 0px 7px -1px rgba(189, 178, 189, 1);
@@ -211,10 +259,48 @@ body {
         justify-content: space-around;
         flex-direction: row;
     }
+    .button-menu {
+        font-size: 110%;
+        cursor: pointer;
+        outline: none;
+        margin: auto;
+        margin-top: 2%;
+        border-radius: 5px;
+        width: 42%;
+        -webkit-box-shadow: 0px 0px 7px -1px #007bff;
+        -moz-box-shadow: 0px 0px 7px -1px #007bff;
+        box-shadow: 0px 0px 7px -1px #007bff;
+    }
+    .button-desayuno {
+        background: #007bff;
+        color: #fff;
+    }
+    .dropbtn {
+        background-color: #4CAF50;
+        color: white;
+        width: 42%;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        height: 46;
+        display: flex;
+        margin-bottom: 2%;
+        border-radius: 10px;
+    }
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        margin-left: 30%;
+    }
     .card {
-        width: 48%;
+        width: 42%;
         height: 250px;
-        margin: 1%;
+        margin: auto;
+        border-radius: 10px;
         margin-bottom: 3%;
         -webkit-box-shadow: 0px 0px 7px -1px rgb(161, 155, 161);
         -moz-box-shadow: 0px 0px 7px -1px rgba(189, 178, 189, 1);
@@ -228,7 +314,7 @@ body {
         width: 10%;
     }
     .conteiner-menu {
-        width: 54%;
+        width: 50%;
     }
     .orders {
   
@@ -272,9 +358,41 @@ body {
         flex-wrap: wrap;
         flex-direction: row;
     }
+    .button-menu {
+        font-size: 110%;
+        cursor: pointer;
+        outline: none;
+        margin: auto;
+        margin-top: 2%;
+        border-radius: 5px;
+        width: 29%;
+        border-width: 0.02px 0px 0px 0px;
+        border-style: solid;
+    }
+    .dropbtn {
+        background-color: #4CAF50;
+        color: white;
+        width: 29%;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        height: 46;
+        display: flex;
+        margin-bottom: 2%;
+        border-radius: 10px;
+    }
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        margin-left: 35%;
+    }
     .card {
-        width: 31%;
-        height: 260px;
+        width: 29%;
+        height: 250px;
         margin: 1%;
         border-radius: 10px;
         display: flex;

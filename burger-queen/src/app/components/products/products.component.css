@@ -1,18 +1,10 @@
-.button-card {
-    padding: 16px;
-    cursor: pointer;
-    outline: none;
-    border: none;
-    text-decoration: none;
-    color: #fff;
-    font-size: 100%;
-}
-
 .p-card {
     padding: 0;
-    margin: 0;
+    margin: 5px;
 }
 
-.button-imagen-desayuno {
-    background-image: url("http://sandwichesandmore.com.ng/wp-content/uploads/2018/07/sssalad.png")
+.price {
+    border-color: rgb(199, 194, 194);
+    border-width: 0.02px 0px 0px 0px;
+    border-style: solid;
 }
