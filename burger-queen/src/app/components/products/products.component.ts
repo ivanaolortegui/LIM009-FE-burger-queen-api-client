@@ -1,6 +1,6 @@
 import { Component,Injectable, OnInit } from '@angular/core';
 import {UserService } from 'src/app/services/user.service';
-import {product } from 'src/app/services/products'
+import {product } from 'src/app/interface/products'
 import {OrdersService} from 'src/app/services/orders.service'
 
 @Component({

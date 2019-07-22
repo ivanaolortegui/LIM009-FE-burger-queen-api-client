@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { OrdersService } from "src/app/services/orders.service";
-import { product } from "src/app/services/products";
+import { product } from "src/app/interface/products";
 import { UserService } from "../../services/user.service";
-import { Order } from "../../services/order";
+import { Order } from "../../interface/order";
 import { OrderForBackend } from "../../interface/orderforbackend";
 
 
