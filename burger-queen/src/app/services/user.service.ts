@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/internal/Observable';
 import { map } from 'rxjs/operators'
 import { User } from '../interface/user'
 import { product } from '../interface/products';
+import{ orderResponse} from '../interface/orderResponse'
 
 
 
@@ -20,7 +21,7 @@ export class UserService {
 
     
   getToken(user: User) {
-    return this.http.post(this.url, user).pipe(map(resp => {
+    return this.http.post(this.url, user).pipe(map(resp => {     
       this.saveToken(resp['accessToken'])
       return resp;
     }))
@@ -50,8 +51,10 @@ export class UserService {
      'Content-Type': 'application/json',
      
     }); 
-    this.http.post("http://localhost:5000/orders", orderForBackend, {headers: headers})
-    .subscribe(res => console.log(res));
+   
+    
+   return  this.http.post("http://localhost:5000/orders", orderForBackend, {headers: headers})
+   //.pipe(map(res => console.log(res)));
     
   }
 

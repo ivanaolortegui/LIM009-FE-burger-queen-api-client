@@ -1,4 +1,4 @@
-<section class="orders-responsive">
+<section class="orders-responsive ">
   <div class="client-secction">
     <div class="">
       <h5 class="text-center">
@@ -14,40 +14,40 @@
     </div>
   </div>
 
-  <div  class="main section-orders row" *ngFor="let product of orderProduct; let idx = index" >
-    <div class="margin-product text-center col-4 col-sm-4 col-xs-3 col-md-12 col-lg-4 col-xl-3">
+  <div  class="main section-orders row " *ngFor="let product of orderProduct; let idx = index" >
+    <div class=" margin-item margin-product text-center col-4 col-sm-4 col-xs-3 col-md-12 col-lg-4 col-xl-3">
       {{ orderProduct[idx].name }}
     </div>
 
 <div class=" col-6 col-sm-7 col-xs-4 col-md-12 col-lg-6 col-xl-3 " >
   <div class="button-icon margin-product ">
-    <h6 class="qty">Cantidad: </h6>
+    <h6 class="qty ">Cantidad: </h6>
     <div class=" button-icon " > 
         <button class="icon icon-operation" (click)="decrementQuantity(idx)"> - </button>
-       <div> <p class="margin-p ">{{ lstPedido[idx].qty }}</p></div>
+       <div class=" icon count"> <p class="margin-p ">{{ lstPedido[idx].qty }}</p></div>
         <button class="icon  icon-operation" (click)="incrementQuantity(idx)"> + </button>
     </div>
   </div>
-  <div class="button-icon margin-product ">
+  <div class="button-icon margin-product text-center">
      <h5 > Precio:   </h5> 
      <h5 class=" price"> {{    orderProduct[idx].price }}$</h5> 
    
   </div>
 
   <div class="button-icon margin-product ">
-    <h5 class="" >  SubTotal:</h5> 
+    <h3 class="text-center" >  SubTotal:</h3> 
     <h5 class=" price"> {{ orderProduct[idx].price * lstPedido[idx].qty }}$</h5>
     
   </div>
   </div>
 
-    <div class=" text-center margin-product col-12 col-sm-12 col-xs-12 col-md-12 col-lg-2 col-xl-1">
+    <div class=" margin-item text-center margin-product col-12 col-sm-12 col-xs-12 col-md-12 col-lg-2 col-xl-1">
       <button class="icon delete-icon" (click)="deleteproduct(idx)"></button>
     </div>
 
   </div>
 
-  <div class="total-datails"><strong>Total:{{ total }}</strong></div>
+  <div class="total-datails "><strong>Total:{{ total }}</strong></div>
   
 
   <div class="main center-button">

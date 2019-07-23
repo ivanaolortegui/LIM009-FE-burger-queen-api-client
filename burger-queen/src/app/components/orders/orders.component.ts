@@ -69,9 +69,10 @@ export class OrdersComponent implements OnInit {
         client: nameClient,
         product: this.lstPedido
       };
-      console.log(this.orderForBackend);  
     });
-    this.userservice.getOrder(this.orderForBackend)
+    this.userservice.getOrder(this.orderForBackend).subscribe(arg => console.log(arg));
+    
+    
   }
 
   deleteproduct(idx: number) {

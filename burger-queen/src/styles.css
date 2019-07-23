@@ -7,6 +7,7 @@ body {
     background-repeat: no-repeat;
     margin: 0;
     padding: 0;
+   
 }
 
 .header-container {
@@ -50,7 +51,7 @@ body {
     color: white;
     background: #293092;
     font: bold;
-    font-family: "Source Sans Pro", sans-serif;
+    font-family: "font-family: 'Averia Gruesa Libre', cursive";
     font-weight: 700;
     margin-top: 5px;
     text-align: center;
@@ -72,6 +73,7 @@ body {
     margin-bottom: 2%;
     border-radius: 10px;
     text-align: center;
+    outline: none;
 }
 
 .dropdown {
@@ -286,6 +288,7 @@ body {
         display: flex;
         margin-bottom: 2%;
         border-radius: 10px;
+        outline: none;
     }
     .dropdown-content {
         display: none;

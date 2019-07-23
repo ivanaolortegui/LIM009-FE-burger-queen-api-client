@@ -3,7 +3,12 @@
         "userId": "1",
         "email": "ivana@gmail.com",
         "password": "$2a$10$u04HgHbJAureCDVa87m7A.NfG8S9izMV.GQerhuggj6v.pr/YKOfK"
-    }],
+    },{
+        "userId": "2",
+        "email": "liz@gmail.com",
+        "password": "$2a$10$u04HgHbJAureCDVa87m7A.NfG8S9izMV.GQerhuggj6v.pr/YKOfK"
+    }
+],
 
     "products": [{
             "_id": "1",
