@@ -13,9 +13,10 @@ private lstProducts:Array<product>=[];
 productData = this.productSource.asObservable(); 
 constructor() { }
 
-private refresh() {
+refresh() {
   // Emitir los nuevos valores para que todos los que dependan se actualicen.
   this.productSource.next(this.lstProducts);
+  
 }
 
 sharingProductData(product: product) {

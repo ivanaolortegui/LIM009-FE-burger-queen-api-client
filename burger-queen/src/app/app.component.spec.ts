@@ -65,7 +65,7 @@ describe('AppComponent', () => {
 
   it('navigate to "home" takes you to /home', fakeAsync(() => {
     router.navigate(["home"]).then(() => {
-      expect(location.path()).toBe("/login");
+      expect(location.path()).toBe("/home");
     });
   }));
 
