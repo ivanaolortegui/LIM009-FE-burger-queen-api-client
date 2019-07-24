@@ -117,7 +117,7 @@
   margin:   0% 0% 0% 10%;
 }
 .margin-item{
-  margin: 0px;
+  margin:12px;
 }
 @media screen and (min-width: 540px) {
   .section-orders {
@@ -150,7 +150,7 @@
 
 @media screen and (min-width: 770px) {
   .margin-item{
-    margin-top: 70px
+    margin-top: 40px
   }
 }
 

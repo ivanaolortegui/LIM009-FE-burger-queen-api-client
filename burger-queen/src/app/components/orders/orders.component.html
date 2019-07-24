@@ -10,12 +10,13 @@
         placeholder=""
         aria-label="Example text with button addon"
         aria-describedby="MaterialButton-addon1"
+        [(ngModel)]="nameClient" name="nameClient"
       />
     </div>
   </div>
 
   <div  class="main section-orders row " *ngFor="let product of orderProduct; let idx = index" >
-    <div class=" margin-item margin-product text-center col-4 col-sm-4 col-xs-3 col-md-12 col-lg-4 col-xl-3">
+    <div class=" margin-item margin-product text-center col-4 col-sm-4 col-xs-3 col-md-12 col-lg-2 col-xl-3">
       {{ orderProduct[idx].name }}
     </div>
 

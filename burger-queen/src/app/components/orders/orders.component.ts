@@ -68,7 +68,11 @@ export class OrdersComponent implements OnInit {
         userId: resp[0].userId,
         client: nameClient,
         product: this.lstPedido
+       
+     
       };
+      console.log(this.orderForBackend);
+      
     });
     this.userservice.getOrder(this.orderForBackend).subscribe(arg => console.log(arg));
     
@@ -80,7 +84,7 @@ export class OrdersComponent implements OnInit {
     this.total -= parseInt(this.orderProduct[idx].price) 
    // console.log(this.total);
     
-    this.orderservice.deleProduct(idx);
+    this.orderservice.deleteProduct(idx);
   }
 
   incrementQuantity(idx: number) {
