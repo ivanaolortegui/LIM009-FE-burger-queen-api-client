@@ -68,7 +68,11 @@ export class OrdersComponent implements OnInit {
         userId: resp[0].userId,
         client: nameClient,
         product: this.lstPedido
+       
+     
       };
+      console.log(this.orderForBackend);
+      
     });
     this.userservice.getOrder(this.orderForBackend).subscribe(arg => console.log(arg));
     
