@@ -80,7 +80,7 @@ export class OrdersComponent implements OnInit {
     this.total -= parseInt(this.orderProduct[idx].price) 
    // console.log(this.total);
     
-    this.orderservice.deleProduct(idx);
+    this.orderservice.deleteProduct(idx);
   }
 
   incrementQuantity(idx: number) {
