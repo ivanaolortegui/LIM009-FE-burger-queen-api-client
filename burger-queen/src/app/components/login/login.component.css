@@ -45,8 +45,10 @@
     padding: 4%;
     width: 722px;
     height: 340px;
-    background: rgba(249, 236, 206, 0.93);
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.35);
+    margin-bottom: 3%;
+        -webkit-box-shadow: 0px 0px 7px -1px rgb(161, 155, 161);
+        -moz-box-shadow: 0px 0px 7px -1px rgba(189, 178, 189, 1);
+        box-shadow: 0px 0px 7px -1px rgba(189, 178, 189, 1);
     border-radius: 4px;
 }
 
@@ -67,8 +69,7 @@
         padding: 4%;
         width: 832px;
         height: 340px;
-        background: rgba(249, 236, 206, 0.93);
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.35);
+       
         border-radius: 4px;
     }
 }
@@ -87,8 +88,7 @@
         padding: 4%;
         width: 832px;
         height: 340px;
-        background: rgba(249, 236, 206, 0.93);
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.35);
+       
         border-radius: 4px;
     }
     .login-input {
@@ -116,8 +116,7 @@
         padding: 4%;
         width: 832px;
         height: 340px;
-        background: rgba(249, 236, 206, 0.93);
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.35);
+      
         border-radius: 4px;
     }
     .login-input {
