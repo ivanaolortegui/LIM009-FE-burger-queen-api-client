@@ -2,9 +2,8 @@ import { Injectable } from '@angular/core';
 import {BehaviorSubject, from} from 'rxjs'
 import { product } from '../interface/products';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { UserService } from './user.service';
 import { map } from 'rxjs/operators'
-import { User } from '../interface/user';
+import {UserService} from '../services/user.service'
 
 @Injectable({
   providedIn: 'root'
@@ -54,15 +53,15 @@ deleteProduct(idx : number){
     console.log(this.lstProducts) 
   }
 
-
   getOrders() {
     const headers = new HttpHeaders({
       'Authorization': 'Bearer ' + this.userService.Usertoken
     });
     return this.http.get("http://localhost:5000/orders", { headers: headers })
-      .pipe(map(response => response)
+      .pipe(map(response => console.log(response))
       )
   }
+
 
 
 
