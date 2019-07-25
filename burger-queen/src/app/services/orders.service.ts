@@ -1,6 +1,10 @@
 import { Injectable } from '@angular/core';
-import {BehaviorSubject} from 'rxjs'
+import {BehaviorSubject, from} from 'rxjs'
 import { product } from '../interface/products';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { UserService } from './user.service';
+import { map } from 'rxjs/operators'
+import { User } from '../interface/user';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +15,7 @@ public productSource = new BehaviorSubject<Array<any>>([]); // variable que se e
 public lstProducts:Array<product>=[];
 //definiendo observable
 productData = this.productSource.asObservable(); 
-constructor() { }
+constructor(private http: HttpClient, private userService : UserService) { }
 
 refresh() {
   // Emitir los nuevos valores para que todos los que dependan se actualicen.
@@ -51,7 +55,14 @@ deleteProduct(idx : number){
   }
 
 
-
+  getOrders() {
+    const headers = new HttpHeaders({
+      'Authorization': 'Bearer ' + this.userService.Usertoken
+    });
+    return this.http.get("http://localhost:5000/orders", { headers: headers })
+      .pipe(map(response => response)
+      )
+  }
 
 
 

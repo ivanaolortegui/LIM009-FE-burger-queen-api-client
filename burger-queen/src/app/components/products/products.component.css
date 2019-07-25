@@ -8,3 +8,15 @@
     border-width: 0.02px 0px 0px 0px;
     border-style: solid;
 }
+.nav-link{
+    color:black;
+}
+
+.nav-link.active .item{
+    background-color:#929eaa4f;
+}
+.nav-link.active {
+    color: #EE1D23;
+    background-color: #fff;
+    border-color: #dee2e6 #dee2e6 #fff;
+}
