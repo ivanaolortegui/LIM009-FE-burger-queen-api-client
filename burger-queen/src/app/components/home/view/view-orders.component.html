@@ -1,1 +1,12 @@
-<p>view-orders works!</p>
+
+<main class="view-orders" >
+<section class="cards-orders"  *ngFor="let item of orders">
+<p class="client" > Cliente :  {{item.client}}</p>
+
+<div *ngFor="let product of item.products"> 
+        <p>{{product.qty}} {{product.product.name}} </p> 
+  
+</div>
+<p>Status: {{item.status}}</p>
+</section>
+</main>
