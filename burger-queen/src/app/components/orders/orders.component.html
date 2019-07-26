@@ -1,6 +1,5 @@
 <section class="orders-responsive ">
   <div class="client-secction">
-    <div class="">
       <h5 class="text-center">
         Cliente
       </h5>
@@ -10,9 +9,7 @@
         placeholder=""
         aria-label="Example text with button addon"
         aria-describedby="MaterialButton-addon1"
-        [(ngModel)]="nameClient" name="nameClient"
-      />
-    </div>
+        [(ngModel)]="nameClient" name="nameClient"/>
   </div>
 
   <div  class="main section-orders row " *ngFor="let product of orderProduct; let idx = index" >
@@ -48,7 +45,7 @@
 
   </div>
 
-  <div class="total-datails "><strong>Total:{{ total }}</strong></div>
+  <div class="total-datails "><strong>  Total:   {{ total }} </strong></div>
   
 
   <div class="main center-button">

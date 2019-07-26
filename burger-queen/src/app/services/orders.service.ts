@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {BehaviorSubject} from 'rxjs'
+import {BehaviorSubject, from} from 'rxjs'
 import { product } from '../interface/products';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators'
@@ -14,7 +14,7 @@ public productSource = new BehaviorSubject<Array<any>>([]); // variable que se e
 public lstProducts:Array<product>=[];
 //definiendo observable
 productData = this.productSource.asObservable(); 
-constructor(private http: HttpClient, private userService: UserService) { }
+constructor(private http: HttpClient, private userService : UserService) { }
 
 refresh() {
   // Emitir los nuevos valores para que todos los que dependan se actualicen.
