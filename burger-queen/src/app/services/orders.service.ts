@@ -65,7 +65,5 @@ deleteProduct(idx : number){
   }
 
 
-
-
 }
 

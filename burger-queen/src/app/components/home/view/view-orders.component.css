@@ -1,7 +1,8 @@
-.view-orders{
+.view-orders {
     display: flex
 }
-.cards-orders{
+
+.cards-orders {
     margin: 1%;
     background: #f2f0ec;
     border-radius: 10px;
@@ -10,15 +11,38 @@
     -moz-box-shadow: 0px 0px 7px -1px rgba(189, 178, 189, 1);
     box-shadow: 0px 0px 7px -1px rgba(189, 178, 189, 1);
 }
+
 .client {
-background-color: bisque;
+    background-color: bisque;
 }
-@media screen and (min-width: 540px) {
 
+.states {
+    width: 100%;
+    color: white;
+    font-size: 130%;
+    text-transform: uppercase;
+    text-align: center;
+    border: none;
 }
-@media screen and (min-width: 720px) {
 
+option.canceled {
+    background-color: green;
 }
-@media screen and (min-width: 1100px) {
 
+option.pending {
+    background-color: red;
 }
+
+option.delivering {
+    background-color: yellow;
+}
+
+option.delivered {
+    background-color: black;
+}
+
+@media screen and (min-width: 540px) {}
+
+@media screen and (min-width: 720px) {}
+
+@media screen and (min-width: 1100px) {}
