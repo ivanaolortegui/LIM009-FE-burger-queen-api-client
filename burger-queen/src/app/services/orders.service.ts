@@ -64,6 +64,18 @@ deleteProduct(idx : number){
       ) 
   }
 
+<<<<<<< HEAD
+=======
+putStatus(obj: Object){
+  const headers = new HttpHeaders({
+    'Authorization': 'Bearer ' + this.userService.Usertoken
+  });
+  return this.http.put(`http://localhost:3000/orders/order2`, obj , { headers: headers })
+     .pipe(map(response => response)
+    ) 
+}
+
+>>>>>>> fe5495045a129c68416f7f91223f992a7aec7b2e
 
 }
 
