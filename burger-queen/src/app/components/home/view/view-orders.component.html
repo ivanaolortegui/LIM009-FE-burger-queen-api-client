@@ -12,7 +12,7 @@
             <a class="dropdown-item">Another link</a>
         </div> -->
         <select class="states" [(ngModel)]="opcionSeleccionada" (change)="captureData()">
-                <option  class ="pending"value="pending"> </option>
+                <option  class ="pending"value="pending">{{item.status}} </option>
                 <option class ="canceled" value="canceled">canceled</option>
                 <option class = "delivering" value="delivering">delivering</option>
                 <option class = "delivered" value="delivered">delivered</option>

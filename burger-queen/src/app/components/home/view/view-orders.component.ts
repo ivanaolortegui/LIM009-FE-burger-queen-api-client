@@ -21,6 +21,9 @@ export class ViewOrdersComponent implements OnInit {
       this.orders = respon// Obtener todos las ordenes
       console.log(respon);
     })
+
+
+    
   this.orderService.putStatus({
     "id": "order2",
     "userId": "1",
@@ -57,5 +60,9 @@ export class ViewOrdersComponent implements OnInit {
   })
    
   }
-  
+  captureData(){
+    // Pasamos el valor seleccionado a la variable verSeleccion
+    this.verSeleccion = this.opcionSeleccionada;
+    console.log(this.verSeleccion);
+}
 }
