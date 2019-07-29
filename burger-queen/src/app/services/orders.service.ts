@@ -64,8 +64,6 @@ deleteProduct(idx : number){
       ) 
   }
 
-<<<<<<< HEAD
-=======
 putStatus(obj: Object){
   const headers = new HttpHeaders({
     'Authorization': 'Bearer ' + this.userService.Usertoken
@@ -75,7 +73,6 @@ putStatus(obj: Object){
     ) 
 }
 
->>>>>>> fe5495045a129c68416f7f91223f992a7aec7b2e
 
 }
 
