@@ -64,11 +64,11 @@ deleteProduct(idx : number){
       ) 
   }
 
-putStatus(obj: Object){
+putStatus(obj: Object, id : string){
   const headers = new HttpHeaders({
     'Authorization': 'Bearer ' + this.userService.Usertoken
   });
-  return this.http.put(`http://localhost:3000/orders/order2`, obj , { headers: headers })
+  return this.http.put(`http://localhost:3000/orders/${id}`, obj , { headers: headers })
      .pipe(map(response => response)
     ) 
 }
