@@ -4,6 +4,7 @@ import { product } from "src/app/interface/products";
 import { UserService } from "../../services/user.service";
 import { Order } from "../../interface/order";
 import { OrderForBackend } from "../../interface/orderforbackend";
+import {formatDate } from '@angular/common';
 
 
 @Component({
@@ -19,12 +20,15 @@ export class OrdersComponent implements OnInit {
   order: Order; // variable auxiliar para interfaz
   total :number; 
   orderForBackend: OrderForBackend;
+  today= new Date();
+  jstoday = '';
+
 //  nameClient : string;
   constructor(
     private orderservice: OrdersService,
     private userservice: UserService
   ) {
-   
+
   }
 
   ngOnInit() {
@@ -61,23 +65,23 @@ export class OrdersComponent implements OnInit {
       console.log(this.total)
     });
   }
-
   sendToKitchen(nameClient:string) {   // Función que captura el userId y el nombre de cliente para enviarlo a cocina
     this.userservice.getIdUsers().subscribe(resp => {
       this.orderForBackend = {
         userId: resp[0].userId,
         client: nameClient,
-        product: this.lstPedido
-       
+        product: this.lstPedido,
+        dateEntry: this.jstoday = formatDate(this.today, 'dd-MM-yyyy hh:mm:ss a', 'en-US', '+0530'),
      
       };
       console.log(this.orderForBackend);
       
     });
+
     this.userservice.getOrder(this.orderForBackend).subscribe(arg => console.log(arg));
     
-    
   }
+
 
   deleteproduct(idx: number) {
     this.lstPedido.splice(idx,1)

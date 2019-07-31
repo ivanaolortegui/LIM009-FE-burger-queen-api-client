@@ -33,18 +33,19 @@ export class ViewOrdersComponent implements OnInit {
       }
     }, 1000);
   }
-  captureData(item: any) {
-    // Pasamos el valor seleccionado a la variable verSeleccion
-    this.verSeleccion = this.opcionSeleccionada;
-    item.status = this.verSeleccion;
-
-    console.log(this.opcionSeleccionada);
+  captureData(item: any, state) { debugger
+// declaramos una variable para que reciba el estado    
+    const obj:object = {
+      ...item,
+      status: state
+    }
+    console.log(state);
     console.log(item.id);
-    if (this.verSeleccion === "delivered" || "canceled") {
+    if (state === "delivered" ||state===  "canceled") {   // 
       clearInterval(this.chronometer);
     }
 
-    this.orderService.putStatus(item, item.id).subscribe(resp => {
+    this.orderService.putStatus(obj, item.id).subscribe(resp => {
       //Envio objeto y id
       console.log(resp);
     });

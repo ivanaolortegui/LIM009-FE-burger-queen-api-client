@@ -5,4 +5,5 @@ export interface OrderForBackend {
     _id: string;
     qty: number;
   }[];
+  dateEntry :string;
 }

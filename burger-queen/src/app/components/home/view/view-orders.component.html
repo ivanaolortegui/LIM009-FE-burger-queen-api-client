@@ -1,6 +1,6 @@
 <main class="view-orders">
     <section class="cards-orders" *ngFor="let item of orders">
-        <p class="client"> Cliente : {{item.client}}  {{min}}: {{seg}} </p> 
+        <p class="client"> Cliente : {{item.client}} {{min}}: {{seg}} </p>
 
         <div *ngFor="let product of item.products">
             <p>{{product.qty}} {{product.product.name}}</p>
@@ -11,7 +11,7 @@
             <a class="dropdown-item active">Active link</a>
             <a class="dropdown-item">Another link</a>
         </div> -->
-        <select class="states" [(ngModel)]="opcionSeleccionada" (change)="captureData(item)">
+        <select class="states" #select (change)="captureData(item, select.value)">
             <!--  <option  *ngFor="let status of options" class="status" value="status"> {{status}} </option>  -->
                <option  class ="pending"value="pending">{{item.status}} </option>
                 <option class ="canceled" value="canceled">canceled</option>
