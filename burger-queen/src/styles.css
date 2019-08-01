@@ -240,7 +240,6 @@ body {
     .main {
         display: flex;
         margin: 2%;
-        justify-content: space-between;
     }
     .log {
         width: 30%;
@@ -350,7 +349,7 @@ body {
     .main {
         display: flex;
         margin: 2%;
-        justify-content: space-between;
+        justify-content: flex-start;
     }
     .log {
         width: 70%;

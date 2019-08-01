@@ -12,7 +12,6 @@ export class ViewOrdersComponent implements OnInit {
   constructor(private orderService: OrdersService) {}
   opcionSeleccionada: string = "pending";
   verSeleccion: string = "";
-  //options = ["pending", "canceled", "delivering", "delivered"];
   min: number = 0;
   seg: number = 0;
   chronometer: any;
