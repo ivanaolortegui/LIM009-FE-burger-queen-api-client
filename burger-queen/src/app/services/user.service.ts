@@ -84,5 +84,8 @@ export class UserService {
     return this.Usertoken.length > 2;
   }
 
+  logout(){
+  localStorage.removeItem('token');
+  }
 
 }

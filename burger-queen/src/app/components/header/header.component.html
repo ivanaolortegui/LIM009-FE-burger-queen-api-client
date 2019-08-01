@@ -5,7 +5,8 @@
         <img class="burguer " src="assets/img/hambur-trans.png" alt="">
     </div>
 
-    <div class="menu-nav width-nav" [routerLink]="['view-orders']">Ver Pedidos</div>
-    <div class="menu-nav width-nav">Cerrar Sessión</div>
+    <div *ngIf="viewOrder" class="menu-nav width-nav" [routerLink]="['view-orders']">Ver Órdenes</div>
+    <div *ngIf="home" class="menu-nav width-nav" [routerLink]="['/home']">Realizar Pedidos</div>
+    <div class="menu-nav width-nav" (click)="getOut()">Cerrar Sessión</div>
 
 </header>
