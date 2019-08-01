@@ -1,26 +1,26 @@
 <main class="view-orders">
-    <section class="cards-orders" *ngFor="let item of orders">
-            
-        <p class="client">Cliente : {{item.client}} {{min}}: {{seg}} </p>
+  <section class="cards-orders" *ngFor="let item of orders">
+    <p class="client">Cliente : {{ item.client }} {{ min }}: {{ seg }}</p>
 
-        <div class="item-margin" *ngFor="let product of item.products">
-            <p >{{product.qty}} {{product.product.name}}</p>
-
-        </div>
-        <!--    <div class="dropdown-menu">
+    <div class="item-margin" *ngFor="let product of item.products">
+       <p class="text p-card view-order-product">
+          {{ product.qty }} {{ product.product.name }}
+        </p>
+      </div>
+   
+    <!--    <div class="dropdown-menu">
             <a class="dropdown-item">Regular link</a>
             <a class="dropdown-item active">Active link</a>
             <a class="dropdown-item">Another link</a>
         </div> -->
-        <select class="states" #select (change)="captureData(item, select.value)">
-               <option  class ="pending"value="pending">{{item.status}} </option>
-                <option class ="canceled" value="canceled">canceled</option>
-                <option class = "delivering" value="delivering">delivering</option>
-                <option class = "delivered" value="delivered">delivered</option> 
-        </select>
-    </section>
-
+    <select class="states" #select (change)="captureData(item, select.value)">
+      <option class="pending" value="pending">{{ item.status }} </option>
+      <option class="canceled" value="canceled">canceled</option>
+      <option class="delivering" value="delivering">delivering</option>
+      <option class="delivered" value="delivered">delivered</option>
+    </select>
+  </section>
 </main>
 <footer>
-    <button [routerLink]="['/home']"> Inicio</button>
+  <button [routerLink]="['/home']">Inicio</button>
 </footer>

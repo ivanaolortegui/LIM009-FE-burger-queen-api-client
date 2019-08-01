@@ -4,8 +4,8 @@
 
 .cards-orders {
     margin: 1%;
-    background: #f2f0ec;
-    width: 300px;
+    background: #fff;
+    width: 30%;
     border-radius: 10px;
     -webkit-box-shadow: 0px 0px 7px -1px rgb(161, 155, 161);
     -moz-box-shadow: 0px 0px 7px -1px rgba(189, 178, 189, 1);
@@ -27,7 +27,7 @@
     text-align: center;
     border: none;
     margin: 3%;
-    padding-inline-start: 30%;
+    padding-inline-start: 40%;
     text-align: center;
     border-radius: 6px;
     background: red;
@@ -35,6 +35,12 @@
 }
 .item-margin {
  margin:4px;
+}
+
+.view-order-product {
+    border-color: rgb(207, 210, 212);
+    border-width: 0px 0px 0.02px 0px;
+    border-style: solid;
 }
 
 option.canceled {

@@ -85,6 +85,7 @@ export class OrdersComponent implements OnInit {
   clear(){
     this.nameClient= " ";
     this.orderProduct= [];
+    this.total = 0;
     
   }
 

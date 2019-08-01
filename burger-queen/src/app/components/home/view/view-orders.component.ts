@@ -32,7 +32,7 @@ export class ViewOrdersComponent implements OnInit {
       }
     }, 1000);
   }
-  captureData(item: any, state) { debugger
+  captureData(item: any, state) {// debugger
 // declaramos una variable para que reciba el estado    
     const obj:object = {
       ...item,
