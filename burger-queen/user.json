@@ -113,7 +113,7 @@
     {
       "id": "order1",
       "userId": "1",
-      "client": "jose1",
+      "client": "jose",
       "products": [
         {
           "qty": 2,
@@ -139,7 +139,7 @@
         }
       ],
       "status": "canceled",
-      "dateEntry": "",
+      "dateEntry": "Thu Aug 01 2019 11:36:15 GMT-0500 (Peru Standard Time",
       "dateProcessed": ""
     },
     {
@@ -170,8 +170,8 @@
           }
         }
       ],
-      "status": "pending",
-      "dateEntry": "",
+      "status": "delivered",
+      "dateEntry": "Thu Aug 01 2019 11:36:15 GMT-0500 (Peru Standard Time",
       "dateProcessed": ""
     }
   ]
