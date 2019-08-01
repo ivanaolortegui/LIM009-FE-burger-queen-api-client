@@ -20,6 +20,7 @@ export class OrdersComponent implements OnInit {
   order: Order; // variable auxiliar para interfaz
   total :number; 
   orderForBackend: OrderForBackend;
+  nameClient:string;
   today= new Date();
   jstoday = '';
 
@@ -79,6 +80,11 @@ export class OrdersComponent implements OnInit {
     });
 
     this.userservice.getOrder(this.orderForBackend).subscribe(arg => console.log(arg));
+    
+  }
+  clear(){
+    this.nameClient= " ";
+    this.orderProduct= [];
     
   }
 
