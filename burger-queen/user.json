@@ -138,7 +138,7 @@
           }
         }
       ],
-      "status": "canceled",
+      "status": "delivering",
       "dateEntry": "01-08-2019 04:06:50 AM",
       "dateProcessed": ""
     },
@@ -170,7 +170,7 @@
           }
         }
       ],
-      "status": "delivering",
+      "status": "canceled",
       "dateEntry": "01-08-2019 04:00:50 AM",
       "dateProcessed": ""
     }

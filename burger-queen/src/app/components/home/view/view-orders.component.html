@@ -2,8 +2,8 @@
     <section class="cards-orders" *ngFor="let item of orders">
         <p class="client"> Cliente : {{item.client}} {{min}}: {{seg}} </p>
 
-        <div *ngFor="let product of item.products">
-            <p>{{product.qty}} {{product.product.name}}</p>
+        <div class="" *ngFor="let product of item.products">
+            <p class="text p-card view-order-product">{{product.qty}} {{product.product.name}}</p>
 
         </div>
         <!--    <div class="dropdown-menu">
