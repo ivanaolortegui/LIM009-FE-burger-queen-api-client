@@ -12,7 +12,7 @@ export class ViewOrdersComponent implements OnInit {
   constructor(private orderService: OrdersService) {}
   opcionSeleccionada: string = "pending";
   verSeleccion: string = "";
-  options = ["pending", "canceled", "delivering", "delivered"];
+  //options = ["pending", "canceled", "delivering", "delivered"];
   min: number = 0;
   seg: number = 0;
   chronometer: any;
@@ -33,7 +33,7 @@ export class ViewOrdersComponent implements OnInit {
       }
     }, 1000);
   }
-  captureData(item: any, state) { debugger
+  captureData(item: any, state) {// debugger
 // declaramos una variable para que reciba el estado    
     const obj:object = {
       ...item,
