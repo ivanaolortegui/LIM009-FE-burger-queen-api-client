@@ -139,7 +139,7 @@
         }
       ],
       "status": "canceled",
-      "dateEntry": "Thu Aug 01 2019 11:36:15 GMT-0500 (Peru Standard Time",
+      "dateEntry": 1564748145757,
       "dateProcessed": ""
     },
     {
@@ -171,7 +171,7 @@
         }
       ],
       "status": "delivered",
-      "dateEntry": "Thu Aug 01 2019 11:36:15 GMT-0500 (Peru Standard Time",
+      "dateEntry": 1564748173155,
       "dateProcessed": ""
     }
   ]

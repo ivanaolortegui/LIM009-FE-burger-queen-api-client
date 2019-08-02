@@ -2,7 +2,7 @@
 
 <main class="view-orders">
     <section class="cards-orders" *ngFor="let item of orders">
-        <p class="client"> 😎 Cliente : {{ item.client }}{{ min }}: {{ seg }}</p>
+        <p class="client"> 😎 Cliente : {{ item.client }} {{ min }}: {{ seg }}</p>
 
         <div class="item-margin" *ngFor="let product of item.products">
             <p class="text p-card view-order-product">
