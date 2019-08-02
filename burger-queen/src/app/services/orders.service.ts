@@ -59,7 +59,7 @@ deleteProduct(idx : number){
     const headers = new HttpHeaders({
       'Authorization': 'Bearer ' + this.userService.Usertoken
     });
-    return this.http.get<orderResponse[]>("http://localhost:5000/orders", { headers: headers })
+    return this.http.get<orderResponse[]>("http://localhost:3000/660/orders", { headers: headers })
        .pipe(map(response => response)
       ) 
   }

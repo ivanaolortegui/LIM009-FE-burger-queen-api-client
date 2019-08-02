@@ -2,7 +2,7 @@
 
 <main class="view-orders">
     <section class="cards-orders" *ngFor="let item of orders">
-        <div class="client" (click)="timeForOrders(item)"> <p> 😎Cliente : {{ item.client }} </p>  <div>kk</div></div> 
+        <div class="client" > <p> 😎Cliente : {{ item.client }} </p>  <div>{{timers[item.id].hours}} : {{ timers[item.id].min}} : {{timers[item.id].sec }}</div></div> 
 
         <div class="item-margin " *ngFor="let product of item.products ">
             <p class="text p-card view-order-product ">
@@ -17,10 +17,10 @@
         </div> -->
 
         <select class="states " #select (change)="captureData(item, select.value) ">
-      <option class="pending " value="pending ">{{ item.status }} </option>
-      <option class="canceled " value="canceled ">canceled</option>
-      <option class="delivering " value="delivering ">delivering</option>
-      <option class="delivered " value="delivered ">delivered</option>
+      <option class="pending " value="pending">{{ item.status }} </option>
+      <option class="canceled " value="canceled">canceled</option>
+      <option class="delivering " value="delivering">delivering</option>
+      <option class="delivered " value="delivered">delivered</option>
     </select>
     </section>
 </main>

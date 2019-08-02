@@ -9,13 +9,14 @@ import { orderResponse } from "../../../interface/orderResponse";
 })
 export class ViewOrdersComponent implements OnInit {
   orders: orderResponse[];
+  timers = {}
+  
   constructor(private orderService: OrdersService) {}
-
+ 
   ngOnInit() {
-    this.orderService.getOrders().subscribe((respon: orderResponse[]) => {
-      this.orders = respon; // Obtener todos las ordenes
-      console.log(respon);
-    });
+
+    
+    this.getData  () 
 
     /*  this.chronometer = setInterval(() => {
       this.seg++;
@@ -28,6 +29,15 @@ export class ViewOrdersComponent implements OnInit {
       }
     }, 1000);*/
   }
+  getData  () {
+    this.orderService.getOrders().subscribe((respon: orderResponse[]) => {
+      this.orders = respon; // Obtener todos las ordenes
+      this.orders.forEach(order => {
+        this.timeForOrders(order)
+      })
+    });
+  }
+  
   timeForOrders(item: any) {
     const obj: object = {
       ...item
@@ -37,21 +47,38 @@ export class ViewOrdersComponent implements OnInit {
     let min: any = Math.trunc(realTimeOfOrders);
     let seg: any = realTimeOfOrders.toFixed(2).toString();
     let segundosTotales = parseInt(seg.substring(seg.indexOf(".") + 1));
-
+    let hours:any = Math.trunc(min/60);
+    console.log( hours );
+    
     console.log(segundosTotales);
-    setInterval(() => {
+    let interval = setInterval(() => {
       segundosTotales++;
-      if (segundosTotales > 60) {
+      if (segundosTotales > 59) {
         segundosTotales = 0;
         min++;
-        if (min === 0) {
+        /* if (min === 0) {
           min = 0;
-        }
-      }
+        } */
+      } if(min > 59){
+        min = 0;
+       // hours++
+      } 
 
-      console.log(min);
-      console.log("se" + segundosTotales);
+     // console.log(min);
+      this.timers[item.id]= {
+        hours,
+        min,
+        sec: segundosTotales
+      }
+    //  console.log("se" + segundosTotales);
     }, 1000);
+    if (item.status ==="delivered" || item.status ==="canceled") {
+      // clearInterval(interval)
+      console.log("holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+} 
+
+       
+   //return interval; 
   }
 
   captureData(item: any, state) {
@@ -63,14 +90,13 @@ export class ViewOrdersComponent implements OnInit {
     };
     console.log(state);
     console.log(item.id);
-    if (state === "delivered" || state === "canceled") {
-      //
-      // clearInterval(this.chronometer);
-    }
+    
+  
 
     this.orderService.putStatus(obj, item.id).subscribe(resp => {
       //Envio objeto y id
       console.log(resp);
+     this.getData  () 
     });
   }
 }
