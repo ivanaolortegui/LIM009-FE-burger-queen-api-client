@@ -14,6 +14,7 @@
 }
 
 .client {
+    display: flex;
     background: rgba(252, 174, 23, 0.64);
     border-radius: 10px 10px 0px 0px;
     padding: 6px;

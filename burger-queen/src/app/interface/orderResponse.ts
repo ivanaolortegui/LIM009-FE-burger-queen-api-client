@@ -13,6 +13,6 @@ export interface orderResponse{
             }[]
         }
     status: string,
-    dateEntry: string,
+    dateEntry: number,
     dateProcessed:string
 }

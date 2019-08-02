@@ -10,18 +10,14 @@ import { orderResponse } from "../../../interface/orderResponse";
 export class ViewOrdersComponent implements OnInit {
   orders: orderResponse[];
   constructor(private orderService: OrdersService) {}
-  opcionSeleccionada: string = "pending";
-  verSeleccion: string = "";
-  min: number = 0;
-  seg: number = 0;
-  chronometer: any;
+
   ngOnInit() {
     this.orderService.getOrders().subscribe((respon: orderResponse[]) => {
       this.orders = respon; // Obtener todos las ordenes
       console.log(respon);
     });
 
-    this.chronometer = setInterval(() => {
+    /*  this.chronometer = setInterval(() => {
       this.seg++;
       if (this.seg === 60) {
         this.seg = 0;
@@ -30,18 +26,46 @@ export class ViewOrdersComponent implements OnInit {
           this.min = 0;
         }
       }
+    }, 1000);*/
+  }
+  timeForOrders(item: any) {
+    const obj: object = {
+      ...item
+    };
+    const newDate = Date.now();
+    const realTimeOfOrders = (newDate - item.dateEntry) / 60000; // esta en minutos
+    let min: any = Math.trunc(realTimeOfOrders);
+    let seg: any = realTimeOfOrders.toFixed(2).toString();
+    let segundosTotales = parseInt(seg.substring(seg.indexOf(".") + 1));
+
+    console.log(segundosTotales);
+    setInterval(() => {
+      segundosTotales++;
+      if (segundosTotales > 60) {
+        segundosTotales = 0;
+        min++;
+        if (min === 0) {
+          min = 0;
+        }
+      }
+
+      console.log(min);
+      console.log("se" + segundosTotales);
     }, 1000);
   }
-  captureData(item: any, state) {// debugger
-// declaramos una variable para que reciba el estado    
-    const obj:object = {
+
+  captureData(item: any, state) {
+    // debugger
+    // declaramos una variable para que reciba el estado
+    const obj: object = {
       ...item,
       status: state
-    }
+    };
     console.log(state);
     console.log(item.id);
-    if (state === "delivered" ||state===  "canceled") {   // 
-      clearInterval(this.chronometer);
+    if (state === "delivered" || state === "canceled") {
+      //
+      // clearInterval(this.chronometer);
     }
 
     this.orderService.putStatus(obj, item.id).subscribe(resp => {
