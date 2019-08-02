@@ -4,9 +4,9 @@
         <img class="letter " src="assets/img/letter.png" alt="">
         <img class="burguer " src="assets/img/hambur-trans.png" alt="">
     </div>
-
-    <div *ngIf="viewOrder" class="menu-nav width-nav" [routerLink]="['view-orders']">Ver Órdenes</div>
-    <div *ngIf="home" class="menu-nav width-nav" [routerLink]="['/home']">Realizar Pedidos</div>
-    <div class="menu-nav width-nav" (click)="getOut()">Cerrar Sessión</div>
-
+    <nav class="nav-menu">
+    <div *ngIf="viewOrder" class="menu-nav " [routerLink]="['view-orders']">Ver Órdenes</div>
+    <div *ngIf="home" class="menu-nav " [routerLink]="['/home']">Realizar Pedidos</div>
+    <div class="menu-nav " (click)="getOut()">Cerrar Sessión</div>
+    </nav>
 </header>
