@@ -113,7 +113,7 @@
     {
       "id": "order1",
       "userId": "1",
-      "client": "jose1",
+      "client": "jose",
       "products": [
         {
           "qty": 2,
@@ -138,8 +138,8 @@
           }
         }
       ],
-      "status": "canceled",
-      "dateEntry": 1564748145757,
+      "status": "delivered",
+      "dateEntry": 1564703827453,
       "dateProcessed": ""
     },
     {
@@ -170,7 +170,7 @@
           }
         }
       ],
-      "status": "delivered",
+      "status": "delivering",
       "dateEntry": 1564748173155,
       "dateProcessed": ""
     }

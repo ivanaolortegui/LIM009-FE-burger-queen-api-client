@@ -44,21 +44,7 @@
     border-style: solid;
 }
 
-option.canceled {
-    background-color: green;
-}
 
-option.pending {
-    background-color: red;
-}
-
-option.delivering {
-    background-color: yellow;
-}
-
-option.delivered {
-    background-color: black;
-}
 
 @media screen and (min-width: 540px) {}
 
