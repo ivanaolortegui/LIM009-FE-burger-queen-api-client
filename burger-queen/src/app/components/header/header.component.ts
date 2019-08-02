@@ -11,8 +11,7 @@ export class HeaderComponent implements OnInit {
 home:boolean;
 viewOrder:boolean;
 constructor(private router:Router, private user:UserService) {
-  console.log(  this.router.url
-    );
+
     if(this.router.url ==="/home"){
       this.home=false;
       this.viewOrder=true;
