@@ -170,7 +170,7 @@
           }
         }
       ],
-      "status": "delivering",
+      "status": "delivered",
       "dateEntry": 1564748173155,
       "dateProcessed": 1565037432303
     },
@@ -202,7 +202,7 @@
           }
         }
       ],
-      "status": "delivering",
+      "status": "delivered",
       "dateEntry": 1564703827453,
       "dateProcessed": 1565037005481
     }

@@ -4,6 +4,7 @@ import {
 } from "@angular/core";
 import { OrdersService } from "../../../services/orders.service";
 import { orderResponse } from "../../../interface/orderResponse";
+import { element } from 'protractor';
 
 @Component({
   selector: "app-view-orders",
@@ -16,10 +17,17 @@ export class ViewOrdersComponent implements OnInit {
   chef : any;
   waiter : any;
   mostrar:boolean= true;
-  
+  optionForChef:string[] = ['delivering', 'canceled', 'pending'];
+  optionForWaiter:string[] = ['delivering', 'canceled', 'delivered'];
 
   constructor(private orderService: OrdersService) {}
 
+  statesGeneralForChefs =(item)=>{
+   return this.optionForChef.filter(element => element != item.status);
+  }
+  statesGeneralForWaiter =(item)=>{
+  return this.optionForWaiter.filter(element=>element != item.status);
+  }
   ngOnInit() {
     this.orderService.getOrders().subscribe((respon: orderResponse[]) => {
       this.orders = respon; // Obtener todos las ordenes

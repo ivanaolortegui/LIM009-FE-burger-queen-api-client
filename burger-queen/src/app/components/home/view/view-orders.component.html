@@ -27,11 +27,21 @@
                             {{ product.qty }} {{ product.product.name }}
                         </p>
                     </div>
-                    <select class="states " #select (change)="captureData(item, select.value) ">
-                    <option class="pending " value="pending">{{ item.status }} </option>
-                    <option class="canceled " value="canceled">canceled</option>
-                    <option class="delivering " value="delivering">delivering</option>
+                    <select class="states " #select (change)="captureData(item, select.value)">   
+                     <option class="pending"  [value]="item.status">{{item.status}}</option>
+                    <option   *ngFor="let status of statesGeneralForChefs(item)" [value]="status">{{status}}</option>
+         
                   </select>
+
+                    <!-- <div class="dropdown " #state1 (click)="captureData(item, state1.value)">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {{ item.status }}
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuMenu">
+                            <button class="dropdown-item" value="delivering" type="button" #state2 (click)="captureData(item, state2.value)">Delivering</button>
+                            <button class="dropdown-item" value="canceled" type="button" #state3 (click)="captureData(item, state3.value)">Canceled</button>
+                        </div>
+                    </div> -->
                 </section>
             </ng-container>
             <ng-container *ngIf="!mostrar">
@@ -46,10 +56,10 @@
                             {{ product.qty }} {{ product.product.name }}
                         </p>
                     </div>
-                    <select class="states " #select (change)="captureData(item, select.value) ">
-                    <option class="pending " value="pending">{{ item.status }} </option>
-                    <option class="delivering " value="delivering">delivered</option>
-                  </select>
+                    <select class="states " #select (change)="captureData(item, select.value)">   
+                        <option class="pending"  [value]="item.status">{{item.status}}</option>
+                       <option *ngFor="let status of statesGeneralForWaiter(item)" [value]="status">{{status}}</option>
+                     </select>
                 </section>
             </ng-container>
 
