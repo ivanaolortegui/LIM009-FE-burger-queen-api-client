@@ -138,9 +138,9 @@
           }
         }
       ],
-      "status": "delivered",
+      "status": "canceled",
       "dateEntry": 1564703827453,
-      "dateProcessed": ""
+      "dateProcessed": 1564971315621
     },
     {
       "id": "order2",
@@ -172,6 +172,38 @@
       ],
       "status": "delivering",
       "dateEntry": 1564748173155,
+      "dateProcessed": 1564971592257
+    },
+    {
+      "id": "order3",
+      "userId": "1",
+      "client": "Dani",
+      "products": [
+        {
+          "qty": 2,
+          "product": {
+            "_id": "5",
+            "name": "Hamburguesa Simple",
+            "price": "10",
+            "image": "https://image.flaticon.com/icons/svg/135/135592.svg",
+            "type": "Almuerzo y cena",
+            "dateEntry": ""
+          }
+        },
+        {
+          "qty": 4,
+          "product": {
+            "_id": "4",
+            "name": "Jugo de frutas natural",
+            "price": "7",
+            "image": "https://image.flaticon.com/icons/svg/1902/1902947.svg",
+            "type": "Desayuno",
+            "dateEntry": ""
+          }
+        }
+      ],
+      "status": "delivering",
+      "dateEntry": 1564703827453,
       "dateProcessed": ""
     }
   ]

@@ -1,4 +1,9 @@
-import { Component, OnInit, ReflectiveInjector } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  ReflectiveInjector,
+  OnDestroy
+} from "@angular/core";
 import { OrdersService } from "../../../services/orders.service";
 import { orderResponse } from "../../../interface/orderResponse";
 
@@ -7,78 +12,101 @@ import { orderResponse } from "../../../interface/orderResponse";
   templateUrl: "./view-orders.component.html",
   styleUrls: ["./view-orders.component.css"]
 })
-export class ViewOrdersComponent implements OnInit {
+export class ViewOrdersComponent implements OnInit, OnDestroy {
   orders: orderResponse[];
-  timers = {}
-  
+  timers = {};
+  data: any;
+
   constructor(private orderService: OrdersService) {}
- 
+
   ngOnInit() {
-
-    
-    this.getData  () 
-
-    /*  this.chronometer = setInterval(() => {
-      this.seg++;
-      if (this.seg === 60) {
-        this.seg = 0;
-        this.min++;
-        if (this.min === 0) {
-          this.min = 0;
-        }
-      }
-    }, 1000);*/
+    // this.getData();
+    let data = this.orderService
+      .getOrders()
+      .subscribe((respon: orderResponse[]) => {
+        this.orders = respon; // Obtener todos las ordenes
+        this.orders.forEach(order => {
+          this.timeForOrders(order);
+        });
+      });
   }
-  getData  () {
+  ngOnDestroy() {
+    this.data.unsubscribe();
+  }
+  getData() {
     this.orderService.getOrders().subscribe((respon: orderResponse[]) => {
       this.orders = respon; // Obtener todos las ordenes
+      console.log("helo");
+
       this.orders.forEach(order => {
-        this.timeForOrders(order)
-      })
+        this.timeForOrders(order);
+      });
     });
   }
-  
+
   timeForOrders(item: any) {
     const obj: object = {
       ...item
     };
-    const newDate = Date.now();
-    const realTimeOfOrders = (newDate - item.dateEntry) / 60000; // esta en minutos
-    let min: any = Math.trunc(realTimeOfOrders);
-    let seg: any = realTimeOfOrders.toFixed(2).toString();
-    let segundosTotales = parseInt(seg.substring(seg.indexOf(".") + 1));
-    let hours:any = Math.trunc(min/60);
-    console.log( hours );
-    
-    console.log(segundosTotales);
-    let interval = setInterval(() => {
-      segundosTotales++;
-      if (segundosTotales > 59) {
-        segundosTotales = 0;
-        min++;
-        /* if (min === 0) {
-          min = 0;
-        } */
-      } if(min > 59){
-        min = 0;
-       // hours++
-      } 
 
-     // console.log(min);
-      this.timers[item.id]= {
+    if (obj["status"] === "delivered" || obj["status"] === "canceled") {
+      console.log("h");
+      const realTimeOfOrders = (obj["dateProcessed"] - item.dateEntry) / 1000;
+      let roundedSeconds = Math.round(realTimeOfOrders); // segundos redondeados
+      let totalMinutes = roundedSeconds / 60; // de segundos a minutos
+      let segundos = totalMinutes.toFixed(2).toString();
+      let segundosTotales = parseInt(
+        segundos.substring(segundos.indexOf(".") + 1)
+      );
+      let hours: any = Math.trunc(totalMinutes / 60);
+
+      let decimalMinutes = (totalMinutes / 60).toFixed(2).toString();
+
+      let min = parseInt(
+        decimalMinutes.substring(decimalMinutes.indexOf(".") + 1)
+      );
+      this.timers[item.id] = {
         hours,
         min,
         sec: segundosTotales
-      }
-    //  console.log("se" + segundosTotales);
-    }, 1000);
-    if (item.status ==="delivered" || item.status ==="canceled") {
-      // clearInterval(interval)
-      console.log("holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
-} 
+      };
+    } else {
+      const newDate = Date.now();
+      const realTimeOfOrders = (newDate - item.dateEntry) / 1000; // esta en segundos
+      let roundedSeconds = Math.round(realTimeOfOrders); // segundos redondeados
+      let totalMinutes = roundedSeconds / 60; // de segundos a minutos
+      let segundos = totalMinutes.toFixed(2).toString();
+      let segundosTotales = parseInt(
+        segundos.substring(segundos.indexOf(".") + 1)
+      );
+      let hours: any = Math.trunc(totalMinutes / 60);
 
-       
-   //return interval; 
+      let decimalMinutes = (totalMinutes / 60).toFixed(2).toString();
+
+      let min = parseInt(
+        decimalMinutes.substring(decimalMinutes.indexOf(".") + 1)
+      );
+      console.log(hours);
+      console.log(min);
+
+      console.log(segundosTotales);
+      let interval = setInterval(() => {
+        segundosTotales++;
+        if (segundosTotales > 59) {
+          segundosTotales = 0;
+        }
+        if (min > 59) {
+          min = 0;
+        }
+
+        this.timers[item.id] = {
+          hours,
+          min,
+          sec: segundosTotales,
+          interval
+        };
+      }, 1000);
+    }
   }
 
   captureData(item: any, state) {
@@ -88,15 +116,19 @@ export class ViewOrdersComponent implements OnInit {
       ...item,
       status: state
     };
-    console.log(state);
-    console.log(item.id);
-    
-  
+    /*  console.log(state);
+    console.log(item.id); */
+    if (state === "delivered" || state === "canceled") {
+      obj["dateProcessed"] = Date.now();
+      clearInterval(this.timers[item.id].interval);
+      //console.log("hola");
+    }
 
+    //this.data.unsubscribe();
     this.orderService.putStatus(obj, item.id).subscribe(resp => {
       //Envio objeto y id
-      console.log(resp);
-     this.getData  () 
+      // console.log(resp);
     });
+    // this.getData()
   }
 }
