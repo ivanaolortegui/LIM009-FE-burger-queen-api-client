@@ -1,8 +1,24 @@
 <app-header class=""> </app-header>
-
+<section>
+    <ul class="nav nav-tabs md-tabs nav-justified primary-color" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" (click)="mostrar = false" data-toggle="tab" href="#panel555" role="tab">
+                <div class="item"> <i class="fas fa-user pr-2"></i>Cocinero </div>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" (click)="mostrar = true" href="#panel666" role="tab">
+                <div class="item"><i class="fas fa-heart pr-2"></i>Mesonero </div>
+            </a>
+        </li>
+    </ul>
+</section>
 <main class="view-orders">
     <section class="cards-orders" *ngFor="let item of orders">
-        <div class="client" > <p> 😎Cliente : {{ item.client }} </p>  <div class="clock">{{timers[item.id].hours}} : {{ timers[item.id].min}} : {{timers[item.id].sec }}</div></div> 
+        <div class="client">
+            <p> 😎Cliente : {{ item.client }} </p>
+            <div class="clock">{{timers[item.id].hours}} : {{ timers[item.id].min}} : {{timers[item.id].sec }}</div>
+        </div>
 
         <div class="item-margin " *ngFor="let product of item.products ">
             <p class="text p-card view-order-product ">
@@ -20,7 +36,6 @@
       <option class="pending " value="pending">{{ item.status }} </option>
       <option class="canceled " value="canceled">canceled</option>
       <option class="delivering " value="delivering">delivering</option>
-      <option class="delivered " value="delivered">delivered</option>
     </select>
     </section>
 </main>

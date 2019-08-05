@@ -76,8 +76,8 @@ export class ViewOrdersComponent implements OnInit {
     };
     /*  console.log(state);
     console.log(item.id); */
-    if (state === "delivered" || state === "canceled") {
-      obj["dateProcessed"] = Date.now();
+    if (state === "delivering" || state === "canceled") {
+     // obj["dateProcessed"] = Date.now();
       clearInterval(this.timers[item.id].interval);
     }
 
