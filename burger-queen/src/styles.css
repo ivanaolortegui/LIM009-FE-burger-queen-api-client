@@ -321,8 +321,8 @@ body {
     }
     
     .card {
-        width: 42%;
-        height: 250px;
+        width: 48%;
+        height: 240px;
         margin: auto;
         border-radius: 10px;
         margin-bottom: 3%;
@@ -442,8 +442,8 @@ body {
     }
     
     .card {
-        width: 29%;
-        height: 250px;
+        width: 31%;
+        height: 240px;
         margin: 1%;
         border-radius: 10px;
         display: flex;

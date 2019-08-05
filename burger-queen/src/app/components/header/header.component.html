@@ -5,8 +5,12 @@
         <img class="burguer " src="assets/img/hambur-trans.png" alt="">
     </div>
     <nav class="nav-menu">
-    <div *ngIf="viewOrder" class="menu-nav " [routerLink]="['view-orders']">Ver Órdenes</div>
-    <div *ngIf="home" class="menu-nav " [routerLink]="['/home']">Realizar Pedidos</div>
+    <div *ngIf="viewOrder" class="menu-nav center" [routerLink]="['view-orders']">Ver Órdenes</div>
+    <div *ngIf="home" class="menu-nav center" [routerLink]="['/home']">Realizar Pedidos</div>
     <div class="menu-nav " (click)="getOut()">Cerrar Sessión</div>
+   
     </nav>
+    <div><span class="hamburguer">
+        &#9776;
+    </span> </div>
 </header>

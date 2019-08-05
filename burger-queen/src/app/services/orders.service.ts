@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {BehaviorSubject, from} from 'rxjs'
+import { BehaviorSubject, from, Observable } from 'rxjs';
 import { product } from '../interface/products';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators'
@@ -55,13 +55,13 @@ deleteProduct(idx : number){
     console.log(this.lstProducts) 
   }
 
-  getOrders() {
+  getOrders() : Observable<orderResponse[]> {
     const headers = new HttpHeaders({
       'Authorization': 'Bearer ' + this.userService.Usertoken
     });
     return this.http.get<orderResponse[]>("http://localhost:3000/660/orders", { headers: headers })
-       .pipe(map(response => response)
-      ) 
+      /*  .pipe(map(response => response)
+      )  */
   }
 
 putStatus(obj: Object, id : string){
