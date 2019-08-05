@@ -138,7 +138,7 @@
           }
         }
       ],
-      "status": "delivered",
+      "status": "pending",
       "dateEntry": 1564703827453,
       "dateProcessed": 1565037035790
     },
@@ -170,7 +170,7 @@
           }
         }
       ],
-      "status": "canceled",
+      "status": "delivering",
       "dateEntry": 1564748173155,
       "dateProcessed": 1565037432303
     },

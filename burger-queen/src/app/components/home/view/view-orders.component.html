@@ -2,42 +2,64 @@
 <section>
     <ul class="nav nav-tabs md-tabs nav-justified primary-color" role="tablist">
         <li class="nav-item">
-            <a class="nav-link active" (click)="mostrar = false" data-toggle="tab" href="#panel555" role="tab">
+            <a class="nav-link active" (click)="mostrar = true" data-toggle="tab" href="#panel555" role="tab">
                 <div class="item"> <i class="fas fa-user pr-2"></i>Cocinero </div>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" (click)="mostrar = true" href="#panel666" role="tab">
+            <a class="nav-link" data-toggle="tab" (click)="mostrar = false" href="#panel666" role="tab">
                 <div class="item"><i class="fas fa-heart pr-2"></i>Mesonero </div>
             </a>
         </li>
     </ul>
-</section>
-<main class="view-orders">
-    <section class="cards-orders" *ngFor="let item of orders">
-        <div class="client">
-            <p> 😎Cliente : {{ item.client }} </p>
-            <div class="clock">{{timers[item.id].hours}} : {{ timers[item.id].min}} : {{timers[item.id].sec }}</div>
-        </div>
+    <div class="tab-content">
 
-        <div class="item-margin " *ngFor="let product of item.products ">
-            <p class="text p-card view-order-product ">
-                {{ product.qty }} {{ product.product.name }}
-            </p>
-        </div>
+        <main class="view-orders">
+            <ng-container *ngIf="mostrar">
+                <section class="cards-orders" *ngFor="let item of chef">
+                    <div class="client">
+                        <p> 😎Cliente : {{ item.client }} </p>
+                        <div class="clock">{{timers[item.id].hours}} : {{ timers[item.id].min}} : {{timers[item.id].sec }}</div>
+                    </div>
 
-        <!--    <div class="dropdown-menu ">
+                    <div class="item-margin " *ngFor="let product of item.products ">
+                        <p class="text p-card view-order-product ">
+                            {{ product.qty }} {{ product.product.name }}
+                        </p>
+                    </div>
+                    <select class="states " #select (change)="captureData(item, select.value) ">
+                    <option class="pending " value="pending">{{ item.status }} </option>
+                    <option class="canceled " value="canceled">canceled</option>
+                    <option class="delivering " value="delivering">delivering</option>
+                  </select>
+                </section>
+            </ng-container>
+            <ng-container *ngIf="!mostrar">
+                <section class="cards-orders" *ngFor="let item of waiter">
+                    <div class="client">
+                        <p> 😎Cliente : {{ item.client }} </p>
+                        <div class="clock">{{timers[item.id].hours}} : {{ timers[item.id].min}} : {{timers[item.id].sec }}</div>
+                    </div>
+
+                    <div class="item-margin " *ngFor="let product of item.products ">
+                        <p class="text p-card view-order-product ">
+                            {{ product.qty }} {{ product.product.name }}
+                        </p>
+                    </div>
+                    <select class="states " #select (change)="captureData(item, select.value) ">
+                    <option class="pending " value="pending">{{ item.status }} </option>
+                    <option class="delivering " value="delivering">delivered</option>
+                  </select>
+                </section>
+            </ng-container>
+
+            <!--    <div class="dropdown-menu ">
             <a class="dropdown-item ">Regular link</a>
             <a class="dropdown-item active ">Active link</a>
             <a class="dropdown-item ">Another link</a>
         </div> -->
-
-        <select class="states " #select (change)="captureData(item, select.value) ">
-      <option class="pending " value="pending">{{ item.status }} </option>
-      <option class="canceled " value="canceled">canceled</option>
-      <option class="delivering " value="delivering">delivering</option>
-    </select>
-    </section>
-</main>
+        </main>
+    </div>
+</section>
 <footer>
 </footer>

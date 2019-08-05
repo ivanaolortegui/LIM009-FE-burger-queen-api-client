@@ -13,15 +13,40 @@ import { orderResponse } from "../../../interface/orderResponse";
 export class ViewOrdersComponent implements OnInit {
   orders: orderResponse[];
   timers = {};
+  chef : any;
+  waiter : any;
+  mostrar:boolean= true;
+  
 
   constructor(private orderService: OrdersService) {}
 
   ngOnInit() {
     this.orderService.getOrders().subscribe((respon: orderResponse[]) => {
       this.orders = respon; // Obtener todos las ordenes
-      this.orders.forEach(order => {
+        console.log(this.orders[0].status); 
+
+     this.waiter = this.orders.filter(element => {
+       return element.status =="delivering" || element.status =="delivered"
+      })
+      this.waiter.forEach(order=>{
+        this.timeForOrders(order)
+        console.log(order);
+      });
+
+      console.log(this.waiter);
+      this.chef = this.orders.filter(element => {
+      return element.status ==="pending" || element.status === "canceled"
+      })
+
+
+      this.chef.forEach(order=>{
         this.timeForOrders(order);
       });
+/* 
+      this.orders.forEach(order => {
+        this.timeForOrders(order);
+
+      }); */
     });
   }
 
