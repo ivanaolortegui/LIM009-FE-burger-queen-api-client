@@ -1,8 +1,6 @@
 import {
   Component,
   OnInit,
-  ReflectiveInjector,
-  OnDestroy
 } from "@angular/core";
 import { OrdersService } from "../../../services/orders.service";
 import { orderResponse } from "../../../interface/orderResponse";
@@ -31,41 +29,20 @@ export class ViewOrdersComponent implements OnInit {
     const obj: object = {
       ...item
     };
-
+    let realTimeOfOrders;
+    let interval;
     if (obj["status"] === "delivered" || obj["status"] === "canceled") {
-      const realTimeOfOrders = (obj["dateProcessed"] - item.dateEntry) / 1000;
-      let roundedSeconds = Math.round(realTimeOfOrders); // segundos redondeados
-      let totalMinutes = roundedSeconds / 60; // de segundos a minutos
-      let segundos = totalMinutes.toFixed(2).toString();
-      let segundosTotales = parseInt(
-        segundos.substring(segundos.indexOf(".") + 1)
-      );
-      let hours: any = Math.trunc(totalMinutes / 60);
-      let decimalMinutes = (totalMinutes / 60).toFixed(2).toString();
-
-      let min = parseInt(decimalMinutes.substring(decimalMinutes.indexOf(".") + 1));
-      this.timers[item.id] = {
-        hours,
-        min,
-        sec: segundosTotales
-      };
+      realTimeOfOrders = (obj["dateProcessed"] - item.dateEntry) / 1000;
     } else {
       const newDate = Date.now();
-      const realTimeOfOrders = (newDate - item.dateEntry) / 1000; // esta en segundos
-      let roundedSeconds = Math.round(realTimeOfOrders); // segundos redondeados
-      let totalMinutes = roundedSeconds / 60; // de segundos a minutos
-      let segundos = totalMinutes.toFixed(2).toString();
-      let segundosTotales = parseInt(
-        segundos.substring(segundos.indexOf(".") + 1)
-      );
-      let hours: any = Math.trunc(totalMinutes / 60);
-      let decimalMinutes = (totalMinutes / 60).toFixed(2).toString();
-
-      let min = parseInt(
-        decimalMinutes.substring(decimalMinutes.indexOf(".") + 1)
-      );
-   
-      let interval = setInterval(() => {
+      realTimeOfOrders = (newDate - item.dateEntry) / 1000;
+    } // esta en segundos
+    let segundosTotales = Math.trunc(realTimeOfOrders % 60);
+    let totalMinutes = Math.trunc(realTimeOfOrders / 60);
+    let hours = Math.trunc(totalMinutes / 60);
+    let min = Math.trunc(totalMinutes % 60);
+    if (obj["status"] === "delivering") {
+      interval = setInterval(() => {
         segundosTotales++;
         if (segundosTotales > 59) {
           segundosTotales = 0;
@@ -78,9 +55,15 @@ export class ViewOrdersComponent implements OnInit {
           hours,
           min,
           sec: segundosTotales,
-          interval
+          interval //he ingresado el setInterval en una propiedad del obj timers para detenerlo
         };
       }, 1000);
+    } else {
+      this.timers[item.id] = {
+        hours,
+        min,
+        sec: segundosTotales
+      };
     }
   }
 

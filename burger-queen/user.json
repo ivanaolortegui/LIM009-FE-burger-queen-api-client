@@ -138,9 +138,9 @@
           }
         }
       ],
-      "status": "canceled",
+      "status": "delivered",
       "dateEntry": 1564703827453,
-      "dateProcessed": 1565033655518
+      "dateProcessed": 1565037035790
     },
     {
       "id": "order2",
@@ -172,7 +172,7 @@
       ],
       "status": "canceled",
       "dateEntry": 1564748173155,
-      "dateProcessed": 1565033557271
+      "dateProcessed": 1565037432303
     },
     {
       "id": "order3",
@@ -204,7 +204,7 @@
       ],
       "status": "delivering",
       "dateEntry": 1564703827453,
-      "dateProcessed": ""
+      "dateProcessed": 1565037005481
     }
   ]
 }

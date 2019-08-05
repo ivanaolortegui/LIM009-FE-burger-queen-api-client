@@ -14,5 +14,5 @@ export interface orderResponse{
         }
     status: string,
     dateEntry: number,
-    dateProcessed:string
+    dateProcessed:number,
 }

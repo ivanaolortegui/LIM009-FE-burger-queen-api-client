@@ -60,9 +60,6 @@ export class OrdersComponent implements OnInit {
       }
       this.total +=  parseInt(ele.price) * this.lstPedido[index].qty
       });
-     /*  this.orderProduct.forEach((ele, index) => {
-        this.total +=  parseInt(ele.price) * this.lstPedido[index].qty
-      }); */
       console.log(this.total)
     });
   }
@@ -71,9 +68,7 @@ export class OrdersComponent implements OnInit {
       this.orderForBackend = {
         userId: resp[0].userId,
         client: nameClient,
-        product: this.lstPedido,
-        dateEntry: this.jstoday = formatDate(this.today, 'dd-MM-yyyy hh:mm:ss a', 'en-US', '+0530'),
-     
+        product: this.lstPedido,     
       };
       console.log(this.orderForBackend);
       
