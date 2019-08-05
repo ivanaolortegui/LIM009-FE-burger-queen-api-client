@@ -12,32 +12,15 @@ import { orderResponse } from "../../../interface/orderResponse";
   templateUrl: "./view-orders.component.html",
   styleUrls: ["./view-orders.component.css"]
 })
-export class ViewOrdersComponent implements OnInit, OnDestroy {
+export class ViewOrdersComponent implements OnInit {
   orders: orderResponse[];
   timers = {};
-  data: any;
 
   constructor(private orderService: OrdersService) {}
 
   ngOnInit() {
-    // this.getData();
-    let data = this.orderService
-      .getOrders()
-      .subscribe((respon: orderResponse[]) => {
-        this.orders = respon; // Obtener todos las ordenes
-        this.orders.forEach(order => {
-          this.timeForOrders(order);
-        });
-      });
-  }
-  ngOnDestroy() {
-    this.data.unsubscribe();
-  }
-  getData() {
     this.orderService.getOrders().subscribe((respon: orderResponse[]) => {
       this.orders = respon; // Obtener todos las ordenes
-      console.log("helo");
-
       this.orders.forEach(order => {
         this.timeForOrders(order);
       });
@@ -50,7 +33,6 @@ export class ViewOrdersComponent implements OnInit, OnDestroy {
     };
 
     if (obj["status"] === "delivered" || obj["status"] === "canceled") {
-      console.log("h");
       const realTimeOfOrders = (obj["dateProcessed"] - item.dateEntry) / 1000;
       let roundedSeconds = Math.round(realTimeOfOrders); // segundos redondeados
       let totalMinutes = roundedSeconds / 60; // de segundos a minutos
@@ -59,12 +41,9 @@ export class ViewOrdersComponent implements OnInit, OnDestroy {
         segundos.substring(segundos.indexOf(".") + 1)
       );
       let hours: any = Math.trunc(totalMinutes / 60);
-
       let decimalMinutes = (totalMinutes / 60).toFixed(2).toString();
 
-      let min = parseInt(
-        decimalMinutes.substring(decimalMinutes.indexOf(".") + 1)
-      );
+      let min = parseInt(decimalMinutes.substring(decimalMinutes.indexOf(".") + 1));
       this.timers[item.id] = {
         hours,
         min,
@@ -80,16 +59,12 @@ export class ViewOrdersComponent implements OnInit, OnDestroy {
         segundos.substring(segundos.indexOf(".") + 1)
       );
       let hours: any = Math.trunc(totalMinutes / 60);
-
       let decimalMinutes = (totalMinutes / 60).toFixed(2).toString();
 
       let min = parseInt(
         decimalMinutes.substring(decimalMinutes.indexOf(".") + 1)
       );
-      console.log(hours);
-      console.log(min);
-
-      console.log(segundosTotales);
+   
       let interval = setInterval(() => {
         segundosTotales++;
         if (segundosTotales > 59) {
@@ -121,14 +96,11 @@ export class ViewOrdersComponent implements OnInit, OnDestroy {
     if (state === "delivered" || state === "canceled") {
       obj["dateProcessed"] = Date.now();
       clearInterval(this.timers[item.id].interval);
-      //console.log("hola");
     }
 
-    //this.data.unsubscribe();
     this.orderService.putStatus(obj, item.id).subscribe(resp => {
       //Envio objeto y id
       // console.log(resp);
     });
-    // this.getData()
   }
 }
