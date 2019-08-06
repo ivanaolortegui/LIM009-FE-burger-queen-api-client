@@ -18,7 +18,7 @@ es difícil_](https://medium.com/dailyjs/the-deepest-reason-why-modern-javascrip
 Al elegir un _framework_ o _librería_ para nuestra interfaz, nos apoyamos en una
 serie de convenciones e implementaciones _probadas_ y _documentadas_ para
 resolver un problema común a toda interfaz web. Esto nos permite concentrarnos
-mejor (dedicar más tiempo) en las caractrísticas _específicas_ de
+mejor (dedicar más tiempo) en las características _específicas_ de
 nuestra aplicación.
 
 Cuando elegimos una de estas tecnologías no solo importamos un pedacito de
@@ -53,7 +53,7 @@ Esta es la información que tenemos del cliente:
 > | Café americano            |    5 |
 > | Café con leche            |    7 |
 > | Sandwich de jamón y queso |   10 |
-> | Jugo de frutas natural              |    7 |
+> | Jugo de frutas natural    |    7 |
 >
 > Y otro menú para el resto del día:
 >
@@ -219,6 +219,26 @@ rápidamente a los clientes que las hicieron.
 ##### Criterios de aceptación
   * Ver listado de pedido listos para servir.
   * Marcar pedidos que han sido entregados.
+
+##### Definición de terminado
+  * Debes haber recibido _code review_ de al menos una compañera.
+  * Haces _test_ unitarios y, además, has testeado tu producto manualmente.
+  * Hiciste _tests_ de usabilidad e incorporaste el _feedback_ del usuario.
+  * Desplegaste tu aplicación y has etiquetado tu versión (git tag).
+  * Los datos se deben mantener íntegros, incluso después de que un pedido ha
+  terminado. Todo esto para poder tener estadísticas en el futuro.
+
+---------------------
+
+#### [Historia de usuario 5] Administrador(a) de tienda debe administrar a sus trabajadorxs
+Yo como administrador(a) de tienda quiero gestionar a los usuarios de 
+la plataforma para mantener actualizado la informacion de mis trabajadorxs.
+
+##### Criterios de aceptación
+  * Ver listado de trabajadorxs.
+  * Agregar trabajadorxs.
+  * Eliminar trabajadoxs.
+  * Actualizar datos de trabajadorxs.
 
 ##### Definición de terminado
   * Debes haber recibido _code review_ de al menos una compañera.
