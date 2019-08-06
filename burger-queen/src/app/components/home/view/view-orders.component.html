@@ -1,0 +1,75 @@
+<app-header class=""> </app-header>
+<section>
+    <ul class="nav nav-tabs md-tabs nav-justified primary-color" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" (click)="mostrar = true" data-toggle="tab" href="#panel555" role="tab">
+                <div class="item"> <i class="fas fa-user pr-2"></i>Cocinero </div>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" (click)="mostrar = false" href="#panel666" role="tab">
+                <div class="item"><i class="fas fa-heart pr-2"></i>Mesonero </div>
+            </a>
+        </li>
+    </ul>
+    <div class="tab-content">
+
+        <main class="view-orders">
+            <ng-container *ngIf="mostrar">
+                <section class="cards-orders" *ngFor="let item of chef">
+                    <div class="client">
+                        <p> 😎Cliente : {{ item.client }} </p>
+                        <div class="clock">{{timers[item.id].hours}} : {{ timers[item.id].min}} : {{timers[item.id].sec }}</div>
+                    </div>
+
+                    <div class="item-margin " *ngFor="let product of item.products ">
+                        <p class="text p-card view-order-product ">
+                            {{ product.qty }} {{ product.product.name }}
+                        </p>
+                    </div>
+                    <select class="states " #select (change)="captureData(item, select.value)">   
+                     <option class="pending"  [value]="item.status">{{item.status}}</option>
+                    <option   *ngFor="let status of statesGeneralForChefs(item)" [value]="status">{{status}}</option>
+         
+                  </select>
+
+                    <!-- <div class="dropdown " #state1 (click)="captureData(item, state1.value)">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {{ item.status }}
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuMenu">
+                            <button class="dropdown-item" value="delivering" type="button" #state2 (click)="captureData(item, state2.value)">Delivering</button>
+                            <button class="dropdown-item" value="canceled" type="button" #state3 (click)="captureData(item, state3.value)">Canceled</button>
+                        </div>
+                    </div> -->
+                </section>
+            </ng-container>
+            <ng-container *ngIf="!mostrar">
+                <section class="cards-orders" *ngFor="let item of waiter">
+                    <div class="client">
+                        <p> 😎Cliente : {{ item.client }} </p>
+                        <div class="clock">{{timers[item.id].hours}} : {{ timers[item.id].min}} : {{timers[item.id].sec }}</div>
+                    </div>
+
+                    <div class="item-margin " *ngFor="let product of item.products ">
+                        <p class="text p-card view-order-product ">
+                            {{ product.qty }} {{ product.product.name }}
+                        </p>
+                    </div>
+                    <select class="states " #select (change)="captureData(item, select.value)">   
+                        <option class="pending"  [value]="item.status">{{item.status}}</option>
+                       <option *ngFor="let status of statesGeneralForWaiter(item)" [value]="status">{{status}}</option>
+                     </select>
+                </section>
+            </ng-container>
+
+            <!--    <div class="dropdown-menu ">
+            <a class="dropdown-item ">Regular link</a>
+            <a class="dropdown-item active ">Active link</a>
+            <a class="dropdown-item ">Another link</a>
+        </div> -->
+        </main>
+    </div>
+</section>
+<footer>
+</footer>
