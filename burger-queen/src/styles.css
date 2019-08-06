@@ -1,8 +1,10 @@
 /*  You can add global styles to this file, and also import other style files * */
-*{
+
+* {
     margin: 0;
     padding: 0;
 }
+
 body {
     background-image: url("src/assets/img/french-f.png");
     background-attachment: fixed;
@@ -11,14 +13,12 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Chau Philomene One', sans-serif;
-   
 }
 
 @font-face {
     font-family: "Insaniburger Regular";
     src: url("src/assets/img/Insanibu.ttf") format('ttf');
 }
-
 
 .center-button {
     display: flex;
@@ -54,7 +54,6 @@ body {
     color: white;
     background: #D72428;
     font: bold;
-
     /* font-family: "font-family: 'Averia Gruesa Libre', cursive"; */
     font-weight: 700;
     margin-top: 5px;
@@ -144,21 +143,6 @@ body {
     margin: auto;
 }
 
-.title {
-    font-size: 140%;
-    font-weight: 700;
-}
-
-.login-input {
-    outline: none;
-    background: rgba(179, 172, 172, 0.486);
-    margin-bottom: 15px;
-    height: 40px;
-    padding: 0px;
-    border-radius: 5px;
-    border: 1px;
-}
-
 .ordenes {
     width: 40%;
 }
@@ -175,10 +159,8 @@ body {
 }
 
 .orders {
-   
     width: 100%;
     height: min-content;
-   
 }
 
 @media screen and (min-width: 540px) {
@@ -190,14 +172,6 @@ body {
     .log {
         width: 30%;
         margin-top: 10%;
-    }
-    .login-input {
-        outline: none;
-        margin-bottom: 15px;
-        height: 55px;
-        padding: 0px;
-        border-radius: 5px;
-        border: 1px;
     }
     .button {
         padding: 19px 36px;
@@ -228,14 +202,11 @@ body {
         width: 54%;
     }
     .orders {
-    
         width: 52%;
         margin-left: 3%;
-        
     }
-    .orders-responsive{
+    .orders-responsive {
         height: min-content;
-        
     }
 }
 
@@ -247,14 +218,6 @@ body {
     .log {
         width: 30%;
         margin-top: 10%;
-    }
-    .login-input {
-        outline: none;
-        margin-bottom: 15px;
-        height: 55px;
-        padding: 0px;
-        border-radius: 5px;
-        border: 1px;
     }
     .button {
         padding: 19px 36px;
@@ -298,7 +261,6 @@ body {
         padding: 16px;
         display: block;
     }
-    
     .dropdown-content {
         display: none;
         position: absolute;
@@ -311,15 +273,12 @@ body {
     .dropdown-content a:hover {
         background-color: #f1f1f1
     }
-    
     .dropdown:hover .dropdown-content {
         display: block;
     }
-    
     .dropdown:hover .dropbtn {
         background-color: #3e8e41;
     }
-    
     .card {
         width: 48%;
         height: 240px;
@@ -341,11 +300,9 @@ body {
         width: 50%;
     }
     .orders {
-  
         width: 54%;
         margin-left: 3%;
     }
- 
 }
 
 @media screen and (min-width: 1100px) {
@@ -357,16 +314,6 @@ body {
     .log {
         width: 70%;
         margin-top: 10%;
-    }
-    .login-input {
-        outline: none;
-        background: rgba(179, 172, 172, 0.486);
-        margin-bottom: 15px;
-        height: 41px;
-        padding: 0px;
-        font-size: 100;
-        border-radius: 5px;
-        border: 1px;
     }
     .img-with {
         width: 114px;
@@ -419,7 +366,6 @@ body {
         padding: 16px;
         display: block;
     }
-    
     .dropdown-content {
         display: none;
         position: absolute;
@@ -432,15 +378,12 @@ body {
     .dropdown-content a:hover {
         background-color: #f1f1f1
     }
-    
     .dropdown:hover .dropdown-content {
         display: block;
     }
-    
     .dropdown:hover .dropbtn {
         background-color: #3e8e41;
     }
-    
     .card {
         width: 31%;
         height: 240px;
@@ -456,11 +399,9 @@ body {
         justify-content: space-around;
     }
     .orders {
-        
         width: 55%;
-        
     }
-    .orders-responsive{
+    .orders-responsive {
         margin-top: 0px;
         background: white;
     }

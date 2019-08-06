@@ -44,9 +44,9 @@ describe('FormLoginComponent', () => {
     expect(component).toBeTruthy();
   });
   it('Deberia de llamar a "guardar" al dar submit al form', () => {
-    spyOn(component, 'guardar');
+    spyOn(component, 'saveFormFromUser');
     formEl.triggerEventHandler('submit', null);
-    expect(component.guardar).toHaveBeenCalled();
+    expect(component.saveFormFromUser).toHaveBeenCalled();
   })
 
 });

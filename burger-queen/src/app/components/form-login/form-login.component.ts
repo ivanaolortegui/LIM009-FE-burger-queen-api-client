@@ -13,28 +13,19 @@ import Swal from 'sweetalert2'
 export class FormLoginComponent implements OnInit {
   
   user:object= {
-  email: '',
+  email:'',
   password:''
-
 }
-
-
-
-  constructor(private userservice : UserService,
-    
-            private router : Router) { }
+  constructor(private userservice : UserService, private router : Router) { }
 
   ngOnInit() {
-   
-    
-   
   }
- guardar(forma : FormGroup) {
+ saveFormFromUser(forma : FormGroup) {
    if (forma.invalid){return;}
   Swal.fire({
     allowOutsideClick: false,
     type: "info",
-    text: "espere por favor..."
+    text: "Espere por favor..."
   });
   Swal.showLoading()
   this.userservice.getToken(forma.value).subscribe(resp => {
@@ -54,8 +45,7 @@ export class FormLoginComponent implements OnInit {
       type: "error",
       text: text,
       confirmButtonColor:"#293092"
-  
-    });
+      });
    });
  }
  
