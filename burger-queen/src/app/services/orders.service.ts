@@ -68,6 +68,8 @@ putStatus(obj: Object, id : string){
   const headers = new HttpHeaders({
     'Authorization': 'Bearer ' + this.userService.Usertoken
   });
+  console.log(id);
+  
   return this.http.put(`http://localhost:3000/orders/${id}`, obj , { headers: headers })
      .pipe(map(response => response)
     ) 

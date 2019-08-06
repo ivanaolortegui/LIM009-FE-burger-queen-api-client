@@ -1,5 +1,4 @@
 .header-container {
-  padding-top: 5px;
   width: 100%;
   background: rgba(252, 174, 23, 0.64);
   display: flex;
@@ -20,22 +19,32 @@
 .width-nav {
   width: 100%;
 }
-.hamburguer {
+
+/* .hamburguer {
   font-size: 29px;
   color: #fff;
 }
+
 .hamburguer:hover {
   cursor: pointer;
-}
-.nav-menu{
+} */
+ .nav-menu {
   position: fixed;
   top: 80px;
   right: 1%;
   height: 3%;
   transition: 1s; 
-}
+} 
 @media screen and (min-width: 540px) {
+  .navbar-toggler {
+    display: none;
+  }
+  .header-container {
+    padding-top: 5px;
+   
+  }
   .nav-menu {
+    position: absolute;
     display: flex;
     justify-content: space-around;
     width: 100%;
@@ -84,7 +93,7 @@
   }
 }
 @media screen and (min-width: 1100px) {
-
+ 
   .menu-nav {
     font-size: 210%;
     color: rgb(45, 47, 49);
@@ -100,7 +109,7 @@
   }
   .nav-menu {
    
-    top: 1%;
+    top: 2%;
 
   }
 }
