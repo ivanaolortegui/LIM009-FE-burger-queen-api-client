@@ -64,7 +64,7 @@ export class ViewOrdersComponent implements OnInit {
     };
     let realTimeOfOrders;
     let interval;
-    if (obj["status"] === "delivered" || obj["status"] === "canceled") {
+    if (obj["status"] === "delivering" || obj["status"] === "canceled") {
       realTimeOfOrders = (obj["dateProcessed"] - item.dateEntry) / 1000;
     } else {
       const newDate = Date.now();
@@ -74,7 +74,7 @@ export class ViewOrdersComponent implements OnInit {
     let totalMinutes = Math.trunc(realTimeOfOrders / 60);
     let hours = Math.trunc(totalMinutes / 60);
     let min = Math.trunc(totalMinutes % 60);
-    if (obj["status"] === "delivering") {
+    if (obj["status"] === "pending") {
       interval = setInterval(() => {
         segundosTotales++;
         if (segundosTotales > 59) {
