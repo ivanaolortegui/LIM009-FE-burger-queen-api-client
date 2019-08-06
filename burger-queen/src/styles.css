@@ -169,10 +169,6 @@ body {
         margin: 2%;
         justify-content: space-between;
     }
-    .log {
-        width: 30%;
-        margin-top: 10%;
-    }
     .button {
         padding: 19px 36px;
     }
@@ -214,10 +210,6 @@ body {
     .main {
         display: flex;
         margin: 2%;
-    }
-    .log {
-        width: 30%;
-        margin-top: 10%;
     }
     .button {
         padding: 19px 36px;
@@ -310,10 +302,6 @@ body {
         display: flex;
         margin: 2%;
         justify-content: flex-start;
-    }
-    .log {
-        width: 70%;
-        margin-top: 10%;
     }
     .img-with {
         width: 114px;
