@@ -134,7 +134,6 @@ body {
 
 .card .text {
     text-align: center;
-    font-family: Insaniburger;
 }
 
 .card-img-top {
@@ -149,7 +148,6 @@ body {
 }
 
 .descripcion-producto {
-    font-weight: 700;
     color: black;
 }
 
