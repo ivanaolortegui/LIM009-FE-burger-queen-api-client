@@ -23,6 +23,10 @@
     justify-content: space-around;
 }
 
+.time {
+    margin-left: 10%;
+}
+
 .states {
     width: 94%;
     color: white;
