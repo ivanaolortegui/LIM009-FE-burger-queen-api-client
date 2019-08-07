@@ -121,6 +121,7 @@ body {
 }
 
 .card {
+    position: inherit;
     width: 70%;
     height: 280px;
     margin: auto;
