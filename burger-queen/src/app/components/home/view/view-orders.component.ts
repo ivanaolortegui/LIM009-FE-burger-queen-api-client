@@ -16,7 +16,7 @@ export class ViewOrdersComponent implements OnInit {
   timers = {};
   chef : any;
   waiter : any;
-  mostrar:boolean= true;
+  show:boolean= true;
   optionForChef:string[] = ['delivering', 'canceled', 'pending'];
   optionForWaiter:string[] = ['delivering', 'canceled', 'delivered'];
 
@@ -38,7 +38,6 @@ export class ViewOrdersComponent implements OnInit {
       })
       this.waiter.forEach(order=>{
         this.timeForOrders(order)
-        console.log(order);
       });
 
       console.log(this.waiter);
@@ -50,11 +49,6 @@ export class ViewOrdersComponent implements OnInit {
       this.chef.forEach(order=>{
         this.timeForOrders(order);
       });
-/* 
-      this.orders.forEach(order => {
-        this.timeForOrders(order);
-
-      }); */
     });
   }
 
@@ -62,23 +56,23 @@ export class ViewOrdersComponent implements OnInit {
     const obj: object = {
       ...item
     };
-    let realTimeOfOrders;
-    let interval;
+    let realTimeOfOrders: number;
+    let interval:Object;
     if (obj["status"] === "delivering" || obj["status"] === "canceled") {
       realTimeOfOrders = (obj["dateProcessed"] - item.dateEntry) / 1000;
     } else {
       const newDate = Date.now();
       realTimeOfOrders = (newDate - item.dateEntry) / 1000;
     } // esta en segundos
-    let segundosTotales = Math.trunc(realTimeOfOrders % 60);
+    let totalSeconds = Math.trunc(realTimeOfOrders % 60);
     let totalMinutes = Math.trunc(realTimeOfOrders / 60);
     let hours = Math.trunc(totalMinutes / 60);
     let min = Math.trunc(totalMinutes % 60);
     if (obj["status"] === "pending") {
       interval = setInterval(() => {
-        segundosTotales++;
-        if (segundosTotales > 59) {
-          segundosTotales = 0;
+        totalSeconds++;
+        if (totalSeconds > 59) {
+          totalSeconds = 0;
         }
         if (min > 59) {
           min = 0;
@@ -87,7 +81,7 @@ export class ViewOrdersComponent implements OnInit {
         this.timers[item.id] = {
           hours,
           min,
-          sec: segundosTotales,
+          sec: totalSeconds,
           interval //he ingresado el setInterval en una propiedad del obj timers para detenerlo
         };
       }, 1000);
@@ -95,7 +89,7 @@ export class ViewOrdersComponent implements OnInit {
       this.timers[item.id] = {
         hours,
         min,
-        sec: segundosTotales
+        sec: totalSeconds
       };
     }
   }
@@ -114,9 +108,8 @@ export class ViewOrdersComponent implements OnInit {
       clearInterval(this.timers[item.id].interval);
     }
 
-    this.orderService.putStatus(obj, item.id).subscribe(resp => {
+    this.orderService.putStatus(obj, item._id).subscribe(resp => {
       //Envio objeto y id
-      // console.log(resp);
     });
   }
 }

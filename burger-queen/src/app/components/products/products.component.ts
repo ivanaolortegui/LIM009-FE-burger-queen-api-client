@@ -12,8 +12,8 @@ export class ProductsComponent implements OnInit {
   products : product [] = [] ;
   desayuno :product [] = [];
   almuerzo : product []=[];
-  mostrar = false;
-  ocultar = true;
+  mostrar : boolean= false;
+  
  
   constructor(private userservice : UserService, private orderservice :OrdersService) {
     
