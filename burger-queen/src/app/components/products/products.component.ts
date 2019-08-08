@@ -12,8 +12,8 @@ export class ProductsComponent implements OnInit {
   products : product [] = [] ;
   desayuno :product [] = [];
   almuerzo : product []=[];
-  mostrar = false;
-  ocultar = true;
+  mostrar : boolean= false;
+  
  
   constructor(private userservice : UserService, private orderservice :OrdersService) {
     
@@ -26,7 +26,7 @@ export class ProductsComponent implements OnInit {
      this.desayuno = this.products.filter(ele => { 
        return ele.type==="Desayuno"})
      this.almuerzo = this.products.filter(ele => {
-       return ele.type === "Almuerzo y cena"
+       return ele.type === "Almuerzo"
      })  
     }) 
   }

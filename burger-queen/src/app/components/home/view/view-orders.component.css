@@ -17,10 +17,17 @@
 
 .client {
     display: flex;
-    background: rgba(252, 174, 23, 0.64);
+    background: #fff;
     border-radius: 10px 10px 0px 0px;
+    -webkit-box-shadow: 0px 0px 7px -1px rgb(161, 155, 161);
+    -moz-box-shadow: 0px 0px 7px -1px rgba(189, 178, 189, 1);
+    box-shadow: 0px 0px 7px -1px rgba(189, 178, 189, 1);
     padding: 6px;
     justify-content: space-between;
+}
+
+.time {
+    margin-left: 14%;
 }
 
 .states {
@@ -50,9 +57,13 @@
 
 .clock {
     border-radius: 4px;
-    background: rgba(255, 255, 255, 0.75);
+    background: rgba(252, 174, 23, 0.64);
+    -webkit-box-shadow: 0px 0px 7px -1px rgb(161, 155, 161);
+    -moz-box-shadow: 0px 0px 7px -1px rgba(189, 178, 189, 1);
+    box-shadow: 0px 0px 7px -1px rgba(189, 178, 189, 1);
     height: 10%;
     padding: 1%;
+    width: 30%;
 }
 
 .nav-link {

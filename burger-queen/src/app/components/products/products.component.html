@@ -25,7 +25,7 @@
                 <div class="card" (click)=" selectedProduct(product)" *ngFor=" let product of desayuno ">
                     <img class="card-img-top img-with " [src]="product.image " [alt]="product.name ">
                     <p class="text p-card descripcion-producto ">{{product.name}}</p>
-                    <p class="text price">S/.{{product.price}}.00 </p>
+                    <p class="text price">$ {{product.price}} </p>
                 </div>
 
             </ng-container>
@@ -34,7 +34,7 @@
                 <div class="card " (click)=" selectedProduct(product) " *ngFor="let product of almuerzo ">
                     <img class="card-img-top img-with " [src]="product.image " [alt]="product.name ">
                     <p class="text p-card descripcion-producto ">{{product.name}}</p>
-                    <p class="text price "> S/.{{product.price}}.00</p>
+                    <p class="text price ">$ {{product.price}}</p>
 
                 </div>
             </ng-container>
