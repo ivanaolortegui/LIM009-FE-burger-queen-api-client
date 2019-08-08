@@ -12,7 +12,7 @@ import Swal from 'sweetalert2'
 })
 export class FormLoginComponent implements OnInit {
   
-  user:object= {
+  user:UserModel= {
   email:'',
   password:''
 }
