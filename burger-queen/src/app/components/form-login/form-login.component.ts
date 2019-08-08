@@ -12,15 +12,15 @@ import Swal from 'sweetalert2'
 })
 export class FormLoginComponent implements OnInit {
   
-  user:object= {
-  email:'',
-  password:''
+  user: UserModel= {
+  email: '',
+  password: ''
 }
   constructor(private userservice : UserService, private router : Router) { }
 
   ngOnInit() {
   }
- saveFormFromUser(forma : FormGroup) {
+ saveFormFromUser(forma) {
    if (forma.invalid){return;}
   Swal.fire({
     allowOutsideClick: false,
