@@ -73,9 +73,10 @@ export class OrdersComponent implements OnInit {
   }
 
   clear(){
-    this.nameClient=="";
-    this.orderProduct==[];
-    this.total ==0;
+    this.nameClient="";
+    this.orderProduct=[];
+    this.orderservice.lstProducts =[];    
+    this.total=0;
   }
 
 

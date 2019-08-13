@@ -57,22 +57,28 @@ export class ViewOrdersComponent implements OnInit {
     if (obj["status"] === "delivered" || obj["status"] === "canceled") {
       realTimeOfOrders = (Date.parse(obj["dateProcessed"]) - Date.parse(obj["dateEntry"])) / 1000;      
     } else {
-      const newDate =Date.now();
-      realTimeOfOrders =( newDate - Date.parse(obj["dateEntry"])) / 1000;
+      const newDate =new Date(Date.now()).toString();
+      realTimeOfOrders =( Date.parse(newDate) - Date.parse(obj["dateEntry"])) / 1000;
           } // esta en segundos
+          console.log(realTimeOfOrders, Date.parse(obj["dateEntry"]))
     let totalSeconds = Math.trunc(realTimeOfOrders % 60);
     let totalMinutes = Math.trunc(realTimeOfOrders / 60);
     let hours = Math.trunc(totalMinutes / 60);
     let min = Math.trunc(totalMinutes % 60);
+    console.log(min);
+    
     if (obj["status"] === "pending") {
       interval = setInterval(() => {
         totalSeconds++;
         if (totalSeconds > 59) {
           totalSeconds = 0;
+          min++;
         }
         if (min > 59) {
           min = 0;
+     
         }
+
 
         this.timers[obj["_id"]] = {
           hours,
@@ -89,6 +95,7 @@ export class ViewOrdersComponent implements OnInit {
       };
 
     }
+    
   }
 
   captureData(item: any, state) {
