@@ -18,7 +18,7 @@
                 <section class="cards-orders" *ngFor="let item of chef">
                     <div class="client">
                         <p> Cliente : {{ item.client }} </p>
-                        <div class="clock" *ngIf="timers[item.id]"> Tiempo de Preparación: {{timers[item.id].hours}} : {{ timers[item.id].min}} : {{timers[item.id].sec }}</div>
+                        <div class="clock" *ngIf="timers[item._id]"> Tiempo de Preparación: {{timers[item._id].hours}} : {{ timers[item._id].min}} : {{timers[item._id].sec }}</div>
                     </div>
 
                     <div class="item-margin " *ngFor="let product of item.products ">
@@ -38,7 +38,7 @@
                     <div class="client">
                         <p class="name-client"> Cliente : {{ item.client }} </p>
                         <p class="time"> Tiempo:</p>
-                        <div class="clock" *ngIf="timers[item.id]"> {{timers[item.id].hours}} : {{ timers[item.id].min}} : {{timers[item.id].sec }}</div>
+                        <div class="clock" *ngIf="timers[item._id]"> {{timers[item["_id"]].hours}} : {{ timers[item._id].min}} : {{timers[item._id].sec }}</div>
                     </div>
 
                     <div class="item-margin " *ngFor="let product of item.products ">

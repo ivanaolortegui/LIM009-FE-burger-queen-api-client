@@ -31,9 +31,7 @@ export class ViewOrdersComponent implements OnInit {
   ngOnInit() {
     this.orderService.getOrders().subscribe((respon: orderResponse[]) => {
       this.orders = respon; // Obtener todos las ordenes
-        console.log(respon); 
-
-     this.waiter = this.orders.filter(element => {
+      this.waiter = this.orders.filter(element => {
        return element.status =="delivering" || element.status =="delivered" || element.status === "canceled" 
       })
       this.waiter.forEach(order=>{
@@ -54,7 +52,6 @@ export class ViewOrdersComponent implements OnInit {
     const obj: object = {
       ...item
     };
-    console.log(obj);
     let realTimeOfOrders: number;
     let interval:Object;
     if (obj["status"] === "delivered" || obj["status"] === "canceled") {
@@ -62,9 +59,7 @@ export class ViewOrdersComponent implements OnInit {
     } else {
       const newDate =Date.now();
       realTimeOfOrders =( newDate - Date.parse(obj["dateEntry"])) / 1000;
-      
-      console.log(Date.parse(obj["dateEntry"]));
-    } // esta en segundos
+          } // esta en segundos
     let totalSeconds = Math.trunc(realTimeOfOrders % 60);
     let totalMinutes = Math.trunc(realTimeOfOrders / 60);
     let hours = Math.trunc(totalMinutes / 60);
@@ -79,7 +74,7 @@ export class ViewOrdersComponent implements OnInit {
           min = 0;
         }
 
-        this.timers[item.id] = {
+        this.timers[obj["_id"]] = {
           hours,
           min,
           sec: totalSeconds,
@@ -87,34 +82,26 @@ export class ViewOrdersComponent implements OnInit {
         };
       }, 1000);
     } else {
-      this.timers[item.id] = {
+      this.timers[obj["_id"]] = {
         hours,
         min,
         sec: totalSeconds
       };
 
     }
-   
   }
 
   captureData(item: any, state) {
-    // debugger
-    // declaramos una variable para que reciba el estado
-   /* const obj: object = {
+ 
+   const obj: object = {
       ...item,
       status: state
-    };*/
-    //console.log(item.id); */
-    if (state === "delivered" || state === "canceled") {
-     // obj["dateProcessed"] = Date.now();
-     console.log(this.timers[item.id].interval);
-     
-      clearInterval(this.timers[item.id].interval);
+    };
+    if (state === "delivered" || state === "canceled") {     
+      clearInterval(this.timers[obj["_id"]].interval);
     }
 
     this.orderService.putStatus({status:state}, item._id).subscribe(resp => {
-      console.log(resp);
-
     });
   }
 }
