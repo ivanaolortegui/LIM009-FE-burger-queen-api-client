@@ -54,23 +54,23 @@ deleteProduct(idx : number){
     this.refresh();
     console.log(this.lstProducts) 
   }
-
-  getOrders() : Observable<orderResponse[]> {
-    const headers = new HttpHeaders({
+ getOrders() : Observable<orderResponse[]> {
+   const headers = new HttpHeaders({
       'Authorization': 'Bearer ' + this.userService.Usertoken
     });
-    return this.http.get<orderResponse[]>("http://localhost:3000/660/orders", { headers: headers })
+    return this.http.get<orderResponse[]>("http://167.71.153.94:81/orders", { headers: headers })
       /*  .pipe(map(response => response)
       )  */
   }
 
+
 putStatus(obj: Object, id : string){
   const headers = new HttpHeaders({
-    'Authorization': 'Bearer ' + this.userService.Usertoken
+    'Authorization': 'Bearer ' + this.userService.Usertoken,
   });
   console.log(id);
   
-  return this.http.put(`http://localhost:3000/orders/${id}`, obj , { headers: headers })
+  return this.http.put(`http://167.71.153.94:81/orders/${id}`, obj , { headers: headers })
      .pipe(map(response => response)
     ) 
 }
