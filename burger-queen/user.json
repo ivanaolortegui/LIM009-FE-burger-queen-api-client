@@ -4,7 +4,7 @@
       "userId": "1",
       "email": "ivana@gmail.com",
       "password": "$2a$10$u04HgHbJAureCDVa87m7A.NfG8S9izMV.GQerhuggj6v.pr/YKOfK",
-      "roles": { 
+      "roles": {
         "admin": false
       }
     },
@@ -12,7 +12,7 @@
       "userId": "2",
       "email": "liz@gmail.com",
       "password": "$2a$10$u04HgHbJAureCDVa87m7A.NfG8S9izMV.GQerhuggj6v.pr/YKOfK",
-      "roles": { 
+      "roles": {
         "admin": true
       }
     }
@@ -208,9 +208,52 @@
           }
         }
       ],
-      "status": "delivered",
+      "status": "pending",
       "dateEntry": 1564703827453,
       "dateProcessed": 1565037005481
+    },
+    {
+      "id": "order4",
+      "userId": "1",
+      "client": "Ale",
+      "products": [
+        {
+          "qty": 1,
+          "product": {
+            "_id": "1",
+            "name": "Cafe Americano",
+            "price": "5",
+            "image": "https://image.flaticon.com/icons/svg/135/135592.svg",
+            "type": "Desayuno",
+            "dateEntry": ""
+          }
+        },
+        {
+          "qty": 1,
+          "product": {
+            "_id": "3",
+            "name": "Sandwich de jamón y queso",
+            "price": "10",
+            "image": "https://image.flaticon.com/icons/svg/1902/1902947.svg",
+            "type": "Desayuno",
+            "dateEntry": ""
+          }
+        },
+        {
+          "qty": 1,
+          "product": {
+            "_id": "8",
+            "name": "Cebollas tostadas",
+            "price": "5",
+            "image": "https://image.flaticon.com/icons/svg/1902/1902947.svg",
+            "type": "Desayuno",
+            "dateEntry": ""
+          }
+        }
+      ],
+      "status": "pending",
+      "dateEntry": 1565383341373,
+      "dateProcessed": 1565037035790
     }
   ]
 }
