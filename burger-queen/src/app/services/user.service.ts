@@ -13,7 +13,7 @@ export class UserService {
 
   Usertoken: string;
   userEmail:string;
-  url = 'http://165.22.166.131:8080/auth';
+  url = 'http://167.71.153.94:81/auth';
   
   constructor(private http: HttpClient) {
    this.readToken()
@@ -33,7 +33,7 @@ export class UserService {
     const headers = new HttpHeaders({
       'Authorization': 'Bearer ' + this.Usertoken
     });
-    return this.http.get<product[]>("http://165.22.166.131:8080/products", { headers: headers })
+    return this.http.get<product[]>("http://167.71.153.94:81/products", { headers: headers })
       .pipe(map(response => response)
       )
   }
@@ -41,7 +41,7 @@ export class UserService {
     const headers = new HttpHeaders({
       'Authorization': 'Bearer ' + this.Usertoken
     });
-    return this.http.get(`http://165.22.166.131:8080/users/${this.userEmail}`, { headers: headers })
+    return this.http.get(`http://167.71.153.94:81/users/${this.userEmail}`, { headers: headers })
       .pipe(map(response => response)
       )
   }
@@ -53,7 +53,7 @@ export class UserService {
      
     }); 
     
-   return  this.http.post("http://165.22.166.131:8080/orders", orderForBackend, {headers: headers})
+   return  this.http.post("http://167.71.153.94:81/orders", orderForBackend, {headers: headers})
    //.pipe(map(res => console.log(res)));
     
   }

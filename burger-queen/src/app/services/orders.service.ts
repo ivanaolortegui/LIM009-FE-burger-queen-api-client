@@ -58,7 +58,7 @@ deleteProduct(idx : number){
    const headers = new HttpHeaders({
       'Authorization': 'Bearer ' + this.userService.Usertoken
     });
-    return this.http.get<orderResponse[]>("http://165.22.166.131:8080/orders", { headers: headers })
+    return this.http.get<orderResponse[]>("http://167.71.153.94:81/orders", { headers: headers })
       /*  .pipe(map(response => response)
       )  */
   }
@@ -66,11 +66,11 @@ deleteProduct(idx : number){
 
 putStatus(obj: Object, id : string){
   const headers = new HttpHeaders({
-    'Authorization': 'Bearer ' + this.userService.Usertoken
+    'Authorization': 'Bearer ' + this.userService.Usertoken,
   });
   console.log(id);
   
-  return this.http.put(`http://165.22.166.131:8080/orders/${id}`, obj , { headers: headers })
+  return this.http.put(`http://167.71.153.94:81/orders/${id}`, obj , { headers: headers })
      .pipe(map(response => response)
     ) 
 }

@@ -21,8 +21,6 @@ export class OrdersComponent implements OnInit {
   total :number; 
   orderForBackend: OrderForBackend;
   nameClient:string;
-  today= new Date();
-  jstoday = '';
 
 //  nameClient : string;
   constructor(
