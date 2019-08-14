@@ -17,8 +17,8 @@ export class ViewOrdersComponent implements OnInit {
   chef : any;
   waiter : any;
   show:boolean= true;
-  optionForChef:string[] = ['delivering', 'canceled', 'pending'];
-  optionForWaiter:string[] = ['delivering', 'canceled', 'delivered'];
+  optionForChef:string[] = ['delivered', 'canceled', 'pending'];
+  optionForWaiter:string[] = ['delivering', 'canceled','delivered'];
 
   constructor(private orderService: OrdersService) {}
 
@@ -31,20 +31,16 @@ export class ViewOrdersComponent implements OnInit {
   ngOnInit() {
     this.orderService.getOrders().subscribe((respon: orderResponse[]) => {
       this.orders = respon; // Obtener todos las ordenes
-        console.log(this.orders[0].status); 
-
-     this.waiter = this.orders.filter(element => {
-       return element.status =="delivering" || element.status =="delivered"
+      this.waiter = this.orders.filter(element => {
+       return element.status =="delivering" || element.status =="delivered" || element.status === "canceled" 
       })
       this.waiter.forEach(order=>{
         this.timeForOrders(order)
       });
 
-      console.log(this.waiter);
-      this.chef = this.orders.filter(element => {
-      return element.status ==="pending" || element.status === "canceled"
+     this.chef = this.orders.filter(element => {
+      return element.status ==="pending" || element.status === "canceled" 
       })
-
 
       this.chef.forEach(order=>{
         this.timeForOrders(order);
@@ -58,27 +54,33 @@ export class ViewOrdersComponent implements OnInit {
     };
     let realTimeOfOrders: number;
     let interval:Object;
-    if (obj["status"] === "delivering" || obj["status"] === "canceled") {
-      realTimeOfOrders = (obj["dateProcessed"] - item.dateEntry) / 1000;
+    if (obj["status"] === "delivered" || obj["status"] === "canceled") {
+      realTimeOfOrders = (Date.parse(obj["dateProcessed"]) - Date.parse(obj["dateEntry"])) / 1000;      
     } else {
-      const newDate = Date.now();
-      realTimeOfOrders = (newDate - item.dateEntry) / 1000;
-    } // esta en segundos
+      const newDate =new Date(Date.now()).toString();
+      realTimeOfOrders =( Date.parse(newDate) - Date.parse(obj["dateEntry"])) / 1000;
+          } // esta en segundos
+          console.log(realTimeOfOrders, Date.parse(obj["dateEntry"]))
     let totalSeconds = Math.trunc(realTimeOfOrders % 60);
     let totalMinutes = Math.trunc(realTimeOfOrders / 60);
     let hours = Math.trunc(totalMinutes / 60);
     let min = Math.trunc(totalMinutes % 60);
+    console.log(min);
+    
     if (obj["status"] === "pending") {
       interval = setInterval(() => {
         totalSeconds++;
         if (totalSeconds > 59) {
           totalSeconds = 0;
+          min++;
         }
         if (min > 59) {
           min = 0;
+     
         }
 
-        this.timers[item.id] = {
+
+        this.timers[obj["_id"]] = {
           hours,
           min,
           sec: totalSeconds,
@@ -86,30 +88,27 @@ export class ViewOrdersComponent implements OnInit {
         };
       }, 1000);
     } else {
-      this.timers[item.id] = {
+      this.timers[obj["_id"]] = {
         hours,
         min,
         sec: totalSeconds
       };
+
     }
+    
   }
 
   captureData(item: any, state) {
-    // debugger
-    // declaramos una variable para que reciba el estado
-    const obj: object = {
+ 
+   const obj: object = {
       ...item,
       status: state
     };
-    /*  console.log(state);
-    console.log(item.id); */
-    if (state === "delivering" || state === "canceled") {
-     // obj["dateProcessed"] = Date.now();
-      clearInterval(this.timers[item.id].interval);
+    if (state === "delivered" || state === "canceled") {     
+      clearInterval(this.timers[obj["_id"]].interval);
     }
 
-    this.orderService.putStatus(obj, item._id).subscribe(resp => {
-      //Envio objeto y id
+    this.orderService.putStatus({status:state}, item._id).subscribe(resp => {
     });
   }
 }

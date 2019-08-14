@@ -21,8 +21,6 @@ export class OrdersComponent implements OnInit {
   total :number; 
   orderForBackend: OrderForBackend;
   nameClient:string;
-  today= new Date();
-  jstoday = '';
 
 //  nameClient : string;
   constructor(
@@ -42,17 +40,15 @@ export class OrdersComponent implements OnInit {
         // Si la lista no tiene elementos se le agrega uno nuevo con cantidad por defecto
         if (this.lstPedido.length === 0) {   
           this.order = {
-            _id: ele._id,
+            product: ele._id,
             qty: 1,
           };
-         // console.log(this.order);           
           this.lstPedido.push(this.order);
-        //  this.total +=  parseInt(ele.price)
         } else {
-          let objProduct = this.lstPedido.find(item=> item._id === ele._id);        
+          let objProduct = this.lstPedido.find(item=> item.product === ele._id);        
         if(objProduct===undefined){
           this.order = {
-            _id: ele._id,
+            product: ele._id,
             qty: 1
           };
           this.lstPedido.push(this.order);     
@@ -65,23 +61,25 @@ export class OrdersComponent implements OnInit {
   }
   sendToKitchen(nameClient:string) {   // Función que captura el userId y el nombre de cliente para enviarlo a cocina
     this.userservice.getIdUsers().subscribe(resp => {
+      console.log(resp);
       this.orderForBackend = {
-        userId: resp[0].userId,
+        userId: resp['_id'],        
         client: nameClient,
-        product: this.lstPedido,     
+        products: this.lstPedido,     
       };
-      console.log(this.orderForBackend);
+      this.userservice.getOrder(this.orderForBackend).subscribe(arg => console.log(arg));
       
     });
-
-    this.userservice.getOrder(this.orderForBackend).subscribe(arg => console.log(arg));
     
   }
+
+
   clear(){
-    this.nameClient= " ";
-    this.orderProduct= [];
-    this.total = 0;
-    
+    this.orderservice.deleteProducts();
+    this.nameClient="";
+    this.orderProduct=[];
+    this.orderservice.lstProducts =[];    
+    this.total=0;
   }
 
 
