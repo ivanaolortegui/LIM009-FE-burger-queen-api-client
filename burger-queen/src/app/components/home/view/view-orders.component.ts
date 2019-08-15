@@ -2,9 +2,13 @@ import {
   Component,
   OnInit,
 } from "@angular/core";
+
+
 import { OrdersService } from "../../../services/orders.service";
 import { orderResponse } from "../../../interface/orderResponse";
-import { element } from 'protractor';
+import { product } from '../../../interface/products';
+
+
 
 @Component({
   selector: "app-view-orders",
@@ -22,10 +26,10 @@ export class ViewOrdersComponent implements OnInit {
 
   constructor(private orderService: OrdersService) {}
 
-  statesGeneralForChefs =(item)=>{
+  statesGeneralForChefs =(item: orderResponse)=>{
    return this.optionForChef.filter(element => element != item.status);
   }
-  statesGeneralForWaiter =(item)=>{
+  statesGeneralForWaiter =(item: orderResponse)=>{
   return this.optionForWaiter.filter(element=>element != item.status);
   }
   ngOnInit() {
@@ -98,9 +102,9 @@ export class ViewOrdersComponent implements OnInit {
     
   }
 
-  captureData(item: any, state) {
+  captureData(item: orderResponse, state: string) {
  
-   const obj: object = {
+   const obj: orderResponse = {
       ...item,
       status: state
     };

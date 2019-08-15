@@ -21,6 +21,7 @@ import { FormsModule } from '@angular/forms';
 import { OrdersService } from './services/orders.service';
 import { HttpTestingController } from '@angular/common/http/testing';
 import { ViewOrdersComponent } from './components/home/view/view-orders.component';
+
 //import { view-ordersComponent } from './components/home/view/view-orders.component';
 
 
@@ -35,7 +36,8 @@ import { ViewOrdersComponent } from './components/home/view/view-orders.componen
     HeaderComponent,
     ProductsComponent,
     OrdersComponent,
-    ViewOrdersComponent,    
+    ViewOrdersComponent,
+     
 
    
   ],
